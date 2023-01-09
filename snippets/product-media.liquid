@@ -1,0 +1,35 @@
+{% comment %}
+    Renders the product media.
+
+    Usage:
+  {%- render 'product-media' -%}
+{% endcomment %}
+
+<script src="{{- 'extender-product-media-modal.js' | asset_url -}}" defer></script>
+{{ 'snippet-product-media.css' | asset_url | stylesheet_tag }}
+
+<product-media-modal>
+  <div class="product-media">
+    <div class="product-media__inner">
+      {% for media in product.media %}
+        <div class="image-holder" data-index="{{ forloop.index0 }}">
+          {{
+            media
+            | image_url: width: original
+            | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+          }}
+        </div>
+        {% if forloop.index == 1 %}
+          <div class="mobile-form image-holder">
+            {% render 'product-form', blocks: blocks, viewport: viewport %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <!-- end .product-media -->
+
+  {%- liquid
+    render 'product-media-modal'
+  -%}
+</product-media-modal>

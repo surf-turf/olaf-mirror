@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "92f4df71-28a8-4ab7-a5a2-b41d902eff5d": {
+          "type": "product-info",
+          "settings": {
+            "title": "Shipping",
+            "product_information": "<p>We ship in 1 to 2 days<\/p>"
+          }
+        },
+        "9fd3ecf1-5013-4981-8a00-c4b5d6edd25e": {
+          "type": "product-info",
+          "settings": {
+            "title": "Returns",
+            "product_information": "<p>You can return items according to our <a href=\"\/pages\/contact\" title=\"Contact\">return policy<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "92f4df71-28a8-4ab7-a5a2-b41d902eff5d",
+        "9fd3ecf1-5013-4981-8a00-c4b5d6edd25e"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

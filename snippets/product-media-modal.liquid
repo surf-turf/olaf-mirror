@@ -1,0 +1,48 @@
+<script src="{{- 'extender-coral-scroll.js' | asset_url -}}" defer></script>
+{{ 'snippet-product-media-modal.css' | asset_url | stylesheet_tag }}
+
+<section class="product-media-modal">
+  <div class="product-media-modal__close">
+    <button class="js-close">{{ 'header.close' | t }}</button>
+  </div>
+
+  <coral-scroll class="coral-scroll">
+    <div class="coral-scroll__grab-overlay"></div>
+    <div class="coral-scroll__slider">
+      {% for media in product.media %}
+        {{
+          media
+          | image_url: width: original
+          | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image slide'
+        }}
+      {% endfor %}
+      <!-- end .slide -->
+    </div>
+    <!-- end .coral-scroll__slider -->
+
+    <div class="coral-scroll__arrows">
+      <button
+        type="button"
+        class="button arrow previous js-disabled"
+        aria-label="previous slide button"
+        name="previous slide button"
+      >
+        {%- render 'arrow-left-fs-slider' -%}
+      </button>
+      <!-- end .previous -->
+
+      <button type="button" class="button arrow next" aria-label="next slide button" name="next slide button">
+        {%- render 'arrow-right-fs-slider' -%}
+      </button>
+      <!-- end .next -->
+    </div>
+    <!-- end .coral-scroll__arrows -->
+
+    <div class="coral-scroll__indicator">
+      <button type="button" class="dot" data-index="0" aria-label="Select slide 0" name="Select slide 0"></button>
+      <!-- end .dot -->
+    </div>
+    <!-- end .coral-scroll__indicator -->
+  </coral-scroll>
+  <!-- end coral-scroll -->
+</section>

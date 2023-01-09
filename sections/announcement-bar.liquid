@@ -1,0 +1,41 @@
+{%- comment -%}Load the component assets{%- endcomment -%}
+{{ 'section-announcement-bar.css' | asset_url | stylesheet_tag }}
+
+<div class="announcement-bar__inner">
+  <div class="text-holder">
+    <p class="text-holder__text--desktop">{{ settings.desktop_text }}</p>
+    <p class="text-holder__text--mobile">{{ settings.mobile_text }}</p>
+  </div>
+  <!-- end .text-holder -->
+
+  {% comment %} <button class="button button--close" id="js-close-announcement-bar" type="button" aria-label="Close the announcement bar" name="Close the announcement bar">
+    {%- render 'icon-close' style: "dark" -%}
+    <!-- end render icon-close -->
+
+  </button>
+  <!-- end .button--close --> {% endcomment %}
+
+</div>
+<!-- end .announcement-bar__inner -->
+
+{% schema %}
+  {
+    "name": "Announcement Bar",
+    "tag": "section",
+    "class": "announcement-bar",
+    "settings": [
+      {
+        "id": "mobile_text",
+        "type": "richtext",
+        "label": "Mobile Announcement bar Text",
+        "info": "Make this short and powerful sentence (max 80 characters)"
+      },
+      {
+        "id": "desktop_text",
+        "type": "richtext",
+        "label": "Desktop Announcement bar text",
+        "info": "Make this short and powerful sentence (max 120 characters)"
+      }
+    ]
+  }
+{% endschema %}

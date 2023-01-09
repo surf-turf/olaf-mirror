@@ -1,0 +1,160 @@
+{% comment %}
+  Log:
+  06-11-2022 - @nol
+  - Added better reset.css
+  - Created method to add multiple fonts through a object.
+  - Added html set 1rem to 10px here
+
+  Usage:
+  {%- render 'head-fonts' -%}
+{% endcomment %}
+
+{%- if settings.use_custom_fonts == false -%}
+  {%- liquid
+    assign base_font = settings.base_font
+    assign base_font_name = base_font.family
+    assign use_italics = settings.base_font_italics
+    assign fallback_font_family = base_font.fallback_families
+
+    for font_variant in base_font.variants
+      if font_variant.style == 'normal' or font_variant.style == 'italic' and use_italics == true
+        assign settings_check = 'base_font_' | append: font_variant.weight
+
+        if settings[settings_check]
+          assign woff = font_variant | font_url: 'woff'
+          assign woff2 = font_variant | font_url
+          echo '<link rel="preload" href="$1" as="font" type="font/woff" crossorigin>' | replace: '$1', woff
+          echo '<link rel="preload" href="$1" as="font" type="font/woff2" crossorigin>' | replace: '$1', woff2
+          style
+            echo font_variant | font_face: font_display: 'swap'
+          endstyle
+        endif
+      endif
+    endfor
+  -%}
+
+{% else %}
+  {% comment %}
+    USE CUSTOM FONTS
+
+    The font needs to be placed in the src/public folder
+
+    @object
+    name|weight|file_name
+  {% endcomment %}
+  {%- capture fonts -%}
+F Grotesk Demi|600|F-Grotesk-Demi.woff
+{%- endcapture -%}
+
+  {% liquid
+    assign fonts = fonts | split: ','
+
+    for font in fonts
+      assign font_object = font | split: '|'
+      assign font_name = font_object[0]
+      assign font_weight = font_object[1]
+      assign font_url = font_object[2]
+
+      comment
+        Preconnect the fonts
+      endcomment
+      echo font_url | append: '2' | asset_url | preload_tag: as: 'font'
+      echo font_url | asset_url | preload_tag: as: 'font'
+
+      comment
+        Create the font face
+      endcomment
+      assign woff = font_url | asset_url
+      assign woff2 = font_url | append: '2' | asset_url
+      style
+        echo "@font-face {font-family: '$1';font-weight: $2;src: local('$1'),url('$3') format('woff2'),url('$4') format('woff');}" | replace: '$1', font_name | replace: '$2', font_weight | replace: '$3', woff2 | replace: '$4', woff | strip | strip_newlines
+      endstyle
+    endfor
+  %}
+{%- endif -%}
+
+{%- style -%}
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+
+  /* HTML5 display-role reset for older browsers */
+  article, aside, details, figcaption, figure,
+  footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+
+  ol, ul {
+    list-style: none;
+  }
+
+  blockquote, q {
+    quotes: none;
+  }
+
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+    content: '';
+    content: none;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    min-height: 100%;
+  }
+
+  body {
+    line-height: 1;
+    font-size: 1.5rem;
+    font-family: {{ fallback_font_family }};
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html.font-loaded body {
+    font-family: {{ base_font_name }};
+  }
+{%- endstyle -%}
+
+<script>
+  (()=>{
+    if( "fonts" in document ) {
+      // Optimization for Repeat Views
+      if ( sessionStorage.font_loaded ) {
+        document.documentElement.className += " font-loaded";
+        return;
+      }
+
+      // Load font
+      Promise.all([
+        document.fonts.load("1em " + {{ base_font_name }}),
+      ]).then(()=>{
+        document.documentElement.className += " font-loaded";
+        sessionStorage.font_loaded = true
+      });
+    }
+  })();
+</script>

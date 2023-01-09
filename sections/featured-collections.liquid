@@ -1,0 +1,134 @@
+{{ 'section-featured-collections.css' | asset_url | stylesheet_tag }}
+{{ 'snippet-featured-collection-card.css' | asset_url | stylesheet_tag }}
+{{ 'snippet-featured-collection-artwork.css' | asset_url | stylesheet_tag }}
+
+<div class="featured-collections__inner">
+  {%- liquid 
+    for block in section.blocks
+      case block.type
+        when 'collection_card'
+          render 'featured-collection-card', settings: block.settings
+        when 'artwork'
+          render 'featured-collection-artwork', settings: block.settings
+      endcase
+    endfor -%}
+</div>
+
+<style>
+  .featured-collections {
+    padding-top: {{ section.settings.spacing_top }}px;
+    padding-bottom: {{ section.settings.spacing_bottom }}px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Featured collections",
+  "tag": "section",
+  "class": "featured-collections",
+  "settings": [
+    {
+      "id": "spacing_top",
+      "type": "range",
+      "label": "Spacing top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 0
+    },
+    {
+      "id": "spacing_bottom",
+      "type": "range",
+      "label": "Spacing bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Collection card",
+      "type": "collection_card",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Image"
+        },
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name"
+        },
+        {
+          "id": "label_desktop",
+          "type": "text",
+          "label": "label (desktop)"
+        },
+        {
+          "id": "label_mobile",
+          "type": "text",
+          "label": "label (mobile)"
+        },
+        {
+          "id": "url",
+          "type": "url",
+          "label": "Url"
+        },
+        {
+          "id": "button_text",
+          "type": "text",
+          "label": "Button text"
+        }
+      ]
+    },
+    {
+      "name": "Artwork",
+      "type": "artwork",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Image"
+        },
+        {
+          "id": "url",
+          "type": "url",
+          "label": "Url"
+        },
+        {
+          "id": "height",
+          "type": "select",
+          "label": "Height",
+          "options": [
+            {
+              "value": "unset",
+              "label": "100%"
+            },
+            {
+              "value": "75%",
+              "label": "75%"
+            },
+            {
+              "value": "50%",
+              "label": "50%"
+            },
+            {
+              "value": "25%",
+              "label": "25%"
+            }
+          ],
+          "default": "75%"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured collections",
+      "category": "sections"
+    }
+  ]
+}
+{% endschema %}

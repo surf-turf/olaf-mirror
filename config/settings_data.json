@@ -1,0 +1,87 @@
+{
+  "current": {
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "mobile_text": "",
+          "desktop_text": ""
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "header_nav": "main-menu",
+          "mobile_nav": "main-menu",
+          "mobile_nav_sub": "bottom-menu",
+          "image": "shopify:\/\/shop_images\/kenny_eclipse_0356-1000x1500.jpg"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "footer_nav": ""
+        }
+      },
+      "cart-drawer": {
+        "type": "cart-drawer",
+        "blocks": {
+          "6adbbd70-53d2-4ba5-a82c-ccb3fd497458": {
+            "type": "text",
+            "settings": {
+              "usp_text": "Free shipping in the Netherlands on all orders"
+            }
+          },
+          "84d33a80-35dd-4398-b8bb-61f61076ad96": {
+            "type": "text",
+            "settings": {
+              "usp_text": "Free shipping in Europe on all orders over €100"
+            }
+          },
+          "147d7d1b-7f31-4d14-b20f-cf7213587c4a": {
+            "type": "text",
+            "settings": {
+              "usp_text": "Rest of the world on all orders over €200"
+            }
+          },
+          "ddb41dba-82ea-4b6d-a662-5f0db5569221": {
+            "type": "text",
+            "settings": {
+              "usp_text": "100% secure checkout"
+            }
+          }
+        },
+        "block_order": [
+          "6adbbd70-53d2-4ba5-a82c-ccb3fd497458",
+          "84d33a80-35dd-4398-b8bb-61f61076ad96",
+          "147d7d1b-7f31-4d14-b20f-cf7213587c4a",
+          "ddb41dba-82ea-4b6d-a662-5f0db5569221"
+        ],
+        "settings": {
+          "upselling_products": [
+            "ace-tate-olaf-sunglasses-oyster-white",
+            "olaf-ace-tate-herman-black",
+            "jog-nap-denim-jeans"
+          ]
+        }
+      },
+      "alert-bar": {
+        "type": "alert-bar",
+        "settings": {
+          "alert_text": "TO ENSURE YOUR ITEMS ARRIVE IN TIME FOR HOLIDAYS, ORDER BY THE SHIPPING DEADLINES YOU CAN FIND <a href=\"\/pages\/careers\" title=\"Careers\">HERE<\/a>.",
+          "show_alert": true,
+          "text_color": "#000000",
+          "background_color": "#efff3b",
+          "position": "top"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
+  "presets": {
+    "Default": {
+    }
+  }
+}

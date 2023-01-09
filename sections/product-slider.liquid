@@ -1,0 +1,104 @@
+<script src="{{- 'extender-coral-scroll.js' | asset_url -}}" defer></script>
+{{ 'section-product-slider.css' | asset_url | stylesheet_tag }}
+
+<div class="product-slider__inner">
+  <coral-scroll class="coral-scroll">
+    <div class="coral-scroll__grab-overlay"></div>
+    <div class="coral-scroll__slider">
+      {% for product in section.settings.product_list %}
+        {% render 'product-button', product: product %}
+      {% endfor %}
+      <!-- end .slide -->
+    </div>
+    <!-- end .coral-scroll__slider -->
+
+    <div class="coral-scroll__arrows">
+      <button
+        type="button"
+        class="button arrow previous js-disabled"
+        aria-label="previous slide button"
+        name="previous slide button"
+      >
+        {%- render 'arrow-left' -%}
+      </button>
+      <!-- end .previous -->
+
+      <button type="button" class="button arrow next" aria-label="next slide button" name="next slide button">
+        {%- render 'arrow-right' -%}
+      </button>
+      <!-- end .next -->
+    </div>
+    <!-- end .coral-scroll__arrows -->
+
+    <div class="coral-scroll__indicator">
+      <button type="button" class="dot" data-index="0" aria-label="Select slide 0" name="Select slide 0"></button>
+      <!-- end .dot -->
+    </div>
+    <!-- end .coral-scroll__indicator -->
+  </coral-scroll>
+  <!-- end coral-scroll -->
+
+  {% if section.settings.button_title != blank %}
+    <div class="button-holder">
+      <a href="{{ section.settings.button_link }}" class="button button--ghost">
+        {{- section.settings.button_title -}}
+      </a>
+    </div>
+  {% endif %}
+</div>
+
+<style>
+  .product-slider {
+    padding-top: {{ section.settings.spacing_top }}px;
+    padding-bottom: {{ section.settings.spacing_bottom }}px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Product slider",
+  "tag": "section",
+  "class": "product-slider",
+  "settings": [
+    {
+      "id": "product_list",
+      "type": "product_list",
+      "label": "Products"
+    },
+    {
+      "id": "button_title",
+      "type": "text",
+      "label": "Button title"
+    },
+    {
+      "id": "button_link",
+      "type": "url",
+      "label": "Button link"
+    },
+    {
+      "id": "spacing_top",
+      "type": "range",
+      "label": "Spacing top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 0
+    },
+    {
+      "id": "spacing_bottom",
+      "type": "range",
+      "label": "Spacing bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product slider",
+      "category": "sections"
+    }
+  ]
+}
+{% endschema %}

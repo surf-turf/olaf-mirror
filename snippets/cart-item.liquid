@@ -1,0 +1,165 @@
+{% comment %}
+    Renders a cart item.
+
+    Usage:
+  {%- render 'cart-item' -%}
+{% endcomment %}
+
+<script src="{{- 'extender-cart-item.js' | asset_url -}}" defer></script>
+<script src="{{- 'extender-quantity-selector.js' | asset_url -}}" defer></script>
+
+<cart-item
+  class="cart-item"
+  id="CartItem-{{ item.index | plus: 1 }}"
+  data-id="{{ item.index | plus: 1 }}"
+  data-variant-id="{{ item.id }}"
+>
+  <a class="image-holder" href="{{ item.url }}">
+    {% if item.image != blank %}
+      {{
+        item.image
+        | image_url: width: original
+        | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+      }}
+    {% endif %}
+  </a>
+
+  <div class="cart-item__content">
+    <h2>{{ item.product.title }}</h2>
+
+    {% for option in item.options_with_values %}
+      <div class="cart-item__option">
+        <p class="cart-item__option-label">{{ option.name }}</p>
+        <p class="cart-item__option-value">{{ option.value }}</p>
+
+        <fieldset class="cart-item__variants">
+          {% for option in item.product.options_with_values %}
+            {% for value in option.values %}
+              <label class="option__label">
+                <input
+                  class="option__input"
+                  type="radio"
+                  name="id"
+                  value="{{ value | escape }}"
+                  {% if item.title contains value %}
+                    checked
+                  {% endif %}
+                >
+                <span class="option__name">{{ value }}</span>
+              </label>
+            {% endfor %}
+          {% endfor %}
+          <input id="variantId" type="hidden" value="{{ item.id }}">
+        </fieldset>
+      </div>
+    {% endfor %}
+
+    {% if item.product.metafields.custom.color_dot_color != blank %}
+      <div class="cart-item__option">
+        <p class="cart-item__option-label">{{ 'sections.cart.color' | t }}</p>
+        <div class="color">
+          <div
+            class="cart-item__option--dot"
+            style="background-color: {{ item.product.metafields.custom.color_dot_color }}"
+          ></div>
+          <p class="cart-item__option-value">{{ item.product.title | split: '-' | last }}</p>
+        </div>
+
+        <div class="cart-item__colors">
+          {% for product in item.product.metafields.custom.color_dot_products.value %}
+            <div
+              data-id="{{ product.id }}"
+              class="cart-item__option--dot"
+              style="background-color: {{ product.metafields.custom.color_dot_color }}"
+            ></div>
+          {% endfor %}
+
+          <input type="hidden" class="color-id" id="color-id" value="">
+
+          <script type="application/json" id="color-products">
+            {
+              "products": [
+                {% for product in item.product.metafields.custom.color_dot_products.value %}
+                  {
+                    "id": {{ product.id }},
+                    "variants": [
+                      {% for variant in product.variants %}
+                        {
+                          "id": {{ variant.id }},
+                          "title": {{ variant.title | json }},
+                          "available": {{ variant.available }},
+                          "inventory_quantity": {{ variant.inventory_quantity }},
+                          "price": {{ variant.price }},
+                          "variant_color": "{{ variant.metafields.surfturf.variant_color }}",
+                          "variant_image": "{{ variant.image | image_url: width: 1000 }}",
+                          "compare_at_price":{% if variant.compare_at_price != blank %}{{ variant.compare_at_price }}
+                          {% else %}
+                            null
+                          {% endif %},
+                          "option_titles": "{% for option in product.options %}{% unless forloop.first == true %} - {% endunless %}{{ option | downcase }}{% endfor %}",
+                          "options": "{% for option in variant.options %}{% unless forloop.first == true %} - {% endunless %}{{ option }}{% endfor %}"
+                        }{% if forloop.last != true %},{% endif %}
+                      {% endfor %}
+                    ]
+                  }{% if forloop.last != true %},{% endif %}
+                {% endfor %}
+              ]
+            }
+          </script>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="quantity-holder">
+      <p class="quantity-title">{{ 'sections.cart.quantity' | t }}</p>
+      <quantity-selector>
+        <fieldset class="quantity-form">
+          <button class="js-minus button button--text">-</button>
+          <input class="quantity-form__input" type="text" value="{{ item.quantity }}" disabled>
+          <button class="js-plus button button--text">+</button>
+        </fieldset>
+      </quantity-selector>
+    </div>
+
+    <div class="button-row">
+      <button class="button button--primary cart-item__remove--change js-open-change-modal">
+        {{ 'sections.cart.change' | t }}
+      </button>
+      <button class="button button--ghost cart-item__remove">{{ 'sections.cart.remove' | t }}</button>
+    </div>
+
+    <div class="cart-item__price">
+      {% render 'product-price', product: item.product %}
+    </div>
+
+    <p class="cart-item__change cart-item__change--size">{{ 'sections.cart.change' | t }}</p>
+
+    {% if item.product.metafields.custom.color_dot_color != blank %}
+      <p class="cart-item__change cart-item__change--color">{{ 'sections.cart.change' | t }}</p>
+    {% endif %}
+  </div>
+
+  {% render 'mobile-change-modal', item: item %}
+
+  <script type="application/json" id="item-variants">
+    {
+      "variants": [{% for variant in item.product.variants %}{
+        "id": {{ variant.id }},
+        "title": {{ variant.title | json }},
+        "available": {{ variant.available }},
+        "inventory_quantity": {{ variant.inventory_quantity }},
+        "price": {{ variant.price }},
+        "variant_color": "{{ variant.metafields.surfturf.variant_color }}",
+        "variant_image": "{{ variant.image | image_url: width: 1000 }}",
+        "compare_at_price":{% if variant.compare_at_price != blank %}{{ variant.compare_at_price }}
+        {% else %}
+          null
+        {% endif %},
+        "option_titles": "{% for option in product.options %}{% unless forloop.first == true %} - {% endunless %}{{ option | downcase }}{% endfor %}",
+        "options": "{% for option in variant.options %}{% unless forloop.first == true %} - {% endunless %}{{ option }}{% endfor %}"
+      }
+      {% if forloop.last != true %},{% endif %}{% endfor %}]
+    }
+  </script>
+</cart-item>
+<!-- end .cart-item -->

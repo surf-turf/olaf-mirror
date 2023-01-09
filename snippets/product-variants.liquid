@@ -1,0 +1,36 @@
+<section class="product-variants">
+  {% for option in product.options_with_values %}
+    <div class="option">
+      <h3 class="option__title">{{ option.name }}</h3>
+      <fieldset class="option__fieldset">
+        {% for value in option.values %}
+          <label class="option__label">
+            <input
+              class="option__input"
+              type="radio"
+              name="id"
+              value="{{ value | escape }}"
+            >
+            <span class="option__name">{{ value }}</span>
+          </label>
+        {% endfor %}
+      </fieldset>
+    </div>
+  {% endfor %}
+
+  {% if product.metafields.custom.color_dot_products.value != blank %}
+    <div class="option">
+      <h3 class="option__title">{{ 'product.color' | t }}</h3>
+      <div class="option__colors">
+        {% for colorDot in product.metafields.custom.color_dot_products.value %}
+          <a class="bullet {% if colorDot.id == product.id %}bullet--active{% endif %}" href="{{ colorDot.url }}">
+            <div
+              class="bullet__inner"
+              style="background-color: {{ colorDot.metafields.custom.color_dot_color }};"
+            ></div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+</section>

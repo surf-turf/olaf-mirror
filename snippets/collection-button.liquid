@@ -1,0 +1,69 @@
+{% comment %}
+  Renders a collection button component
+
+  Accepts:
+  - product: {Object} Product Liquid object
+
+  Usage:
+  {%- render 'product-button',
+    product: product
+  -%}
+{% endcomment %}
+<script src="{{- 'extender-product-button.js' | asset_url -}}" defer></script>
+
+<product-button class="collection-button">
+  <a class="image-holder {% if product.images[1] != blank %}image-holder--hover{% endif %}" href="{{ product.url }}">
+    {% if product.images[0] != blank %}
+      {{
+        product.images[0]
+        | image_url: width: 950
+        | image_tag:
+          sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
+          class: 'image-holder__image',
+          width: 500,
+          height: 740,
+          loading: 'lazy'
+      }}
+    {% endif %}
+    {% if product.images[1] != blank %}
+      {{
+        product.images[1]
+        | image_url: width: 950
+        | image_tag:
+          sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
+          class: 'image-holder__image--hover',
+          width: 500,
+          height: 740,
+          loading: 'lazy'
+      }}
+    {% endif %}
+
+    {% if product.metafields.custom.color_dot_products != blank %}
+      <div class="dot-grid">
+        {% for dotProduct in product.metafields.custom.color_dot_products.value %}
+          <button
+            class="dot-grid__button"
+            data-id="{{ dotProduct.id }}"
+            data-featured-image="{{ dotProduct.featured_image | image_url: width: original }}"
+            data-featured-image-hover="{{ dotProduct.images[1] | image_url: width: original }}"
+            data-url="{{ dotProduct.url }}"
+          >
+            <div
+              style="background-color: {{ dotProduct.metafields.custom.color_dot_color }}"
+              class="dot-grid__dot"
+            ></div>
+          </button>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </a>
+  <div class="text-holder">
+    {% if product.metafields.custom.color_name != blank %}
+      <p>{{ product.title | remove: '-' | remove: product.metafields.custom.color_name.value[0] }}</p>
+    {% else %}
+      <p>{{ product.title }}</p>
+    {% endif %}
+    {% render 'product-price', product: product %}
+  </div>
+</product-button>
+<!-- end .product-button -->

@@ -1,0 +1,28 @@
+{% comment %}
+    Renders the cart items.
+
+    Usage:
+  {%- render 'cart-items' -%}
+{% endcomment %}
+
+{{ 'snippet-cart-items.css' | asset_url | stylesheet_tag }}
+{{ 'snippet-cart-item.css' | asset_url | stylesheet_tag }}
+
+{%- comment -%}The id is important for the section renderer to work{%- endcomment -%}
+<div class="cart__items" id="cart-items" data-id="{{ section.id }}">
+  {%- if cart != empty -%}
+    <ul class="cart-items-list">
+      {%- for item in cart.items -%}
+        {%- comment -%}Cart item{%- endcomment -%}
+        {%- render 'cart-item', item: item -%}
+      {%- endfor -%}
+      {% render 'cart-totals' %}
+    </ul>
+    <!-- end .cart-items-list -->
+  {% else %}
+    <div class="cart-drawer__empty">
+      <p>{{ 'sections.cart.empty' | t }}</p>
+    </div>
+  {%- endif -%}
+</div>
+<!-- end .cart__items -->

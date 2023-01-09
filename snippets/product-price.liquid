@@ -1,0 +1,61 @@
+{% comment %}
+    Renders the product price.
+
+    Usage:
+  {%- render 'product-price' -%}
+{% endcomment %}
+
+<div class="price-holder">
+  {% if product.available == true or show_price_when_sold_out == true %}
+    {% if product.compare_at_price > 0 or product.compare_at_price != null %}
+      {%- comment -%}Product has "discount"{%- endcomment -%}
+      {% if product.price_varies == true %}
+        {%- comment -%}Product has multiple variants with different prices{%- endcomment -%}
+        {% if product.compare_at_price > 0 %}
+          <p class="price price--underlined">
+            {{ product.compare_at_price_min | money_without_currency | remove: ',00' }}
+            {{ cart.currency.iso_code }}
+          </p>
+        {% endif %}
+        <p class="price price--has-compare-price">
+          {{ product.price_min | money_without_currency | remove: ',00' }}
+          {{ cart.currency.iso_code }}
+        </p>
+
+      {% else %}
+        {%- comment -%}Single variant product or variants have all the same price{%- endcomment -%}
+        {% if product.compare_at_price > 0 %}
+          <s class="price price--underlined">
+            {{ product.compare_at_price | money_without_currency | remove: ',00' }}
+            {{ cart.currency.iso_code }}
+          </s>
+        {% endif %}
+
+        <p class="price price--has-compare-price">
+          {{ product.price | money_without_currency | remove: ',00' }}
+          {{ cart.currency.iso_code }}
+        </p>
+      {% endif %}
+
+    {% else %}
+      {%- comment -%}Product doesn't have a discount{%- endcomment -%}
+      {% if product.price_varies == true %}
+        {%- comment -%}Product has multiple variants with different prices{%- endcomment -%}
+        <p class="price">
+          {{ product.price_min | money_without_currency | remove: ',00' }}
+          {{ cart.currency.iso_code }} +
+        </p>
+
+      {% else %}
+        {%- comment -%}Single variant product or variants have all the same price{%- endcomment -%}
+        <p class="price">
+          {{ product.price | money_without_currency | remove: ',00' }}
+          {{ cart.currency.iso_code }}
+        </p>
+      {% endif %}
+    {% endif %}
+
+  {% else %}
+    <p class="price">{{ 'product.sold_out' | t }}</p>
+  {% endif %}
+</div>

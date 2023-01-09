@@ -1,0 +1,42 @@
+<div class="footer__inner">
+  <div class="title-holder">
+    <h2 class="title-holder__title">Olaf</h2>
+  </div>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      {% for item in section.settings.footer_nav.links %}
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="{{ item.url }}" class="nav__link">{{ item.title }}</a>
+          </li>
+
+          {% for child_link in item.links %}
+            <div class="children">
+              <li class="nav__child">
+                <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+              </li>
+            </div>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    </div>
+    <p class="copyright">Copyright © 2020 OLAF HUSSEIN</p>
+  </nav>
+</div>
+<!-- end .footer__inner -->
+
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "footer",
+  "class": "footer",
+  "settings": [
+    {
+      "id": "footer_nav",
+      "type": "link_list",
+      "label": "Footer navigation list"
+    }
+  ]
+}
+{% endschema %}

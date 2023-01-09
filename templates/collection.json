@@ -1,0 +1,81 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "blocks": {
+        "76f66184-2c8b-440e-9d99-52529bb592f7": {
+          "type": "grid-3",
+          "settings": {
+            "title": "",
+            "image_1": "shopify:\/\/shop_images\/Screenshot_2022-11-15_at_09.56_2.png",
+            "url_1": "shopify:\/\/collections\/all",
+            "subtitle_1": "",
+            "color_1": "",
+            "image_2": "shopify:\/\/shop_images\/in-focus.png",
+            "url_2": "shopify:\/\/products\/2-pack-olaf-branded-rib-ls-steel-blue-green",
+            "subtitle_2": "",
+            "color_2": "",
+            "image_3": "shopify:\/\/shop_images\/Screenshot_2022-11-15_at_09.56_2_f73f6ac5-b6ee-4334-9bbf-683b6132ee89.png",
+            "url_3": "shopify:\/\/products\/olaf-socks-3-pack-purple-neon",
+            "subtitle_3": "",
+            "color_3": "",
+            "grid_position": 5,
+            "show_on_mobile": "image-left"
+          }
+        },
+        "3dbaaca9-511b-4e63-98bb-2d5b77bb3ef3": {
+          "type": "grid-2",
+          "settings": {
+            "image_left": "shopify:\/\/shop_images\/Rectangle_135.png",
+            "url_left": "shopify:\/\/products\/2-pack-olaf-branded-rib-ls-steel-blue-green",
+            "title_left": "<p>SS23<br\/>high summer<\/p>",
+            "color_1": "#ffffff",
+            "image_right": "shopify:\/\/shop_images\/2210120-Social28_1.png",
+            "url_right": "shopify:\/\/products\/3-pack-olaf-socks-maroon",
+            "title_right": "",
+            "color_2": "",
+            "image_width": 50,
+            "grid_position": 10,
+            "show_on_mobile": "left"
+          }
+        },
+        "d423cb26-bb47-47e4-bc81-99920e917780": {
+          "type": "text",
+          "settings": {
+            "title": "<p>FW 23 <\/p><p>Holiday<\/p>",
+            "content": "<p>Our label is an ongoing dialogue amongst our core team and close collaborators—continuously inspired by countries, cultures and citizens. Under Olaf Hussein, a name that combines two cultures, we explore the notion of a worldly traveler. Objects, references and insights collected across the globe are the starting points of the design process. Ultimately, our label is framework to enable ourselves and others to learn, develop and produce. By doing so, we are constantly expanding on the definition of a clothing label. Read our codes of practice below.<\/p>",
+            "color": "",
+            "grid_position": 13,
+            "grid_padding": 40
+          }
+        },
+        "2c19f748-f2f6-4f5c-a44d-deebbf68f9f1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ignant-photography-david-paige-04-1440x960_1.png",
+            "video_url": "",
+            "url": "shopify:\/\/products\/olaf-socks-3-pack-purple-neon",
+            "subtitle": "",
+            "color": "",
+            "grid_position": 15
+          }
+        }
+      },
+      "block_order": [
+        "76f66184-2c8b-440e-9d99-52529bb592f7",
+        "3dbaaca9-511b-4e63-98bb-2d5b77bb3ef3",
+        "d423cb26-bb47-47e4-bc81-99920e917780",
+        "2c19f748-f2f6-4f5c-a44d-deebbf68f9f1"
+      ],
+      "settings": {
+        "collection_list": [
+          "all",
+          "frontpage"
+        ]
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

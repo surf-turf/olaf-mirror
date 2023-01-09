@@ -1,0 +1,27 @@
+<a href="{{ settings.url }}" class="featured-collection-card">
+  <article class="featured-collection-card__inner">
+    <div class="image-holder">
+      {{ settings.image | image_url: width: original | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image' }}
+
+      {% if settings.label_mobile != blank %}
+        <p class="image-holder__label">{{ settings.label_mobile }}</p>
+      {% endif %}
+    </div>
+
+    <div class="card-content">
+      <div class="card-content__text">
+        {% if settings.name != blank %}
+          <p class="card-content__title">{{ settings.name }}</p>
+        {% endif %}
+
+        {% if settings.label_desktop != blank %}
+          <p class="card-content__label">{{ settings.label_desktop }}</p>
+        {% endif %}
+      </div>
+
+      {% if settings.button_text != blank %}
+        <button class="button button--ghost">{{ settings.button_text }}</button>
+      {% endif %}
+    </div>
+  </article>
+</a>

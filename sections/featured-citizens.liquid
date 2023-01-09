@@ -1,0 +1,61 @@
+{{ 'section-featured-citizens.css' | asset_url | stylesheet_tag }}
+
+{% for block in section.blocks %}
+  <div class="featured-citizens__inner">
+    <div class="citizen" style="background-color: {{ block.settings.background_color }}">
+      {% if block.settings.image != blank %}
+        <div class="image-holder">
+          {{ block.settings.image | image_url: width: original | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image' }}
+        </div>
+      {% endif %}
+
+      {% if block.settings.text != blank %}
+        <div class="text-holder" style="color: {{ block.settings.color }}">
+          {{ block.settings.text }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}
+
+{% schema %}
+{
+  "name": "Featured citizens",
+  "tag": "section",
+  "class": "featured-citizens",
+  "blocks": [
+    {
+      "name": "Featured citizen",
+      "type": "text",
+      "settings": [
+        {
+          "id": "text",
+          "type": "richtext",
+          "label": "Text"
+        },
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Image"
+        },
+        {
+          "id": "background_color",
+          "type": "color",
+          "label": "Background color"
+        },
+        {
+          "id": "color",
+          "type": "color",
+          "label": "Color"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured citizens",
+      "category": "sections"
+    }
+  ]
+}
+{% endschema %}

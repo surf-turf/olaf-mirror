@@ -1,0 +1,27 @@
+<script src="{{- 'extender-collapsable.js' | asset_url -}}" defer></script>
+
+<collapsable-handler>
+  <section class="product-details">
+    <article class="product-details__information collapsable collapsable--active">
+      <button class="collapsable__button">{{ 'product.information' | t }}</button>
+      <div class="collapsable__content">
+        <p>{{ product.description }}</p>
+      </div>
+    </article>
+
+    <article class="product-details__size-chart collapsable">
+      <button class="collapsable__button">{{ 'product.size_chart' | t }}</button>
+    </article>
+
+    {% for block in blocks %}
+      {% if block.settings.title != blank %}
+        <article class="product-details__information collapsable">
+          <button class="collapsable__button">{{ block.settings.title }}</button>
+          <div class="collapsable__content">
+            <p>{{ block.settings.product_information }}</p>
+          </div>
+        </article>
+      {% endif %}
+    {% endfor %}
+  </section>
+</collapsable-handler>

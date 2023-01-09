@@ -1,0 +1,19 @@
+{{ 'snippet-cart-footer.css' | asset_url | stylesheet_tag }}
+
+<div class="cart-footer">
+  <ul class="usp-holder">
+    {% for block in blocks %}
+      <li class="usp-holder__usp">- {{ block.settings.usp_text }}</li>
+    {% endfor %}
+  </ul>
+
+  <div class="upselling-items">
+    <p class="upselling-items__title">{{ 'sections.cart.you_may_also_like' | t }}</p>
+
+    <div class="upselling-items__grid">
+      {% for product in settings.upselling_products %}
+        {% render 'product-button', product: product %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

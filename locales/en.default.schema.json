@@ -1,0 +1,585 @@
+{
+  "sections": {
+    "404": {
+      "name": "404",
+      "settings": {
+        "title": {
+          "label": "Title"
+        },
+        "text": {
+          "label": "text"
+        },
+        "image": {
+          "label": "image"
+        }
+      }
+    },
+    "account": {
+      "account_overview": "Account overview",
+      "name": "Account"
+    },
+    "account_intro": {
+      "name": "Account intro",
+      "settings": {
+        "text": {
+          "name": "Text"
+        },
+        "title": {
+          "name": "Title"
+        }
+      }
+    },
+    "account_overview": {
+      "blocks": {
+        "link": {
+          "name": "Link",
+          "settings": {
+            "account_link_title": {
+              "label": "Link text for the help section on the account overview"
+            },
+            "account_link_url": {
+              "label": "Link for the help section on the account overview"
+            }
+          }
+        }
+      },
+      "name": "Account overview"
+    },
+    "activate_account": {
+      "name": "Activate account"
+    },
+    "adresses": {
+      "name": "Adresses"
+    },
+    "announcement_bar": {
+      "name": "Announcement Bar",
+      "settings": {
+        "desktop_text": {
+          "info": "Make this short and powerful sentence (max 120 characters)",
+          "label": "Desktop Announcement bar text"
+        },
+        "mobile_text": {
+          "info": "Make this short and powerful sentence (max 80 characters)",
+          "label": "Mobile Announcement bar Text"
+        }
+      }
+    },
+    "article": {
+      "name": "Article"
+    },
+    "blog": {
+      "name": "Blog"
+    },
+    "cart": {
+      "name": "Cart"
+    },
+    "cart-intro": {
+      "name": "Cart intro"
+    },
+    "cart-totals": {
+      "name": "Cart totals"
+    },
+    "cart_drawer": {
+      "name": "Cart drawer"
+    },
+    "cart_items": {
+      "name": "Cart items"
+    },
+    "collection": {
+      "name": "Collection"
+    },
+    "collection_template": {
+      "blocks": {
+        "feature_filter": {
+          "name": "Feature filter",
+          "settings": {
+            "feature_paragraph": {
+              "content": "The tag belonging to this group: feature_"
+            },
+            "language_sensitive": {
+              "label": "Language sensitive"
+            },
+            "sensitive_paragraph": {
+              "content": "If a tag is language sensitive, you need to use the tag as following: feature_nl_Winterhard. The second part of the tag is the 2 digit ISO code."
+            },
+            "title": {
+              "label": "Filter group title"
+            }
+          }
+        }
+      },
+      "name": "Collection Template",
+      "settings": {
+        "header": {
+          "content": "Filter Settings"
+        },
+        "paragraph": {
+          "content": "Add filter groups using blocks"
+        }
+      }
+    },
+    "contact": {
+      "block": {
+        "name": "Contact block",
+        "settings": {
+          "text": {
+            "label": "Contact block text"
+          },
+          "title": {
+            "label": "Contact block title"
+          }
+        }
+      },
+      "name": "Contact",
+      "settings": {
+        "address": {
+          "label": "Address"
+        },
+        "address_information": {
+          "label": "Address information"
+        }
+      }
+    },
+    "cookie_banner": {
+      "name": "Cookie banner",
+      "settings": {
+        "cookie_text": {
+          "label": "Cookie banner text"
+        },
+        "cookie_title": {
+          "label": "Cookie banner title"
+        }
+      }
+    },
+    "custom-liquid": {
+      "name": "Custom Liquid",
+      "presets": {
+        "name": "Custom Liquid"
+      },
+      "settings": {
+        "custom_liquid": {
+          "info": "Add app snippets or other Liquid code to create advanced customizations.",
+          "label": "Custom Liquid"
+        }
+      }
+    },
+    "faq": {
+      "blocks": {
+        "category": {
+          "name": "Faq category",
+          "settings": {
+            "group_title": {
+              "label": "Faq category title"
+            }
+          }
+        },
+        "item": {
+          "name": "Faq item",
+          "settings": {
+            "faq_description": {
+              "label": "Faq item description"
+            },
+            "faq_html": {
+              "label": "Faq item html"
+            },
+            "faq_parent_group": {
+              "label": "Belongs in faq category"
+            },
+            "faq_title": {
+              "label": "Faq item title"
+            }
+          }
+        }
+      },
+      "item": "Faq item",
+      "name": "Faq",
+      "settings": {
+        "title": {
+          "label": "Title"
+        }
+      }
+    },
+    "footer": {
+      "name": "Footer",
+      "settings": {
+        "footer_nav": {
+          "info": "Please select the Footer menu",
+          "label": "Footer navigation"
+        }
+      }
+    },
+    "header": {
+      "blocks": {
+        "menu_item": {
+          "name": "Main menu item",
+          "settings": {
+            "item_dropdown": {
+              "info": "Large displayed items",
+              "label": "Megamenu primary"
+            },
+            "item_url": {
+              "info": "Is optional, can be left empty if a megamenu is picked",
+              "label": "Item url"
+            },
+            "mega_menu_image": {
+              "label": "Image in the mega menu"
+            },
+            "show_store": {
+              "label": "Show store address in mega menu"
+            },
+            "title": {
+              "label": "Menu label"
+            }
+          }
+        }
+      },
+      "name": "Header",
+      "settings": {
+        "header_style": {
+          "label": "Transparent background with dark text",
+          "options": {
+            "light-dark": {
+              "label": "Light background with dark text"
+            },
+            "transparent_dark": {
+              "label": "Transparent background with dark text"
+            },
+            "transparent_light": {
+              "label": "Transparent background with light text"
+            }
+          }
+        }
+      }
+    },
+    "hero_slider": {
+      "blocks": {
+        "slider_image": {
+          "name": "Slider image",
+          "settings": {
+            "slide": {
+              "label": "Slide"
+            }
+          }
+        }
+      },
+      "name": "Hero Slider"
+    },
+    "list_collections": {
+      "name": "List collections"
+    },
+    "login": {
+      "name": "Login",
+      "settings": {
+        "image": {
+          "label": "Login background image"
+        },
+        "text": {
+          "label": "Login Text"
+        },
+        "title": {
+          "label": "Login title"
+        }
+      }
+    },
+    "main_cart": {
+      "name": "Main cart"
+    },
+    "main_intro": {
+      "name": "Main intro",
+      "settings": {
+        "content": {
+          "label": "Content"
+        },
+        "description": {
+          "label": "Main intro description"
+        },
+        "image": {
+          "label": "Image"
+        },
+        "image_alignment": {
+          "label": "Image alignment",
+          "options": {
+            "center_label": "Align image center",
+            "left_label": "Align image left",
+            "right_label": "Align image right"
+          }
+        },
+        "padding_size": {
+          "label": "Padding size",
+          "options": {
+            "large": "A large amount of padding",
+            "none": "No padding",
+            "normal": "A normal amount of padding",
+            "small": "A small amount of padding"
+          }
+        },
+        "style_settings": {
+          "label": "Style settings"
+        },
+        "title": {
+          "label": "Main intro title"
+        },
+        "video_url": {
+          "label": "This overwrites the image"
+        }
+      }
+    },
+    "order": {
+      "name": "Order"
+    },
+    "page": {
+      "name": "Page"
+    },
+    "password": {
+      "name": "Password",
+      "settings": {
+        "background_image": {
+          "name": "Background image"
+        },
+        "text": {
+          "name": "Text"
+        },
+        "title": {
+          "name": "Title"
+        }
+      }
+    },
+    "product": {
+      "name": "Product",
+      "blocks": {
+        "usp": {
+          "name": "USP",
+          "settings": {
+            "header": {
+              "content": "General USPs"
+            },
+            "usp_text": {
+              "info": "Keep it short and simple or leave out completely",
+              "label": "The USP Text"
+            },
+            "usp_title": {
+              "label": "The USP Title"
+            }
+          }
+        }
+      }
+    },
+    "product_slider": {
+      "name": "Product Slider",
+      "settings": {
+        "product_slider_title": {
+          "label": "Product slider title"
+        }
+      },
+      "blocks": {
+        "products": {
+          "name": "Products",
+          "settings": {
+            "product": {
+              "label": "Select your product"
+            }
+          }
+        }
+      }
+    },
+    "collection_slider": {
+      "name": "Collection Slider",
+      "settings": {
+        "collection_slider_title": {
+          "label": "Collection slider title"
+        }
+      },
+      "blocks": {
+        "collections": {
+          "name": "Collection",
+          "settings": {
+            "collection": {
+              "label": "Select your collection"
+            }
+          }
+        }
+      }
+    },
+    "register": {
+      "name": "Register",
+      "settings": {
+        "account_register_image": {
+          "label": "Register background image"
+        },
+        "text": {
+          "label": "Register text"
+        },
+        "title": {
+          "label": "Register title"
+        }
+      }
+    },
+    "reset_password": {
+      "name": "Reset password",
+      "settings": {
+        "image": {
+          "label": "Reset password background image"
+        },
+        "text": {
+          "label": "Reset password Text"
+        },
+        "title": {
+          "label": "Reset password title"
+        }
+      }
+    },
+    "search": {
+      "name": "Search"
+    },
+    "welcome": {
+      "blocks": {
+        "card": {
+          "name": "Card",
+          "settings": {
+            "description": {
+              "label": "Description"
+            },
+            "heading": {
+              "label": "Heading"
+            }
+          }
+        }
+      },
+      "name": "Welcome",
+      "presets": {
+        "name": "Welcome"
+      },
+      "settings": {
+        "heading": {
+          "label": "Heading"
+        },
+        "link_label": {
+          "label": "Link label"
+        },
+        "subheading": {
+          "label": "Subeading"
+        }
+      }
+    }
+  },
+  "settings_schema": {
+    "colors": {
+      "name": "Colors",
+      "settings": {
+        "colors_accent_primary": {
+          "info": "Used for solid button background.",
+          "label": "Accent primary"
+        },
+        "colors_accent_secondary": {
+          "label": "Accent secondary"
+        },
+        "colors_background_primary": {
+          "label": "Background primary"
+        },
+        "colors_background_secondary": {
+          "label": "Background secondary"
+        },
+        "colors_outline_button": {
+          "info": "Also used for text links.",
+          "label": "Outline button"
+        },
+        "colors_solid_button": {
+          "info": "Used as foreground color on accent colors.",
+          "label": "Solid button"
+        },
+        "colors_text": {
+          "info": "Used as foreground color on background colors.",
+          "label": "Text"
+        },
+        "header_primary_colors": {
+          "content": "Primary colors"
+        },
+        "header_secondary_colors": {
+          "content": "Secondary colors"
+        }
+      }
+    },
+    "currency_format": {
+      "name": "Currency format",
+      "settings": {
+        "content": "Currency codes",
+        "currency_code_enabled": {
+          "label": "Show currency codes"
+        },
+        "paragraph": "Cart and checkout prices always show currency codes. Example: $1.00 USD."
+      }
+    },
+    "favicon": {
+      "name": "Favicon",
+      "settings": {
+        "favicon": {
+          "info": "Will be scaled down to 64 x 64px",
+          "label": "Favicon image"
+        }
+      }
+    },
+    "social_media": {
+      "name": "Social media",
+      "settings": {
+        "header": {
+          "content": "Social accounts"
+        },
+        "social_facebook_link": {
+          "info": "https:\/\/facebook.com\/shopify",
+          "label": "Facebook"
+        },
+        "social_instagram_link": {
+          "info": "http:\/\/instagram.com\/shopify",
+          "label": "Instagram"
+        },
+        "social_pinterest_link": {
+          "info": "https:\/\/pinterest.com\/shopify",
+          "label": "Pinterest"
+        },
+        "social_snapchat_link": {
+          "info": "https:\/\/www.snapchat.com\/add\/shopify",
+          "label": "Snapchat"
+        },
+        "social_tiktok_link": {
+          "info": "https:\/\/tiktok.com\/@shopify",
+          "label": "TikTok"
+        },
+        "social_tumblr_link": {
+          "info": "https:\/\/shopify.tumblr.com",
+          "label": "Tumblr"
+        },
+        "social_twitter_link": {
+          "info": "https:\/\/twitter.com\/shopify",
+          "label": "Twitter"
+        },
+        "social_vimeo_link": {
+          "info": "https:\/\/vimeo.com\/shopify",
+          "label": "Vimeo"
+        },
+        "social_youtube_link": {
+          "info": "https:\/\/www.youtube.com\/shopify",
+          "label": "YouTube"
+        }
+      }
+    },
+    "typography": {
+      "name": "Typography",
+      "settings": {
+        "fonts_body": {
+          "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/en\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)",
+          "label": "Font"
+        },
+        "fonts_header": {
+          "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/en\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)",
+          "label": "Font"
+        },
+        "header_body": {
+          "content": "Body"
+        },
+        "header_headings": {
+          "content": "Headings"
+        }
+      }
+    }
+  }
+}

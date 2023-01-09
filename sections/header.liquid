@@ -1,0 +1,74 @@
+<script src="{{- 'extender-header-component.js' | asset_url -}}" defer></script>
+
+<header-component>
+  <div class="header__inner header__inner--desktop">
+    <div class="logo">
+      <a href="{{ shop.url }}" class="logo__url">
+        <h1 class="logo__title">Olaf</h1>
+      </a>
+    </div>
+    <!-- end .logo -->
+
+    <ul class="menu">
+      {% render 'mega-menu-desktop', nav: linklists[section.settings.header_nav] %}
+      {% render 'cart-counter' %}
+    </ul>
+
+    <div class="form form--search">
+      <form action="{{ routes.search_url }}">
+        <input
+          type="text"
+          placeholder="{{ 'search.placeholder' | t }}"
+          name="q"
+          value="{{ search.terms | escape }}"
+          class="form__input"
+        >
+      </form>
+    </div>
+
+    <div class="menu-toggle">
+      <button class="js-toggle">
+        {{ 'header.menu' | t -}}
+        {%- if cart.item_count > 0 %}
+          <span>({{ cart.item_count }})</span>
+        {% endif -%}
+      </button>
+    </div>
+  </div>
+  <!-- end .header__inner -->
+
+  {% render 'mega-menu-mobile',
+    nav: linklists[section.settings.mobile_nav],
+    bottom_nav: linklists[section.settings.mobile_nav_sub]
+  %}
+</header-component>
+
+{% schema %}
+{
+  "name": "t:sections.header.name",
+  "tag": "header",
+  "class": "header",
+  "settings": [
+    {
+      "id": "header_nav",
+      "type": "link_list",
+      "label": "Header navigation list"
+    },
+    {
+      "id": "mobile_nav",
+      "type": "link_list",
+      "label": "Mobile navigation list"
+    },
+    {
+      "id": "mobile_nav_sub",
+      "type": "link_list",
+      "label": "Mobile navigation bottom"
+    },
+    {
+      "id": "image",
+      "type": "image_picker",
+      "label": "Menu image"
+    }
+  ]
+}
+{% endschema %}

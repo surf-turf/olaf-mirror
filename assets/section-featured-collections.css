@@ -1,0 +1,1 @@
+.featured-collections{padding:10px 10px}@media(min-width: 768px){.featured-collections{padding:10px 5px}}.featured-collections__inner{display:grid;grid-template-columns:repeat(2, 1fr);grid-gap:10px;gap:10px}@media(min-width: 768px){.featured-collections__inner{grid-template-columns:repeat(3, 1fr);grid-gap:5px;gap:5px}}

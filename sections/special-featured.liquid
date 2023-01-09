@@ -1,0 +1,264 @@
+{{ 'section-special-featured.css' | asset_url | stylesheet_tag }}
+{{ 'snippet-featured-collection-card.css' | asset_url | stylesheet_tag }}
+{{ 'snippet-featured-collection-artwork.css' | asset_url | stylesheet_tag }}
+{{ 'snippet-special-featured-text-card.css' | asset_url | stylesheet_tag }}
+{{ 'snippet-special-featured-image-text.css' | asset_url | stylesheet_tag }}
+
+<div class="special-featured__inner {% if section.settings.mobile_padding %}special-featured__inner--no-padding{% endif %}">
+  {%- liquid 
+    for block in section.blocks
+      case block.type
+        when 'collection_card'
+          render 'featured-collection-card', settings: block.settings
+        when 'artwork'
+          render 'featured-collection-artwork', settings: block.settings
+        when 'text_card'
+          render 'text-card', settings: block.settings
+        when 'image_text'
+          render 'image-text', settings: block.settings
+      endcase
+    endfor -%}
+</div>
+
+<style>
+  .special-featured {
+    padding-top: {{ section.settings.spacing_top }}px;
+    padding-bottom: {{ section.settings.spacing_bottom }}px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "special featured",
+  "tag": "section",
+  "class": "special-featured",
+  "settings": [
+    {
+      "id": "spacing_top",
+      "type": "range",
+      "label": "Spacing top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 0
+    },
+    {
+      "id": "spacing_bottom",
+      "type": "range",
+      "label": "Spacing bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 0
+    },
+    {
+      "id": "mobile_padding",
+      "type": "checkbox",
+      "label": "Disable padding on mobile"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "text card",
+      "type": "text_card",
+      "settings": [
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Title"
+        },
+        {
+          "id": "color",
+          "type": "color",
+          "label": "Color",
+          "default": "#000000"
+        },
+        {
+          "id": "button_1_text",
+          "type": "text",
+          "label": "Button 1 text"
+        },
+        {
+          "id": "button_1_url",
+          "type": "url",
+          "label": "Button 1 url"
+        },
+        {
+          "id": "button_2_text",
+          "type": "text",
+          "label": "Button 2 text"
+        },
+        {
+          "id": "button_2_url",
+          "type": "url",
+          "label": "Button 2 url"
+        },
+        {
+          "id": "show_mobile",
+          "type": "checkbox",
+          "label": "Show this block on mobile"
+        }
+      ]
+    },
+    {
+      "name": "Artwork",
+      "type": "artwork",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Image"
+        },
+        {
+          "id": "url",
+          "type": "url",
+          "label": "Url"
+        },
+        {
+          "id": "height",
+          "type": "select",
+          "label": "Height",
+          "options": [
+            {
+              "value": "unset",
+              "label": "100%"
+            },
+            {
+              "value": "75%",
+              "label": "75%"
+            },
+            {
+              "value": "50%",
+              "label": "50%"
+            },
+            {
+              "value": "25%",
+              "label": "25%"
+            }
+          ],
+          "default": "75%"
+        },
+        {
+          "id": "show_mobile",
+          "type": "checkbox",
+          "label": "Show this block on mobile"
+        }
+      ]
+    },
+    {
+      "name": "Image text",
+      "type": "image_text",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Image"
+        },
+        {
+          "id": "url",
+          "type": "url",
+          "label": "Url"
+        },
+        {
+          "id": "height",
+          "type": "select",
+          "label": "Height",
+          "options": [
+            {
+              "value": "unset",
+              "label": "100%"
+            },
+            {
+              "value": "75%",
+              "label": "75%"
+            },
+            {
+              "value": "50%",
+              "label": "50%"
+            },
+            {
+              "value": "25%",
+              "label": "25%"
+            }
+          ],
+          "default": "75%"
+        },
+        {
+          "id": "color",
+          "type": "color",
+          "label": "Color"
+        },
+        {
+          "type": "header",
+          "content": "Text mobile"
+        },
+        {
+          "id": "title_mobile",
+          "type": "text",
+          "label": "Title mobile"
+        },
+        {
+          "id": "button_1_text_mobile",
+          "type": "text",
+          "label": "Button 1 text mobile"
+        },
+        {
+          "id": "button_1_url_mobile",
+          "type": "url",
+          "label": "Button 1 url mobile"
+        },
+        {
+          "id": "button_2_text_mobile",
+          "type": "text",
+          "label": "Button 2 text mobile"
+        },
+        {
+          "id": "button_2_url_mobile",
+          "type": "url",
+          "label": "Button 2 url mobile"
+        },
+        {
+          "type": "header",
+          "content": "Text desktop"
+        },
+        {
+          "id": "title_desktop",
+          "type": "text",
+          "label": "Title desktop"
+        },
+        {
+          "id": "button_1_text_desktop",
+          "type": "text",
+          "label": "Button 1 text desktop"
+        },
+        {
+          "id": "button_1_url_desktop",
+          "type": "url",
+          "label": "Button 1 url desktop"
+        },
+        {
+          "id": "button_2_text_desktop",
+          "type": "text",
+          "label": "Button 2 text desktop"
+        },
+        {
+          "id": "button_2_url_desktop",
+          "type": "url",
+          "label": "Button 2 url desktop"
+        },
+        {
+          "id": "show_mobile",
+          "type": "checkbox",
+          "label": "Show this block on mobile"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Special featured",
+      "category": "sections"
+    }
+  ]
+}
+{% endschema %}

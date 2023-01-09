@@ -1,0 +1,137 @@
+{{ 'section-mega-menu-mobile.css' | asset_url | stylesheet_tag }}
+<script src="{{- 'extender-mobile-mega-menu.js' | asset_url -}}" defer></script>
+
+<mobile-mega-menu>
+  <section class="mega-menu-mobile">
+    <div class="mega-menu-mobile__inner">
+      <div class="mega-menu-mobile__header">
+        <p>Olaf</p>
+        <button class="js-close">{{ 'header.close' | t }}</button>
+      </div>
+
+      <div class="menu-holder">
+        <nav>
+          <ul class="mega-list">
+            {% for link in nav.links %}
+              <li class="mega-list__item">
+                <button class="button button-l-1">{{ link.title }}</button>
+                {% if link.links.size > 0 %}
+                  <ul class="child-list hidden">
+                    {% for child_link in link.links %}
+                      <li class="child-list__item">
+                        {% if child_link.links.size > 0 %}
+                          <button
+                            {% if child_link.title contains '#' %}
+                              style="color: #{{ child_link.title | split: '#' | last }}"
+                            {% endif %}
+                          >
+                            {{ child_link.title | split: '#' | first }}
+                          </button>
+                        {% else %}
+                          <a
+                            href="{{ child_link.url }}"
+                            {% if child_link.title contains '#' %}
+                              style="color: #{{ child_link.title | split: '#' | last }}"
+                            {% endif %}
+                          >
+                            {{- child_link.title | split: '#' | first -}}
+                          </a>
+                        {% endif %}
+
+                        {% if child_link.links.size > 0 %}
+                          <ul class="grand-child-list">
+                            {% for grand_child_link in child_link.links %}
+                              <li>
+                                <a
+                                  href="{{ grand_child_link.url }}"
+                                  {% if grand_child_link.title contains '#' %}
+                                    style="color: #{{ grand_child_link.title | split: '#' | last }}"
+                                  {% endif %}
+                                >
+                                  {{- grand_child_link.title | split: '#' | first -}}
+                                </a>
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+            <li class="mega-list__item">
+              <button class="button button-l-1 js-mobile-cart">
+                {{ 'header.cart' | t }}
+                <span>({{ cart.item_count }})</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="search">
+          <form action="{{ routes.search_url }}">
+            <input
+              type="text"
+              placeholder="Search..."
+              name="q"
+              value="{{ search.terms | escape }}"
+            >
+          </form>
+        </div>
+
+        <ul class="mega-list mega-list--bottom">
+          {% for link in bottom_nav.links %}
+            <li class="mega-list__item">
+              <button class="button button-l-1">{{ link.title }}</button>
+              {% if link.links.size > 0 %}
+                <ul class="child-list hidden">
+                  {% for child_link in link.links %}
+                    <li class="child-list__item child-list__item--sub">
+                      {% if child_link.links.size > 0 %}
+                        <button
+                          {% if child_link.title contains '#' %}
+                            style="color: #{{ child_link.title | split: '#' | last }}"
+                          {% endif %}
+                        >
+                          {{ child_link.title | split: '#' | first }}
+                        </button>
+                      {% else %}
+                        <a
+                          href="{{ child_link.url }}"
+                          {% if child_link.title contains '#' %}
+                            style="color: #{{ child_link.title | split: '#' | last }}"
+                          {% endif %}
+                        >
+                          {{- child_link.title | split: '#' | first -}}
+                        </a>
+                      {% endif %}
+
+                      {% if child_link.links.size > 0 %}
+                        <ul class="grand-child-list">
+                          {% for grand_child_link in child_link.links %}
+                            <li>
+                              <a
+                                href="{{ grand_child_link.url }}"
+                                {% if grand_child_link.title contains '#' %}
+                                  style="color: #{{ grand_child_link.title | split: '#' | last }}"
+                                {% endif %}
+                              >
+                                {{- grand_child_link.title | split: '#' | first -}}
+                              </a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+  <div class="curtain"></div>
+</mobile-mega-menu>

@@ -1,0 +1,34 @@
+{% comment %}
+  Renders a product card component
+
+  Accepts:
+  - product: {Object} Product Liquid object
+
+  Usage:
+  {%- render 'product-button',
+    product: product
+  -%}
+{% endcomment %}
+<script src="{{- 'extender-product-button.js' | asset_url -}}" defer></script>
+
+{{ 'snippet-product-button.css' | asset_url | stylesheet_tag }}
+
+<product-button class="product-button slide">
+  <a class="image-holder" href="{{ product.url }}">
+    {{
+      product.images[0]
+      | image_url: width: original
+      | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+    }}
+    {{
+      product.images[1]
+      | image_url: width: original
+      | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image--hover'
+    }}
+  </a>
+  <div class="text-holder">
+    <p>{{ product.title }}</p>
+    {% render 'product-price', product: product %}
+  </div>
+</product-button>
+<!-- end .product-button -->

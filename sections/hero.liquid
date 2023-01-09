@@ -1,0 +1,679 @@
+{{ 'section-hero.css' | asset_url | stylesheet_tag }}
+<script src="{{- 'extender-hero.js' | asset_url -}}" defer></script>
+
+<hero-section>
+  {% for block in section.blocks %}
+    {% if block.type == 'sticky' %}
+      <div class="hero__inner hero__inner--sticky">
+        {% if block.settings.hero_title != blank %}
+          <div class="text-holder">
+            <h2
+              class="text-holder__title js-title"
+              data-color="{{ block.settings.hero_text_color }}"
+              data-image-color="{{ block.settings.hero_text_color_image }}"
+            >
+              {{ block.settings.hero_title }}
+            </h2>
+          </div>
+        {% endif %}
+
+        {% if block.settings.hero_image != blank %}
+          <div class="image-holder">
+            {{
+              block.settings.hero_image
+              | image_url: width: 2048
+              | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+            }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if block.type == 'base' %}
+      <a href="{{ block.settings.hero_url }}" class="hero__inner hero__inner--base">
+        {% if block.settings.hero_title != blank %}
+          <div class="text-holder">
+            <h2 class="text-holder__title" style="color: {{ block.settings.hero_base_text_color }}">
+              {{ block.settings.hero_title }}
+            </h2>
+          </div>
+        {% endif %}
+
+        {% if block.settings.hero_image != blank %}
+          <div class="image-holder">
+            {{
+              block.settings.hero_image
+              | image_url: width: 2048
+              | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+            }}
+          </div>
+        {% endif %}
+
+        {% if block.settings.hero_video != blank %}
+          <div>
+            <video></video>
+          </div>
+        {% endif %}
+      </a>
+    {% endif %}
+
+    {% if block.type == 'two_images' %}
+      <section
+        href="{{ block.settings.hero_url_left }}"
+        class="hero__inner hero__inner--two-images {% if block.settings.hero_two_width_animation %}width-animation{% endif %}"
+      >
+        <a href="{{ block.settings.hero_url_left }}" class="left">
+          <div class="text-holder">
+            {% if block.settings.hero_title_left != blank %}
+              <p class="text-holder__title text-holder__title--left">{{ block.settings.hero_title_left }}</p>
+            {% endif %}
+
+            {% if block.settings.hero_button_text_left != blank %}
+              <button class="button button--ghost button--left">{{ block.settings.hero_button_text_left }}</button>
+            {% endif %}
+          </div>
+
+          {% if block.settings.hero_image_left != blank %}
+            <div class="image-holder">
+              {{
+                block.settings.hero_image_left
+                | image_url: width: 2048
+                | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+              }}
+            </div>
+          {% endif %}
+        </a>
+
+        <a href="{{ block.settings.hero_url_left }}" class="right">
+          {% if block.settings.hero_title_left != blank %}
+            <div class="text-holder">
+              {% if block.settings.hero_title_right != blank %}
+                <p class="text-holder__title text-holder__title--right">{{ block.settings.hero_title_right }}</p>
+              {% endif %}
+
+              {% if block.settings.hero_button_text_right != blank %}
+                <button class="button button--ghost button--right">{{ block.settings.hero_button_text_right }}</button>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if block.settings.hero_image_right != blank %}
+            <div class="image-holder">
+              {{
+                block.settings.hero_image_right
+                | image_url: width: 2048
+                | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+              }}
+            </div>
+          {% endif %}
+        </a>
+      </section>
+
+      <style>
+        .text-holder__title--left {
+          color: {{ block.settings.hero_base_text_color_left }};
+        }
+
+        .text-holder__title--right {
+          color: {{ block.settings.hero_base_text_color_right }};
+        }
+
+        .button--left {
+          color: {{ block.settings.hero_base_text_color_left }};
+          border: 1px solid {{ block.settings.hero_base_text_color_left }};
+        }
+
+        .button--right {
+          color: {{ block.settings.hero_base_text_color_right }};
+          border: 1px solid {{ block.settings.hero_base_text_color_right }};
+        }
+
+        .button--left:hover {
+          background-color: {{ block.settings.hero_base_text_color_left }};
+          border: 1px solid {{ block.settings.hero_base_text_color_left }};
+          color: {% if block.settings.hero_base_text_color_left == '#ffffff' %}#00000{% else %}#ffffff{% endif %};
+        }
+
+        .button--right:hover {
+          background-color: {{ block.settings.hero_base_text_color_right }};
+          border: 1px solid {{ block.settings.hero_base_text_color_right }};
+          color: {% if block.settings.hero_base_text_color_right == '#ffffff' %}#00000{% else %}#ffffff{% endif %};
+        }
+      </style>
+    {% endif %}
+
+    {% if block.type == 'three_images' %}
+      <section
+        href="{{ block.settings.hero_url_left }}"
+        class="hero__inner hero__inner--three-images {% if block.settings.hero_three_width_animation %}width-animation{% endif %}"
+      >
+        <a href="{{ block.settings.hero_url_left }}" class="left">
+          <div class="text-holder">
+            {% if block.settings.hero_title_left != blank %}
+              <p class="text-holder__title text-holder__title--three-left">{{ block.settings.hero_title_left }}</p>
+            {% endif %}
+
+            {% if block.settings.hero_button_text_left != blank %}
+              <button class="button button--ghost button--three-left">
+                {{ block.settings.hero_button_text_left }}
+              </button>
+            {% endif %}
+          </div>
+
+          {% if block.settings.hero_image_left != blank %}
+            <div class="image-holder">
+              {{
+                block.settings.hero_image_left
+                | image_url: width: 2048
+                | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+              }}
+            </div>
+          {% endif %}
+        </a>
+
+        <a href="{{ block.settings.hero_url_mid }}" class="mid">
+          <div class="text-holder">
+            {% if block.settings.hero_title_mid != blank %}
+              <p class="text-holder__title text-holder__title--three-mid">{{ block.settings.hero_title_mid }}</p>
+            {% endif %}
+
+            {% if block.settings.hero_button_text_mid != blank %}
+              <button class="button button--ghost button--three-mid">{{ block.settings.hero_button_text_mid }}</button>
+            {% endif %}
+          </div>
+
+          {% if block.settings.hero_image_mid != blank %}
+            <div class="image-holder">
+              {{
+                block.settings.hero_image_mid
+                | image_url: width: 2048
+                | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+              }}
+            </div>
+          {% endif %}
+        </a>
+
+        <a href="{{ block.settings.hero_url_left }}" class="right">
+          {% if block.settings.hero_title_left != blank %}
+            <div class="text-holder">
+              {% if block.settings.hero_title_right != blank %}
+                <p class="text-holder__title text-holder__title--three-right">{{ block.settings.hero_title_right }}</p>
+              {% endif %}
+
+              {% if block.settings.hero_button_text_right != blank %}
+                <button class="button button--ghost button--three-right">
+                  {{ block.settings.hero_button_text_right }}
+                </button>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if block.settings.hero_image_right != blank %}
+            <div class="image-holder">
+              {{
+                block.settings.hero_image_right
+                | image_url: width: 2048
+                | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+              }}
+            </div>
+          {% endif %}
+        </a>
+      </section>
+
+      <style>
+        .text-holder__title--three-left {
+          color: {{ block.settings.hero_base_text_color_left }};
+        }
+
+        .text-holder__title--three-mid {
+          color: {{ block.settings.hero_base_text_color_mid }};
+        }
+
+        .text-holder__title--three-right {
+          color: {{ block.settings.hero_base_text_color_right }};
+        }
+
+        .button--three-left {
+          color: {{ block.settings.hero_base_text_color_left }};
+          border: 1px solid {{ block.settings.hero_base_text_color_left }};
+        }
+
+        .button--three-mid {
+          color: {{ block.settings.hero_base_text_color_mid }};
+          border: 1px solid {{ block.settings.hero_base_text_color_mid }};
+        }
+
+        .button--three-right {
+          color: {{ block.settings.hero_base_text_color_right }};
+          border: 1px solid {{ block.settings.hero_base_text_color_right }};
+        }
+
+        .button--three-left:hover {
+          background-color: {{ block.settings.hero_base_text_color_left }};
+          border: 1px solid {{ block.settings.hero_base_text_color_left }};
+          color: {% if block.settings.hero_base_text_color_left == '#ffffff' %}#00000{% else %}#ffffff{% endif %};
+        }
+
+        .button--three-mid:hover {
+          background-color: {{ block.settings.hero_base_text_color_mid }};
+          border: 1px solid {{ block.settings.hero_base_text_color_mid }};
+          color: {% if block.settings.hero_base_text_color_mid == '#ffffff' %}#00000{% else %}#ffffff{% endif %};
+        }
+
+        .button--three-right:hover {
+          background-color: {{ block.settings.hero_base_text_color_right }};
+          border: 1px solid {{ block.settings.hero_base_text_color_right }};
+          color: {% if block.settings.hero_base_text_color_right == '#ffffff' %}#00000{% else %}#ffffff{% endif %};
+        }
+      </style>
+    {% endif %}
+
+    {% if block.type == 'base_title_button' %}
+      <a href="{{ block.settings.hero_url }}" class="hero__inner hero__inner--base-button">
+        {% if block.settings.hero_title != blank %}
+          <div class="text-holder {{ block.settings.text-position }} {{ block.settings.text-alignment }}">
+            <h2
+              class="text-holder__title text-holder__title--base"
+              style="color: {{ block.settings.hero_base_text_color }}"
+            >
+              {{ block.settings.hero_title }}
+            </h2>
+            {% if block.settings['button-position'] == false %}
+              <button class="button button--ghost button--base-text">{{ block.settings.hero_base_button_text }}</button>
+            {% endif %}
+          </div>
+          {% if block.settings['button-position'] %}
+            <button class="button button--ghost button--base-text button-bottom">
+              {{ block.settings.hero_base_button_text }}
+            </button>
+          {% endif %}
+        {% endif %}
+
+        {% if block.settings.hero_image != blank %}
+          <div class="image-holder">
+            {{
+              block.settings.hero_image
+              | image_url: width: 2048
+              | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+            }}
+          </div>
+        {% endif %}
+      </a>
+
+      <style>
+        .text-holder__title--base {
+          color: {{ block.settings.hero_base_text_color }};
+          font-size: {{ block.settings.hero_base_text_size }}px;
+        }
+
+        .button--base-text {
+          color: {{ block.settings.hero_base_text_color }};
+          border: 1px solid {{ block.settings.hero_base_text_color }};
+        }
+
+        .button--base-text:hover {
+          background-color: {{ block.settings.hero_base_text_color }};
+          color: {% if block.settings.hero_base_text_color == '#ffffff' %}#00000{% else %}#ffffff{% endif %};
+          border: 1px solid {{ block.settings.hero_base_text_color }};
+        }
+      </style>
+    {% endif %}
+  {% endfor %}
+</hero-section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "tag": "section",
+  "class": "hero",
+  "max_blocks": 1,
+  "blocks": [
+    {
+      "type": "sticky",
+      "name": "Hero sticky text",
+      "settings": [
+        {
+          "id": "hero_image",
+          "type": "image_picker",
+          "label": "Hero Image"
+        },
+        {
+          "id": "hero_title",
+          "type": "text",
+          "label": "Hero Title"
+        },
+        {
+          "id": "hero_text_color",
+          "type": "color",
+          "label": "Hero Text color"
+        },
+        {
+          "id": "hero_text_color_image",
+          "type": "color",
+          "label": "Hero Text color (over image)"
+        }
+      ]
+    },
+    {
+      "type": "base",
+      "name": "Hero basic",
+      "settings": [
+        {
+          "id": "hero_image",
+          "type": "image_picker",
+          "label": "Hero Image"
+        },
+        {
+          "id": "hero_title",
+          "type": "text",
+          "label": "Hero Title"
+        },
+        {
+          "id": "hero_url",
+          "type": "url",
+          "label": "hero url"
+        },
+        {
+          "id": "hero_base_text_color",
+          "type": "color",
+          "label": "Hero Text color"
+        }
+      ]
+    },
+    {
+      "type": "two_images",
+      "name": "Two images",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Left section"
+        },
+        {
+          "id": "hero_image_left",
+          "type": "image_picker",
+          "label": "Hero Image left"
+        },
+        {
+          "id": "hero_title_left",
+          "type": "text",
+          "label": "Hero title left"
+        },
+        {
+          "id": "hero_button_text_left",
+          "type": "text",
+          "label": "Hero button text left"
+        },
+        {
+          "id": "hero_url_left",
+          "type": "url",
+          "label": "hero url left"
+        },
+        {
+          "id": "hero_base_text_color_left",
+          "type": "color",
+          "label": "Hero Text color left"
+        },
+        {
+          "type": "header",
+          "content": "Right section"
+        },
+        {
+          "id": "hero_image_right",
+          "type": "image_picker",
+          "label": "Hero Image right"
+        },
+        {
+          "id": "hero_title_right",
+          "type": "text",
+          "label": "Hero title right"
+        },
+        {
+          "id": "hero_button_text_right",
+          "type": "text",
+          "label": "Hero button text right"
+        },
+        {
+          "id": "hero_url_right",
+          "type": "url",
+          "label": "hero url right"
+        },
+        {
+          "id": "hero_base_text_color_right",
+          "type": "color",
+          "label": "Hero Text color right"
+        },
+        {
+          "type": "header",
+          "content": "General settings"
+        },
+        {
+          "id": "hero_two_width_animation",
+          "type": "checkbox",
+          "label": "Show width animation",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "three_images",
+      "name": "Three images",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Left section"
+        },
+        {
+          "id": "hero_image_left",
+          "type": "image_picker",
+          "label": "Hero Image left"
+        },
+        {
+          "id": "hero_title_left",
+          "type": "text",
+          "label": "Hero title left"
+        },
+        {
+          "id": "hero_button_text_left",
+          "type": "text",
+          "label": "Hero button text left"
+        },
+        {
+          "id": "hero_url_left",
+          "type": "url",
+          "label": "hero url left"
+        },
+        {
+          "id": "hero_base_text_color_left",
+          "type": "color",
+          "label": "Hero Text color left"
+        },
+        {
+          "type": "header",
+          "content": "Middle section"
+        },
+        {
+          "id": "hero_image_mid",
+          "type": "image_picker",
+          "label": "Hero Image middle"
+        },
+        {
+          "id": "hero_title_mid",
+          "type": "text",
+          "label": "Hero title middle"
+        },
+        {
+          "id": "hero_button_text_mid",
+          "type": "text",
+          "label": "Hero button text middle"
+        },
+        {
+          "id": "hero_url_mid",
+          "type": "url",
+          "label": "hero url middle"
+        },
+        {
+          "id": "hero_base_text_color_mid",
+          "type": "color",
+          "label": "Hero Text color middle"
+        },
+        {
+          "type": "header",
+          "content": "Right section"
+        },
+        {
+          "id": "hero_image_right",
+          "type": "image_picker",
+          "label": "Hero Image right"
+        },
+        {
+          "id": "hero_title_right",
+          "type": "text",
+          "label": "Hero title right"
+        },
+        {
+          "id": "hero_button_text_right",
+          "type": "text",
+          "label": "Hero button text right"
+        },
+        {
+          "id": "hero_url_right",
+          "type": "url",
+          "label": "hero url right"
+        },
+        {
+          "id": "hero_base_text_color_right",
+          "type": "color",
+          "label": "Hero Text color right"
+        },
+        {
+          "type": "header",
+          "content": "General settings"
+        },
+        {
+          "id": "hero_three_width_animation",
+          "type": "checkbox",
+          "label": "Show width animation",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "base_title_button",
+      "name": "Hero title & button",
+      "settings": [
+        {
+          "id": "hero_image",
+          "type": "image_picker",
+          "label": "Hero Image"
+        },
+        {
+          "id": "hero_title",
+          "type": "text",
+          "label": "Hero Title"
+        },
+        {
+          "id": "hero_base_button_text",
+          "type": "text",
+          "label": "Hero button text"
+        },
+        {
+          "id": "text-position",
+          "type": "select",
+          "label": "Text position",
+          "options": [
+            {
+              "value": "top top--left",
+              "label": "Top left"
+            },
+            {
+              "value": "top top--center",
+              "label": "Top center"
+            },
+            {
+              "value": "top top--right",
+              "label": "Top right"
+            },
+            {
+              "value": "mid mid--left",
+              "label": "Mid left"
+            },
+            {
+              "value": "mid mid--center",
+              "label": "Mid center"
+            },
+            {
+              "value": "mid mid--right",
+              "label": "Mid right"
+            },
+            {
+              "value": "bottom bottom--left",
+              "label": "Bottom left"
+            },
+            {
+              "value": "bottom bottom--center",
+              "label": "Bottom center"
+            },
+            {
+              "value": "bottom bottom--right",
+              "label": "Bottom right"
+            }
+          ],
+          "default": "mid mid--center"
+        },
+        {
+          "id": "text-alignment",
+          "type": "select",
+          "label": "Text position",
+          "options": [
+            {
+              "value": "align-left",
+              "label": "Align left"
+            },
+            {
+              "value": "align-center",
+              "label": "Align center"
+            },
+            {
+              "value": "align-right",
+              "label": "Align right"
+            }
+          ],
+          "default": "align-center"
+        },
+        {
+          "id": "hero_base_text_size",
+          "type": "range",
+          "min": 8,
+          "max": 120,
+          "step": 8,
+          "unit": "px",
+          "default": 32,
+          "label": "Font size"
+        },
+        {
+          "id": "button-position",
+          "type": "checkbox",
+          "label": "button position bottom center",
+          "default": false
+        },
+        {
+          "id": "hero_url",
+          "type": "url",
+          "label": "hero url"
+        },
+        {
+          "id": "hero_base_text_color",
+          "type": "color",
+          "label": "Hero Text color"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero",
+      "category": "sections"
+    }
+  ]
+}
+{% endschema %}

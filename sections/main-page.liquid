@@ -1,0 +1,15 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+<div class="main-page__inner wysiwyg">
+  {{ page.content }}
+</div>
+<!-- end .main-page__inner -->
+
+{% schema %}
+{
+  "name": "Main page",
+  "tag": "section",
+  "class": "main-page",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,14 @@
+{% if template.name == 'collection' %}
+  {% for product in collection.products %}
+    {% if product.metafields.custom.color_dot_products != blank %}
+      {% for dotProduct in product.metafields.custom.color_dot_products.value %}
+        {% if dotProduct.featured_image != blank %}
+          <link rel="preload" href="{{ dotProduct.featured_image | image_url: width: original }}" as="image">
+        {% endif %}
+        {% if dotProduct.images[1] != blank %}
+          <link rel="preload" href="{{ dotProduct.images[1] | image_url: width: original }}" as="image">
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+{% endif %}

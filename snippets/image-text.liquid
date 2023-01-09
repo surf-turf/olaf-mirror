@@ -1,0 +1,63 @@
+<article class="image-text">
+  <div class="image-text__inner">
+    {% if settings.image != blank %}
+      <div class="image-holder">
+        {{ settings.image | image_url: width: original | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image' }}
+      </div>
+    {% endif %}
+
+    <div class="text-holder text-holder--mobile">
+      {% if settings.title_mobile %}
+        <h3 class="text-holder__title">{{ settings.title_mobile }}</h3>
+      {% endif %}
+
+      <div class="button-holder">
+        {% if settings.button_1_text_mobile != blank %}
+          <a href="{{ settings.button_1_url_mobile }}" class="button button--ghost">{{ settings.button_1_text_mobile }}</a>
+        {% endif %}
+  
+        {% if settings.button_2_text_mobile != blank %}
+          <a href="{{ settings.button_2_url_mobile }}" class="button button--ghost">{{ settings.button_2_text_mobile }}</a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="text-holder text-holder--desktop">
+      {% if settings.title_desktop %}
+        <h3 class="text-holder__title">{{ settings.title_desktop }}</h3>
+      {% endif %}
+
+      <div class="button-holder">
+        {% if settings.button_1_text_desktop != blank %}
+          <a href="{{ settings.button_1_url_desktop }}" class="button button--ghost">{{ settings.button_1_text_desktop }}</a>
+        {% endif %}
+  
+        {% if settings.button_2_text_desktop != blank %}
+          <a href="{{ settings.button_2_url_desktop }}" class="button button--ghost">{{ settings.button_2_text_desktop }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</article>
+
+<style>
+  @media only screen and (max-width: 600px) {
+    .image-text {
+      display: {% if settings.show_mobile == false %}none{% else %}unset{% endif %}
+    }
+  }
+  
+  .image-text .text-holder__title {
+    color: {{ settings.color }};
+  }
+
+  .image-text .button {
+    color: {{ settings.color }};
+    border: 1px solid {{ settings.color }};
+  }
+
+  .image-text .button:hover {
+    background-color: {{ settings.color }};
+    color: #000000;
+  }
+</style>

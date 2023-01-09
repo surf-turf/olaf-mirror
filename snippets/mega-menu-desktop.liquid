@@ -1,0 +1,68 @@
+{% for link in nav.links %}
+  <li class="menu__item">
+    <a href="{{ link.url }}" class="menu__url">{{ link.title }}</a>
+  </li>
+  {% if link.links.size > 0 %}
+    <div class="child-menu">
+      <div class="child-menu__inner">
+        {% for child_link in link.links %}
+          {% assign color = '000000' %}
+          {% if child_link.title contains '#' %}
+            {% assign color = child_link.title | split: '#' | last %}
+          {% endif %}
+
+          <div class="menu-column">
+            <a href="{{ child_link.url }}" class="menu-column__link" style="color: #{{ color }}">
+              {{- child_link.title | remove: color | remove: '#' -}}
+            </a>
+            {% if child_link.links.size > 0 %}
+              <ul class="menu-column__list">
+                {% for grand_child_link in child_link.links %}
+                  {% assign color = '000000' %}
+                  {% if grand_child_link.title contains '#' %}
+                    {% assign color = grand_child_link.title | split: '#' | last %}
+                  {% endif %}
+
+                  {% assign featured_image = '' %}
+
+                  {% if collections[grand_child_link.handle].image != blank %}
+                    {% assign featured_image = collections[grand_child_link.handle].image %}
+                  {% else %}
+                    {% assign featured_image = collections[grand_child_link.handle].featured_image %}
+                  {% endif %}
+
+                  <li class="link-item">
+                    <a
+                      href="{{ grand_child_link.url }}"
+                      class="link-item__url"
+                      style="color: #{{ color }}"
+                      data-featured-image="{{ featured_image | image_url: width: 491 }}"
+                    >
+                      {{- grand_child_link.title | remove: color | remove: '#' -}}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+
+      {% if section.settings.image != blank %}
+        <div class="image-holder">
+          {{
+            section.settings.image
+            | image_url: width: 1080
+            | image_tag:
+              width: 600,
+              height: 600,
+              alt: section.settings.image.alt,
+              sizes: '(min-width: 750px) calc(100vw - 22rem), 1100px',
+              class: 'image-holder__image',
+              loading: 'lazy'
+          }}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+{% endfor %}

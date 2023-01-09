@@ -1,0 +1,84 @@
+{{ 'snippet-filter-drawer.css' | asset_url | stylesheet_tag }}
+<script src="{{- 'extender-filter-interaction.js' | asset_url -}}" defer></script>
+<script src="{{- 'extender-sort-interaction.js' | asset_url -}}" defer></script>
+<script src="{{- 'extender-drawer-interaction.js' | asset_url -}}" defer></script>
+
+<section class="filter-drawer">
+  <drawer-interaction>
+    <div class="filter-drawer__inner">
+      <div class="drawer-header">
+        <button class="drawer-header__close">{{ 'sections.collection.close' | t }}</button>
+      </div>
+
+      <div class="filter">
+        {% if settings.collection_list != blank %}
+          <div class="filter__fieldset filter-collections">
+            <div class="filter-collections__title">{{ 'sections.collection.collections' | t }}</div>
+            <div class="filter-collections__list">
+              {% for collection_item in settings.collection_list %}
+                <a
+                  href="{{ collection_item.url }}"
+                  class="filter-collections__item {% if collection_item.handle == collection.handle %}filter-collections__item--active{% endif %}"
+                >
+                  {{ collection_item.title }}
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+
+        <filter-interaction>
+          {% for filter in collection.filters %}
+            <fieldset class="filter__fieldset">
+              <p class="title">{{ filter.label }}</p>
+              <div class="values">
+                {% for filter_value in filter.values %}
+                  <div class="values__value">
+                    <input
+                      type="checkbox"
+                      name="{{ filter.label }}"
+                      id="{{ filter.label }}-{{ filter_value.value }}"
+                      class="js-filter-checkbox"
+                      value="{{ filter_value.value }}"
+                      data-param="{{ filter.param_name }}"
+                      {% if filter_value.active %}
+                        checked
+                      {% endif %}
+                      {% if filter_value.count == 0 and filter_value.active == false %}
+                        disabled
+                      {% endif %}
+                    >
+                    <label for="{{ filter.label }}-{{ filter_value.value }}">
+                      <span>{{ filter_value.value }}</span>
+                    </label>
+                  </div>
+                {% endfor %}
+              </div>
+            </fieldset>
+          {% endfor %}
+        </filter-interaction>
+        <div class="filter__fieldset">
+          <p class="title">{{ 'sections.collection.sort' | t }}</p>
+          <sort-interaction>
+            <div class="sort-holder">
+              {% for option in collection.sort_options %}
+                <button
+                  data-sort="{{ option.value }}"
+                  class="sort-holder__button {% if collection.sort_by == option.value %}sort-holder__button--active{% endif %}"
+                >
+                  {{ option.name }}
+                </button>
+              {% endfor %}
+            </div>
+          </sort-interaction>
+        </div>
+      </div>
+      <div class="filter-footer">
+        <div class="filter-footer__buttons">
+          <button class="button button--ghost js-clear">{{ 'sections.collection.clear' | t }}</button>
+          <button class="button button--primary js-apply">{{ 'sections.collection.apply' | t }}</button>
+        </div>
+      </div>
+    </div>
+  </drawer-interaction>
+</section>

@@ -1,0 +1,255 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Surf & Turf",
+    "theme_version": "0.0.5",
+    "theme_author": "Surf & Turf",
+    "theme_documentation_url": "https://github.com/surf-turf/marlin/wiki",
+    "theme_support_url": "https://github.com/surf-turf/marlin/issues"
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Pick your base font"
+      },
+      {
+        "type": "font_picker",
+        "id": "base_font",
+        "label": "Font",
+        "default": "avenir_next_n4"
+      },
+      {
+        "type": "paragraph",
+        "content": "Check to include dedicated italic specimens"
+      },
+      {
+        "type": "checkbox",
+        "id": "base_font_italics",
+        "label": "Use font italics",
+        "default": false
+      },
+      {
+        "type": "paragraph",
+        "content": "Only check weights that are available for the chosen font"
+      },
+      {
+        "type": "checkbox",
+        "id": "base_font_100",
+        "label": "Use font weight 100",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "base_font_200",
+        "label": "Use font weight 200",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "base_font_300",
+        "label": "Use font weight 300",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "base_font_400",
+        "label": "Use font weight 400",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "base_font_500",
+        "label": "Use font weight 500",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "base_font_600",
+        "label": "Use font weight 600",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "base_font_700",
+        "label": "Use font weight 700",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "base_font_800",
+        "label": "Use font weight 800",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "base_font_900",
+        "label": "Use font weight 900",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Check if your theme supports custom fonts. Surf&Turf needs to set the fonts."
+      },
+      {
+        "type": "checkbox",
+        "id": "use_custom_fonts",
+        "label": "Use custom fonts",
+        "default": false
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.social_media.name",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "t:settings_schema.social_media.settings.social_twitter_link.label",
+        "info": "t:settings_schema.social_media.settings.social_twitter_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "t:settings_schema.social_media.settings.social_facebook_link.label",
+        "info": "t:settings_schema.social_media.settings.social_facebook_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+        "label": "t:settings_schema.social_media.settings.social_pinterest_link.label",
+        "info": "t:settings_schema.social_media.settings.social_pinterest_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "t:settings_schema.social_media.settings.social_instagram_link.label",
+        "info": "t:settings_schema.social_media.settings.social_instagram_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_snapchat_link",
+        "label": "t:settings_schema.social_media.settings.social_snapchat_link.label",
+        "info": "t:settings_schema.social_media.settings.social_snapchat_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "t:settings_schema.social_media.settings.social_youtube_link.label",
+        "info": "t:settings_schema.social_media.settings.social_youtube_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo_link",
+        "label": "t:settings_schema.social_media.settings.social_vimeo_link.label",
+        "info": "t:settings_schema.social_media.settings.social_vimeo_link.info"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.favicon.name",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "t:settings_schema.favicon.settings.favicon.label",
+        "info": "t:settings_schema.favicon.settings.favicon.info"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.currency_format.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.currency_format.settings.content"
+      },
+      {
+        "type": "paragraph",
+        "content": "t:settings_schema.currency_format.settings.paragraph"
+      },
+      {
+        "type": "checkbox",
+        "id": "currency_code_enabled",
+        "label": "t:settings_schema.currency_format.settings.currency_code_enabled.label",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Collection settings",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Collection settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Amount of products to be shown on the first view."
+      },
+      {
+        "type": "range",
+        "id": "collection_products_view",
+        "min": 6,
+        "max": 48,
+        "step": 3,
+        "label": "Products",
+        "default": 18
+      }
+    ]
+  },
+  {
+    "name": "Cart settings",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Cart"
+      },
+      {
+        "type": "text",
+        "id": "cart_intro_title",
+        "label": "Cart intro title"
+      },
+      {
+        "type": "richtext",
+        "id": "cart_intro_text",
+        "label": "Cart intro subtitle"
+      },
+      {
+        "type": "header",
+        "content": "Cart empty state"
+      },
+      {
+        "type": "text",
+        "id": "empty_cart_intro_title",
+        "label": "Empty cart intro title"
+      },
+      {
+        "type": "richtext",
+        "id": "empty_cart_intro_text",
+        "label": "Empty cart intro subtitle"
+      }
+    ]
+  },
+  {
+    "name": "Gift card",
+    "settings": [
+      {
+        "id": "gift_card_background",
+        "type": "image_picker",
+        "label": "Gift card background image"
+      },
+      {
+        "id": "gift_card_title",
+        "type": "textarea",
+        "label": "Gift card Title"
+      },
+      {
+        "id": "gift_card_explanation",
+        "type": "textarea",
+        "label": "Gift card explanation above the QR code"
+      }
+    ]
+  }
+]

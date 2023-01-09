@@ -1,0 +1,145 @@
+<script src="{{- 'extender-recent-work.js' | asset_url -}}" defer></script>
+{{ 'section-recent-work.css' | asset_url | stylesheet_tag }}
+
+<recent-work class="recent-work__inner">
+  {% if section.settings.title != blank %}
+    <div class="text-holder">
+      <h3 class="text-holder__title">{{ section.settings.title }}</h3>
+    </div>
+  {% endif %}
+
+  <div class="image-grid">
+    {% for block in section.blocks %}
+      <a
+        href="{% if block.settings.url != blank %}{{ block.settings.url }}{% endif %}"
+        class="image-holder"
+        style="height: {{ block.settings.height }}"
+      >
+        {{
+          block.settings.image
+          | image_url: width: original
+          | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+        }}
+
+        {% if block.settings.description != blank %}
+          <div
+            class="description-holder"
+            {% if block.settings.text_padding_left == true %}
+              style="padding-left: 5px"
+            {% endif %}
+          >
+            <p class="description-holder__description">{{ block.settings.description }}</p>
+          </div>
+        {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+</recent-work>
+
+<style>
+  .recent-work {
+    padding-top: {{ section.settings.spacing_top }}px;
+    padding-bottom: {{ section.settings.spacing_bottom }}px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Recent work",
+  "class": "recent-work",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "Title"
+    },
+    {
+      "id": "button_title",
+      "type": "text",
+      "label": "Button title"
+    },
+    {
+      "id": "button_link",
+      "type": "url",
+      "label": "Button link"
+    },
+    {
+      "id": "spacing_top",
+      "type": "range",
+      "label": "Spacing top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 0
+    },
+    {
+      "id": "spacing_bottom",
+      "type": "range",
+      "label": "Spacing bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Image"
+        },
+        {
+          "id": "url",
+          "type": "url",
+          "label": "URL"
+        },
+        {
+          "id": "description",
+          "type": "text",
+          "label": "Description"
+        },
+        {
+          "id": "text_padding_left",
+          "type": "checkbox",
+          "label": "Text padding left"
+        },
+        {
+          "id": "height",
+          "type": "select",
+          "label": "Block height",
+          "options": [
+            {
+              "value": "100%",
+              "label": "Full height"
+            },
+            {
+              "value": "75%",
+              "label": "75%"
+            },
+            {
+              "value": "50%",
+              "label": "50%"
+            },
+            {
+              "value": "25%",
+              "label": "25%"
+            }
+          ],
+          "default": "100%"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Recent work",
+      "category": "Sections"
+    }
+  ]
+}
+{% endschema %}

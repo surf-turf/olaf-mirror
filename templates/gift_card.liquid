@@ -1,0 +1,129 @@
+{%- layout 'giftcard' -%}
+
+<section class="gift-card">
+  {%- if settings.gift_card_background != blank -%}
+    <div class="gift-card__background">
+      <img src="{{ settings.gift_card_background | img_url: '1000x' }}" loading="lazy"
+           width="{{ settings.gift_card_background.width }}" height="{{ settings.gift_card_background.height }}"
+           alt="Gift card background">
+    </div>
+    <!-- end .gift-card__background -->
+
+  {%- endif -%}
+
+  <div class="gift-card__inner">
+    <div class="gift-card-modal">
+      <div class="text-holder">
+        {%- if settings.gift_card_title != blank -%}
+          <h2>{{ settings.gift_card_title }}</h2>
+        {%- endif -%}
+
+        {%- if gift_card.enabled -%}
+          {%- if settings.gift_card_explanation != blank -%}
+            <p>{{ settings.gift_card_explanation }}</p>
+          {%- endif -%}
+        {%- endif -%}
+
+        <div class="gift-card-content">
+          {%- if gift_card.balance != blank -%}
+            <p class="gift-card-content__amount">
+              {{ gift_card.balance | money }}
+            </p>
+            <!-- end .gift-card-content__amount -->
+
+          {%- endif -%}
+
+          <div class="gift-card-content__code">
+            {% if gift_card.enabled %}
+              {%- if gift_card.code != blank -%}
+                <p class="gift-card__number" data-card-number="{{ gift_card.code | format_code }}">
+                  {{ gift_card.code | format_code }}
+                </p>
+                <!-- end .gift-card__number -->
+
+              {% endif %}
+            {% endif %}
+
+            {% if gift_card.enabled == false %}
+              <p class="tag">{{ 'general.disabled' | t }}</p>
+            {% endif %}
+
+            {% if gift_card.expired and gift_card.enabled %}
+              <p class="tag">{{ 'templates.gift_card.expired' | t }}</p>
+            {% endif %}
+
+            <p class="gift-card__copy-state"></p>
+            <p>{{ 'templates.gift_card.gift_card_code_description' | t }}</p>
+          </div>
+          <!-- end .gift-card-content__code -->
+
+          <div class="gift-card-content__qr" data-identifier="{{ gift_card.qr_identifier }}"></div>
+          <!-- end .gift-card-content__qr -->
+
+          {%- if gift_card.pass_url -%}
+            <a href="{{ gift_card.pass_url }}" class="gift_card_apple-wallet">
+              <img src="{{ 'gift-card/add-to-apple-wallet.svg' | shopify_asset_url }}" width="120" height="40"
+                   alt="{{ 'templates.gift_card.add_to_apple_wallet' | t }}" loading="lazy">
+            </a>
+          {%- endif -%}
+
+          <div class="gift-card-content__button">
+            <a href="{{ shop.url }}">
+              <button class="button button--primary">{{ 'general.visit_shop' | t }}</button>
+            </a>
+          </div>
+          <!-- end .gift-card-content__button -->
+
+        </div>
+        <!-- end .gift-card-content -->
+
+      </div>
+      <!-- end .text-holder -->
+
+    </div>
+    <!-- end .gift-card__modal -->
+
+  </div>
+  <!-- end .gift-card__inner -->
+
+</section>
+<!-- end .gift-card -->
+
+<script>
+  // Function for placing the qr code inside the HTML.
+  const string = { qrImageAlt: {{ 'templates.gift_card.qr_image_alt' | t | json }} }
+  const qrElement = document.querySelector('.gift-card-content__qr')
+
+  document.addEventListener('DOMContentLoaded', () => {
+    new QRCode(qrElement, {
+      text: qrElement.dataset.identifier,
+      width: 180,
+      height: 180,
+      imageAltText: string.qrImageAlt,
+    })
+  })
+</script>
+
+<script>
+  // Function for copying the card number.
+  const giftCardElement = document.querySelector('.gift-card-content__code')
+  const giftCardSuccessElement = document.querySelector('.gift-card__copy-state')
+  let isMessageDisplayed = false
+
+  if (giftCardElement) {
+    const cardNumber = giftCardElement.querySelector('.gift-card__number').dataset.cardNumber
+
+    giftCardElement.addEventListener('click', () => {
+      navigator.clipboard.writeText(cardNumber).then(() => {
+        if (!isMessageDisplayed) {
+          giftCardSuccessElement.innerHTML = '{{ "general.copied" | t }}'
+          isMessageDisplayed = true
+
+          setTimeout(() => {
+            giftCardSuccessElement.innerHTML = ''
+          }, 3000)
+        }
+      })
+    })
+  }
+</script>

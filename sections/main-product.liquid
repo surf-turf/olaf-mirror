@@ -1,0 +1,40 @@
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+
+<div class="main-product__inner">
+  <div class="main-product__details">
+    {%- liquid
+      render 'product-form', blocks: section.blocks, viewport: 'desktop'
+      render 'floating-form', blocks: section.blocks
+    -%}
+  </div>
+  {%- liquid
+    render 'product-media', blocks: section.blocks, viewport: 'mobile'
+  -%}
+</div>
+
+{% schema %}
+{
+  "name": "Main product",
+  "tag": "section",
+  "class": "main-product",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "product-info",
+      "name": "Product info",
+      "settings": [
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Title"
+        },
+        {
+          "id": "product_information",
+          "type": "richtext",
+          "label": "Product information"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

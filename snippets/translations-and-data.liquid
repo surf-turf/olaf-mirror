@@ -1,0 +1,36 @@
+<script>
+  
+  window.product = {
+    money_format: '{{ shop.money_format }}',
+  };
+
+  window.routes = {
+    cart_add_url: '{{ routes.cart_add_url }}',
+    cart_change_url: '{{ routes.cart_change_url }}',
+    cart_update_url: '{{ routes.cart_update_url }}',
+    checkout_url: '{{ shop_locale.iso_code }}/checkout',
+    related_product_url: '{{ routes.product_recommendations_url }}',
+  };
+
+  window.cartStrings = {
+    error: `{{ 'sections.cart.cart_error' | t }}`,
+    quantityError: `{{ 'sections.cart.cart_quantity_error' | t }}`,
+    change: '{{ 'sections.cart.change' | t }}',
+    confirm: '{{ 'sections.cart.confirm' | t }}'
+  };
+
+  window.variantStrings = {
+    add_to_cart: `{{ 'product.add_to_bag' | t }}`,
+    sold_out: `{{ 'product.sold_out' | t }}`,
+    make_selection: `{{ 'product.make_your_selection' | t }}`,
+    email: `{{ 'account.email' | t }}`,
+    email_me: `{{ 'account.email_me' | t }}`,
+    sale: `{{ 'product.sale' | t }}`,
+    register: `{{ 'account.register' | t }}`,
+  };
+
+  window.text = {};
+  window.text.form = "{{ 'product.from' | t }}";
+  document.documentElement.className = document.documentElement.className.replace('no-js', 'has-js');
+
+</script>

@@ -1,0 +1,348 @@
+{{ 'section-main-collection.css' | asset_url | stylesheet_tag }}
+{{ 'snippet-collection-button.css' | asset_url | stylesheet_tag }}
+{{ 'snippet-collection-grid-of-two.css' | asset_url | stylesheet_tag }}
+{{ 'snippet-collection-text.css' | asset_url | stylesheet_tag }}
+{{ 'snippet-collection-full-width-image.css' | asset_url | stylesheet_tag }}
+{{ 'snippet-collection-grid-of-two.css' | asset_url | stylesheet_tag }}
+<script src="{{- 'extender-main-collection.js' | asset_url -}}" defer></script>
+
+<main-collection>
+  <div class="button-holder">
+    <button class="button-holder__button">{{ 'sections.collection.filter' | t }}</button>
+  </div>
+  <div class="main-collection__inner">
+    {% paginate collection.products by 1000 %}
+      {% for product in collection.products %}
+        {% render 'collection-button', product: product %}
+      {% endfor %}
+      {%- liquid
+        for block in section.blocks
+          case block.type
+            when 'grid-3'
+              render 'collection-grid-of-three', block: block
+            when 'grid-2'
+              render 'collection-grid-of-two', block: block
+            when 'text'
+              render 'collection-text-block', block: block
+            when 'image'
+              render 'collection-full-width-image', block: block
+            else
+              break
+          endcase
+        endfor
+      -%}
+    {% endpaginate %}
+
+    <div class="filter-curtain loading"></div>
+  </div>
+  <!-- end .main-collection__inner -->
+
+  {% render 'filter-drawer', settings: section.settings %}
+</main-collection>
+
+{% schema %}
+{
+  "name": "Main collection",
+  "tag": "section",
+  "class": "main-collection",
+  "settings": [
+    {
+      "type": "collection_list",
+      "id": "collection_list",
+      "label": "Collection list",
+      "info": "These collection links will be shown in the filter drawer."
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Grid of three",
+      "type": "grid-3",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "header",
+          "content": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "url",
+          "id": "url_1",
+          "label": "Url 1"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle_1",
+          "label": "Subtitle 1"
+        },
+        {
+          "type": "color",
+          "id": "color_1",
+          "label": "Color 1"
+        },
+        {
+          "type": "header",
+          "content": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "url",
+          "id": "url_2",
+          "label": "Url 2"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle_2",
+          "label": "Subtitle 2"
+        },
+        {
+          "type": "color",
+          "id": "color_2",
+          "label": "Color 2"
+        },
+        {
+          "type": "header",
+          "content": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "url",
+          "id": "url_3",
+          "label": "Url 3"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle_3",
+          "label": "Subtitle 3"
+        },
+        {
+          "type": "color",
+          "id": "color_3",
+          "label": "Color 3"
+        },
+        {
+          "type": "header",
+          "content": "Grid options"
+        },
+        {
+          "type": "range",
+          "id": "grid_position",
+          "label": "Grid position",
+          "min": 1,
+          "max": 50,
+          "default": 1
+        },
+        {
+          "type": "select",
+          "id": "show_on_mobile",
+          "label": "Show on mobile",
+          "options": [
+            {
+              "value": "image-left",
+              "label": "Image left"
+            },
+            {
+              "value": "image-center",
+              "label": "Image center"
+            },
+            {
+              "value": "image-right",
+              "label": "Image right"
+            }
+          ],
+          "default": "image-left"
+        }
+      ]
+    },
+    {
+      "name": "Grid of two",
+      "type": "grid-2",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Image left"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_left",
+          "label": "Image left"
+        },
+        {
+          "type": "url",
+          "id": "url_left",
+          "label": "Url left"
+        },
+        {
+          "type": "richtext",
+          "id": "title_left",
+          "label": "title left"
+        },
+        {
+          "type": "color",
+          "id": "color_1",
+          "label": "Color 1"
+        },
+        {
+          "type": "header",
+          "content": "Image right"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_right",
+          "label": "Image right"
+        },
+        {
+          "type": "url",
+          "id": "url_right",
+          "label": "Url right"
+        },
+        {
+          "type": "richtext",
+          "id": "title_right",
+          "label": "title right"
+        },
+        {
+          "type": "color",
+          "id": "color_2",
+          "label": "Color 2"
+        },
+        {
+          "type": "header",
+          "content": "Base options"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "min": 0,
+          "max": 200,
+          "step": 5,
+          "default": 100,
+          "label": "Left image width"
+        },
+        {
+          "type": "range",
+          "id": "grid_position",
+          "label": "Grid position",
+          "min": 1,
+          "max": 50,
+          "default": 1
+        },
+        {
+          "type": "select",
+          "id": "show_on_mobile",
+          "label": "Show on mobile",
+          "options": [
+            {
+              "value": "left",
+              "label": "Image left"
+            },
+            {
+              "value": "right",
+              "label": "Image right"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Text block",
+      "type": "text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Color"
+        },
+        {
+          "type": "header",
+          "content": "Base options"
+        },
+        {
+          "type": "range",
+          "id": "grid_position",
+          "label": "Grid position",
+          "min": 1,
+          "max": 50,
+          "default": 1
+        },
+        {
+          "type": "range",
+          "id": "grid_padding",
+          "label": "Vertical padding",
+          "min": 1,
+          "max": 80,
+          "default": 40
+        }
+      ]
+    },
+    {
+      "name": "Full width image",
+      "type": "image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video url"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link url"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Color"
+        },
+        {
+          "type": "header",
+          "content": "Base options"
+        },
+        {
+          "type": "range",
+          "id": "grid_position",
+          "label": "Grid position",
+          "min": 1,
+          "max": 50,
+          "default": 1
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,70 @@
+<div class="grid-of-three" style="grid-row: {{ block.settings.grid_position }}">
+  <div class="grid-of-three__title">
+    <h2>{{ block.settings.title }}</h2>
+  </div>
+  <div class="grid-of-three__inner">
+    <div class="grid-of-three__item {% if block.settings.show_on_mobile == 'image-left' %}grid-of-three__item--mobile{% endif %}">
+      <a
+        {% if block.settings.url_1 != blank %}
+          href="{{ section.settings.url_1 }}"
+        {% endif %}
+        class="grid-of-three__link image-holder"
+      >
+        {% if block.settings.image_1 != blank %}
+          {{
+            block.settings.image_1
+            | image_url: width: 1050
+            | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+          }}
+        {% endif %}
+        {% if block.settings.subtitle_1 != blank %}
+          <div class="subtitle" style="color: {{ block.settings.color_1 }}">
+            {{ block.settings.subtitle_1 }}
+          </div>
+        {% endif %}
+      </a>
+    </div>
+    <div class="grid-of-three__item {% if block.settings.show_on_mobile == 'image-center' %}grid-of-three__item--mobile{% endif %}">
+      <a
+        {% if block.settings.url_2 %}
+          href="{{ section.settings.url_2 }}"
+        {% endif %}
+        class="grid-of-three__link image-holder"
+      >
+        {% if block.settings.image_2 %}
+          {{
+            block.settings.image_2
+            | image_url: width: 1050
+            | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+          }}
+        {% endif %}
+        {% if block.settings.subtitle_2 != blank %}
+          <div class="subtitle" style="color: {{ block.settings.color_2 }}">
+            {{ block.settings.subtitle_2 }}
+          </div>
+        {% endif %}
+      </a>
+    </div>
+    <div class="grid-of-three__item {% if block.settings.show_on_mobile == 'image-right' %}grid-of-three__item--mobile{% endif %}">
+      <a
+        {% if block.settings.url_3 %}
+          href="{{ section.settings.url_3 }}"
+        {% endif %}
+        class="grid-of-three__link image-holder"
+      >
+        {% if block.settings.image_3 != blank %}
+          {{
+            block.settings.image_3
+            | image_url: width: 1050
+            | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+          }}
+        {% endif %}
+        {% if block.settings.subtitle_3 != blank %}
+          <div class="subtitle" style="color: {{ block.settings.color_3 }}">
+            {{ block.settings.subtitle_3 }}
+          </div>
+        {% endif %}
+      </a>
+    </div>
+  </div>
+</div>

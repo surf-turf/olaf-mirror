@@ -1,0 +1,234 @@
+{
+  "sections": {
+    "c81d0255-774b-4d8a-9626-c692347a332b": {
+      "type": "hero",
+      "blocks": {
+        "000164cf-262f-4c58-959f-4fbd655c50e6": {
+          "type": "sticky",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/09_1_2x_5efd6777-cf3f-4f80-96d0-9f2491830c0f.jpg",
+            "hero_title": "continuously inspired by countries, cultures and citizens.",
+            "hero_text_color": "#000000",
+            "hero_text_color_image": "#efff3b"
+          }
+        }
+      },
+      "block_order": [
+        "000164cf-262f-4c58-959f-4fbd655c50e6"
+      ],
+      "settings": {
+      }
+    },
+    "a1301c22-90bf-46d2-9806-91c2ba79f254": {
+      "type": "featured-collections",
+      "blocks": {
+        "b1e6caad-e7e9-4a0f-9a88-6dfd34558868": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wynona_knit_vest_0507-1000x1500.jpg",
+            "name": "Women",
+            "label_desktop": "New Arrivals",
+            "label_mobile": "New",
+            "url": "shopify:\/\/pages\/disclaimer",
+            "button_text": "Shop now"
+          }
+        },
+        "711a9a5e-2e5f-4c47-8ede-c2c825062ecc": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kenny_eclipse_0330-1000x1500.jpg",
+            "name": "Mens",
+            "label_desktop": "New Arrivals",
+            "label_mobile": "New",
+            "url": "",
+            "button_text": ""
+          }
+        },
+        "7ed2a76a-153d-4b09-b98d-b53a831264e0": {
+          "type": "artwork",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kenny_eclipse_0330-1000x1500.jpg",
+            "url": "shopify:\/\/products\/olaf-block-cap-ocean-green",
+            "height": "75%"
+          }
+        }
+      },
+      "block_order": [
+        "b1e6caad-e7e9-4a0f-9a88-6dfd34558868",
+        "711a9a5e-2e5f-4c47-8ede-c2c825062ecc",
+        "7ed2a76a-153d-4b09-b98d-b53a831264e0"
+      ],
+      "settings": {
+        "spacing_top": 8,
+        "spacing_bottom": 0
+      }
+    },
+    "e80ee74c-89e1-440b-8177-245c70a455e7": {
+      "type": "special-featured",
+      "blocks": {
+        "c5e929fd-a594-405f-84da-2964380667c1": {
+          "type": "text_card",
+          "settings": {
+            "title": "EXPLORE SS23 GRAPHICS",
+            "color": "#000000",
+            "button_1_text": "all jackets",
+            "button_1_url": "shopify:\/\/pages\/store",
+            "button_2_text": "see collection",
+            "button_2_url": "shopify:\/\/blogs\/citizens",
+            "show_mobile": false
+          }
+        },
+        "92d1e949-0c5e-468e-bfa5-a068c0417569": {
+          "type": "artwork",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kenny_eclipse_0356-1000x1500.jpg",
+            "url": "shopify:\/\/products\/olaf-aop-puffer-jacket-multi",
+            "height": "50%",
+            "show_mobile": false
+          }
+        },
+        "a17c144a-81a2-4e59-978f-b75bbdce9c21": {
+          "type": "image_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kenny_eclipse_0330-1000x1500_781cdb5f-adf3-43ad-8282-7425546fe53b.jpg",
+            "url": "",
+            "height": "75%",
+            "color": "#fcfafa",
+            "title_mobile": "",
+            "button_1_text_mobile": "",
+            "button_1_url_mobile": "",
+            "button_2_text_mobile": "",
+            "button_2_url_mobile": "",
+            "title_desktop": "",
+            "button_1_text_desktop": "",
+            "button_1_url_desktop": "",
+            "button_2_text_desktop": "",
+            "button_2_url_desktop": "",
+            "show_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "c5e929fd-a594-405f-84da-2964380667c1",
+        "92d1e949-0c5e-468e-bfa5-a068c0417569",
+        "a17c144a-81a2-4e59-978f-b75bbdce9c21"
+      ],
+      "settings": {
+        "spacing_top": 0,
+        "spacing_bottom": 0,
+        "mobile_padding": false
+      }
+    },
+    "e1fd0b58-60a3-497c-baf2-7cc5f2b4ba15": {
+      "type": "featured-citizens",
+      "blocks": {
+        "16bc5338-4d5a-4956-8342-ffaa34d47ccd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Virgil Nicholas<br\/><br\/>With honesty, well-being, and respect for oneself and,<br\/><a href=\"\/pages\/store\" title=\"Bilderdijkstraat 112-114\">Read more...<\/a><\/p>",
+            "image": "shopify:\/\/shop_images\/kenny_eclipse_0330-1000x1500_781cdb5f-adf3-43ad-8282-7425546fe53b.jpg",
+            "background_color": "#ddd26d",
+            "color": "#000000"
+          }
+        },
+        "71e05bdb-f645-4241-9520-8ec6c00382f6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Virgil Nicholas<br\/><br\/>With honesty, well-being, and respect for oneself and,<br\/><a href=\"\/blogs\/projects\" title=\"Projects\">Read more...<\/a><\/p>",
+            "image": "shopify:\/\/shop_images\/wynona_knit_vest_0507-1000x1500.jpg",
+            "background_color": "#7a9dc6",
+            "color": "#000000"
+          }
+        },
+        "27007b99-81c6-4c95-9fd3-a77dd3b055c4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Virgil Nicholas<br\/><br\/>With honesty, well-being, and respect for oneself and, Read more...<\/p>",
+            "image": "shopify:\/\/shop_images\/kenny_eclipse_0330-1000x1500.jpg",
+            "background_color": "#f16539",
+            "color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "16bc5338-4d5a-4956-8342-ffaa34d47ccd",
+        "71e05bdb-f645-4241-9520-8ec6c00382f6",
+        "27007b99-81c6-4c95-9fd3-a77dd3b055c4"
+      ],
+      "settings": {
+      }
+    },
+    "fd9e16cf-c2dd-400b-ac4f-0cef8b1accc9": {
+      "type": "image-section",
+      "blocks": {
+        "e80a7574-1de2-42b5-a0fd-c8c7d9123636": {
+          "type": "image-block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kenny_eclipse_0330-1000x1500_781cdb5f-adf3-43ad-8282-7425546fe53b.jpg",
+            "text": "Heavyweight Studio Hoodie In various colours",
+            "button_text": "Explore more",
+            "button_url": "shopify:\/\/products\/olaf-block-cap-ocean-green",
+            "span": false,
+            "hide_mobile": true,
+            "color": "#ffffff",
+            "height": "75%"
+          }
+        },
+        "8190fe4c-01c8-4c03-b54a-697772c97e10": {
+          "type": "image-block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/09_1_2x_5efd6777-cf3f-4f80-96d0-9f2491830c0f.jpg",
+            "text": "Heavyweight Studio Hoodie",
+            "button_text": "explore more",
+            "button_url": "shopify:\/\/pages\/faq",
+            "span": true,
+            "hide_mobile": false,
+            "color": "#fcfafa",
+            "height": "unset"
+          }
+        }
+      },
+      "block_order": [
+        "e80a7574-1de2-42b5-a0fd-c8c7d9123636",
+        "8190fe4c-01c8-4c03-b54a-697772c97e10"
+      ],
+      "settings": {
+        "show_mobile_button": true,
+        "mobile_button_text": "EXPLORE MORE",
+        "mobile_button_url": "shopify:\/\/products\/olaf-aop-puffer-jacket-multi",
+        "spacing_top": 0,
+        "spacing_bottom": 0
+      }
+    },
+    "2559746f-0b63-4e76-ac39-e111ac2a4894": {
+      "type": "product-slider",
+      "settings": {
+        "product_list": [
+          "olaf-ace-tate-herman-black",
+          "ace-tate-olaf-sunglasses-oyster-white",
+          "jog-nap-denim-jeans",
+          "jog-black-selvedge-jeans",
+          "jog-stretch-denim-jeans",
+          "dries-van-noten-51-100",
+          "olaf-x-matter-evolving-hand-hoodie",
+          "exactitudes-br-arie-versluis-and-ellie-uyttenbroek",
+          "function-by-harley-weir",
+          "graphic-design-500-designs-that-matter",
+          "jog-japan-raw-denim"
+        ],
+        "button_title": "Explore more",
+        "button_link": "shopify:\/\/products\/2-pack-olaf-branded-rib-ls-steel-blue-green",
+        "spacing_top": 40,
+        "spacing_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "c81d0255-774b-4d8a-9626-c692347a332b",
+    "a1301c22-90bf-46d2-9806-91c2ba79f254",
+    "e80ee74c-89e1-440b-8177-245c70a455e7",
+    "e1fd0b58-60a3-497c-baf2-7cc5f2b4ba15",
+    "fd9e16cf-c2dd-400b-ac4f-0cef8b1accc9",
+    "2559746f-0b63-4e76-ac39-e111ac2a4894"
+  ]
+}

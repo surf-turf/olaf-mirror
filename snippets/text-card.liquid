@@ -1,0 +1,41 @@
+<article class="text-card">
+  <div class="text-card__inner">
+    {% if settings.title != blank %}
+      <div class="text-holder">
+        <h3 class="text-holder__title">{{ settings.title }}</h3>
+      </div>
+    {% endif %}
+
+    {% if settings.button_1_text != blank or settings.button_2_text != blank %}
+      <div class="button-holder">
+        {% if settings.button_1_text != blank %}
+          <a href="{{ settings.button_1_url }}" class="button-holder__button button button--primary">{{ settings.button_1_text }}</a>
+        {% endif %}
+
+        {% if settings.button_2_text != blank %}
+          <a href="{{ settings.button_2_url }}" class="button-holder__button button button--ghost">{{ settings.button_2_text }}</a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</article>
+
+<style>
+  @media only screen and (max-width: 600px) {
+    .text-card {
+      display: {% if settings.show_mobile == false %}none{% else %}unset{% endif %}
+    }
+  }
+
+  .text-card .text-holder__title {
+    color: {{ settings.color }};
+  }
+
+  .text-card .button {
+    border: 1px solid {{ settings.color }};
+  }
+
+  .text-card .button:hover {
+    background-color: {{ settings.color }};
+  }
+</style>

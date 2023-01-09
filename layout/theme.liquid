@@ -1,0 +1,51 @@
+<!doctype html>
+<html class="no-js" lang="{{- request.locale.iso_code -}}" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="dns-prefetch" href="https://cdn.shopify.com">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    <meta name="theme-color" content="">
+
+    {{ 'base.js' | asset_url | preload_tag: as: 'script' }}
+    {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
+
+    {%- liquid
+      render 'head-seo'
+      render 'head-metas'
+      render 'head-fonts'
+      render 'preload-collection-images'
+    -%}
+
+    <script src="{{- 'base.js' | asset_url -}}" defer="defer"></script>
+
+    <!-- Vendor third party libraries -->
+    <script src="{{- 'vendors.js' | asset_url -}}" defer="defer"></script>
+
+    <!-- Header hook for plugins -->
+    {{ content_for_header }}
+  </head>
+  <body class="layout-theme template-{{- template.name -}}{%- if template.suffix -%}-{{- template.suffix -}}{%- endif -%}">
+    {%- section 'announcement-bar' -%}
+    {%- section 'header' -%}
+
+    <main id="main-content" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+    <!-- end .main-content -->
+
+    {%- section 'footer' -%}
+
+    {%- comment -%}Translations & data for Javascript{%- endcomment -%}
+    {%- render 'translations-and-data' -%}
+
+    {%- comment -%}If there is no cart drawer, remove this{%- endcomment -%}
+    {%- section 'cart-drawer' -%}
+    <div class="cart-drawer__curtain"></div>
+
+    {%- section 'alert-bar' -%}
+  </body>
+</html>

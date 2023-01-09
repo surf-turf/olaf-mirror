@@ -1,0 +1,96 @@
+{% comment %}
+    Renders the product form.
+
+    Usage:
+  {%- render 'product-form' -%}
+{% endcomment %}
+
+{{ 'snippet-product-form.css' | asset_url | stylesheet_tag }}
+{{ 'snippet-product-details.css' | asset_url | stylesheet_tag }}
+
+{%- comment -%}Include the product form html extender{%- endcomment -%}
+<script src="{{- 'extender-product-form.js' | asset_url -}}" defer></script>
+
+<product-form class="product-info__form product-form {{ viewport }}">
+  {%- form 'product',
+    product,
+    id: product_form_id,
+    class: 'form js-add-to-cart',
+    novalidate: 'novalidate',
+    data-type: 'add-to-cart-form'
+  -%}
+    {%- comment -%}Outputs the variants of a product. Including hidden field for default variant products{%- endcomment -%}
+
+    <div class="title-holder">
+      <h2 class="title-holder__title">{{ product.title }}</h2>
+      {% render 'product-price', product: product %}
+    </div>
+
+    {% render 'product-variants' %}
+
+    {%- if product.has_only_default_variant -%}
+      {%- comment -%}If there is only one variant.{%- endcomment -%}
+      <input
+        id="variantId"
+        name="productVariant"
+        value="{{ product.selected_or_first_available_variant.id }}"
+        type="hidden"
+        aria-label="Variant id for {{ product.title }}"
+        name="Variant id for {{ product.title }}"
+      >
+    {%- else -%}
+      <input id="variantId" name="productVariant" value="" type="hidden">
+    {%- endif -%}
+
+    {%- comment -%}Include here the variant options{%- endcomment -%}
+
+    <div class="cta">
+      <button
+        class="button button--add-to-bag product-add-button button--primary button--disabled js-form-{{ viewport }}"
+        id="addToBagButton"
+        type="submit"
+        aria-label="Add {{ product.title }} to your bag"
+        name="Add {{ product.title }} to your bag"
+        disabled
+      >
+        <p class="button__text">
+          {% if product.available %}
+            {{ 'product.select' | t }}
+          {% else %}
+            {{ 'product.sold_out' | t }}
+          {% endif %}
+        </p>
+      </button>
+
+      <div class="js-wishlist">
+        {% render 'icon-wishlist' %}
+      </div>
+    </div>
+    <!-- end .button--add-to-bag -->
+  {%- endform -%}
+
+  {% render 'product-details', blocks: blocks %}
+
+  {%- comment -%}Object of all variants{%- endcomment -%}
+  <script type="application/json" id="variants-data" data-prettify-ignore>
+    {
+      "variants": [{% for variant in product.variants %}{
+        "id": {{ variant.id }},
+        "title": {{ variant.title | json }},
+        "available": {{ variant.available }},
+        "inventory_quantity": {{ variant.inventory_quantity }},
+        "price": {{ variant.price }},
+        "variant_color": "{{ variant.metafields.surfturf.variant_color }}",
+        "variant_image": "{{ variant.image | image_url: width: 1000 }}",
+        "compare_at_price":{% if variant.compare_at_price != blank %}{{ variant.compare_at_price }}
+        {% else %}
+          null
+        {% endif %},
+        "option_titles": "{% for option in product.options %}{% unless forloop.first == true %} - {% endunless %}{{ option | downcase }}{% endfor %}",
+        "options": "{% for option in variant.options %}{% unless forloop.first == true %} - {% endunless %}{{ option }}{% endfor %}"
+      }
+      {% if forloop.last != true %},{% endif %}{% endfor %}]
+    }
+  </script>
+</product-form>
+<!-- end add to cart form -->

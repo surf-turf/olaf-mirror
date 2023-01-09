@@ -1,0 +1,48 @@
+<!doctype html>
+  <html class="no-js" lang="{{- request.locale.iso_code -}}" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+      <meta name="format-detection" content="telephone=no">
+  
+      <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+      {%- unless settings.fonts_header.system? and settings.fonts_body.system? -%}
+      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+      {%- endunless -%}
+  
+      <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+      {%- unless settings.fonts_header.system? and settings.fonts_body.system? -%}
+      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+      {%- endunless -%}
+  
+      <title>{{- 'templates.gift_card.your_giftcard' | t: shop: shop.name -}}</title>
+      <meta name="description" content="{{- 'gift_cards.issued.subtext' -}}">
+  
+      {%- if canonical_url != blank -%}
+        <link rel="canonical" href="{{ canonical_url }}">
+      {%- endif -%}
+      
+      {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
+
+      {%- liquid
+        render 'head-metas'
+        render 'head-settings'
+      -%}
+  
+      <script src="{{- 'vendor/qrcode.js' | shopify_asset_url -}}" defer></script>
+  
+      <!-- Header hook for plugins -->
+      {{ content_for_header }}
+    </head>
+    <body class="layout-giftcard template-{{- template.name -}}{%- if template.suffix -%}-{{- template.suffix -}}{%- endif -%}">
+      <main id="main-content" role="main" tabindex="-1">
+        {{ content_for_layout }}
+      </main>
+      <!-- end .main-content -->
+  
+      {%- section 'cookie-banner' -%}
+  
+    </body>
+  </html>
+  

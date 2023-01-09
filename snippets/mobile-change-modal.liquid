@@ -1,0 +1,91 @@
+<script src="{{- 'extender-mobile-change.js' | asset_url -}}" defer></script>
+{{ 'snippet-mobile-change-modal.css' | asset_url | stylesheet_tag }}
+
+<script>
+  console.log({{ item.variant | json }})
+</script>
+
+<mobile-change-modal>
+  <div class="mobile-change-modal">
+    {% for option in item.product.options_with_values %}
+      <fieldset class="mobile-change-modal__fieldset">
+        <p>{{ option.name }}</p>
+        {% for value in option.values %}
+          <label class="option__label">
+            <input
+              class="option__input"
+              type="radio"
+              name="{{ option.name | escape }}-{{ item.index }}"
+              value="{{ value | escape }}"
+              {% if item.variant.title == value %}
+                checked
+              {% endif %}
+            >
+            <span class="option__name">{{ value }}</span>
+          </label>
+        {% endfor %}
+      </fieldset>
+    {% endfor %}
+
+    {% if item.product.metafields.custom.color_dot_products.value != blank %}
+      <div class="mobile-change-modal__colors">
+        <p class="title">{{ 'sections.cart.color' | t }}</p>
+        <div class="colors">
+          {% for product in item.product.metafields.custom.color_dot_products.value %}
+            <div
+              data-id="{{ product.id }}"
+              class="colors__dot"
+              style="background-color: {{ product.metafields.custom.color_dot_color }}"
+            ></div>
+          {% endfor %}
+        </div>
+
+        <input type="hidden" class="color-id" id="color-id" value="">
+
+        <script type="application/json" id="color-products">
+          {
+            "products": [
+              {% for product in item.product.metafields.custom.color_dot_products.value %}
+                {
+                  "id": {{ product.id }},
+                  "variants": [
+                    {% for variant in product.variants %}
+                      {
+                        "id": {{ variant.id }},
+                        "title": {{ variant.title | json }},
+                        "available": {{ variant.available }},
+                        "inventory_quantity": {{ variant.inventory_quantity }},
+                        "price": {{ variant.price }},
+                        "variant_color": "{{ variant.metafields.surfturf.variant_color }}",
+                        "variant_image": "{{ variant.image | image_url: width: 1000 }}",
+                        "compare_at_price":{% if variant.compare_at_price != blank %}{{ variant.compare_at_price }}
+                        {% else %}
+                          null
+                        {% endif %},
+                        "option_titles": "{% for option in product.options %}{% unless forloop.first == true %} - {% endunless %}{{ option | downcase }}{% endfor %}",
+                        "options": "{% for option in variant.options %}{% unless forloop.first == true %} - {% endunless %}{{ option }}{% endfor %}"
+                      }{% if forloop.last != true %},{% endif %}
+                    {% endfor %}
+                  ]
+                }{% if forloop.last != true %},{% endif %}
+              {% endfor %}
+            ]
+          }
+        </script>
+      </div>
+    {% endif %}
+
+    <div class="apply-holder">
+      <quantity-selector>
+        <p class="title">{{ 'sections.cart.quantity' | t }}</p>
+        <fieldset class="quantity-form">
+          <button class="js-minus button button--text">-</button>
+          <input class="quantity-form__input" type="text" value="{{ item.quantity }}">
+          <button class="js-plus button button--text">+</button>
+        </fieldset>
+      </quantity-selector>
+      <input type="hidden" id="variantId">
+      <button class="button button--ghost js-apply">{{ 'sections.cart.apply' | t }}</button>
+    </div>
+  </div>
+</mobile-change-modal>

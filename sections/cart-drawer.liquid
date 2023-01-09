@@ -1,0 +1,40 @@
+{{ 'section-cart-drawer.css' | asset_url | stylesheet_tag }}
+
+<div class="cart-drawer__header">
+  <h3>{{ 'sections.cart.your_cart' | t }}</h3>
+  <button class="button js-cart-close close-cart-drawer">{{ 'sections.cart.close' | t }}</button>
+</div>
+
+<div class="cart-drawer__inner">
+  {% render 'cart-items' %}
+  {% render 'cart-footer', blocks: section.blocks, settings: section.settings %}
+</div>
+<!-- end .cart-drawer__inner -->
+
+{% schema %}
+{
+  "name": "t:sections.cart_drawer.name",
+  "tag": "section",
+  "class": "cart-drawer js-drawer-hidden initial-load",
+  "settings": [
+    {
+      "type": "product_list",
+      "id": "upselling_products",
+      "label": "Upselling products"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "USP item",
+      "type": "text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "usp_text",
+          "label": "USP text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

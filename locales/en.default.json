@@ -1,0 +1,213 @@
+{
+  "accessibility": {
+    "close": "Close",
+    "refresh_page": "Refresh the page",
+    "skip_to_content": "Skip to main content"
+  },
+  "account": {
+    "add_address": "Add address",
+    "addresses": "Addresses",
+    "already_registered": "Already have an account?",
+    "back_to_account": "Back to account",
+    "billing_address": "Billing address",
+    "change_address": "Change address",
+    "city": "City",
+    "confirmation_password": "Confirm password",
+    "conformation_password": "Password confirmation",
+    "country": "Country",
+    "delete": "Delete",
+    "delete_address": "Delete address",
+    "details": "Details",
+    "edit_address": "Edit address",
+    "email": "Email",
+    "email_me": "Email me",
+    "first_name": "First name",
+    "forgot_password": "forgot_password",
+    "forgot_password_description": "Reset it here!",
+    "forgot_password_title": "Forgotten your password?",
+    "fulfillment_status": "Fulfillment Status",
+    "help": "Help",
+    "last_name": "Last name",
+    "log_out": "Log out",
+    "login": "Login",
+    "no_account": "No account",
+    "order": "Order",
+    "order_note": "Order note",
+    "orders": "Orders",
+    "password": "Password",
+    "payment_status": "Payment Status",
+    "phone_number": "Phone number",
+    "placed_on": "Placed on",
+    "please_login": "Please login",
+    "province": "Province",
+    "register": "Register",
+    "register_now": "Register now",
+    "reset_it_now": "Reset it now",
+    "shipping": "Shipping",
+    "shipping_address": "Shipping address",
+    "street_form": "Street",
+    "submit": "Submit",
+    "total": "Total",
+    "total_discount": "Total discount",
+    "view_addresses": "View addresses",
+    "zip": "Postal code"
+  },
+  "collection": {
+    "clear_all_filters": "Clear all filters",
+    "filter": "Filter",
+    "load_more": "Load more",
+    "name_a_z": "Name a-z",
+    "name_z_a": "Name z-a",
+    "of": "of",
+    "price_ascending": "Price ascending",
+    "price_descending": "Price descending",
+    "products": "Products",
+    "results": "Results",
+    "sort_on": "Sort by"
+  },
+  "contact": {
+    "form": {
+      "email": "Email",
+      "error": "Please enter a valid",
+      "message": "Message",
+      "message_placeholder": "Please write your message here",
+      "name": "Name",
+      "title": "Or send a message. We will answer your request shortly"
+    },
+    "title": "Contact"
+  },
+  "faq": {
+    "title": "Faq"
+  },
+  "footer": {
+    "follow_us": "Follow us"
+  },
+  "general": {
+    "copied": "Copied",
+    "disabled": "Disabled",
+    "social": {
+      "title": {
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "pinterest": "Pinterest",
+        "snapchat": "Snapchat",
+        "tiktok": "TikTok",
+        "tumblr": "Tumblr",
+        "twitter": "Twitter",
+        "vimeo": "Vimeo",
+        "youtube": "YouTube"
+      }
+    },
+    "visit_shop": "Visit shop"
+  },
+  "header": {
+    "account": "Account",
+    "cart": "Cart",
+    "cart_drawer": "Cart drawer",
+    "search": "Search",
+    "search_placeholder": "Type to search",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "password": {
+    "are_you_the_store_owner": "Are you the store owner?",
+    "enter_using_password": "Enter using password",
+    "enter_website": "Enter website",
+    "error": "Error",
+    "log_in_here": "Log in here",
+    "password": "Password"
+  },
+  "product": {
+    "about_this_product": "About this product",
+    "add_to_cart": "Add to cart",
+    "choose_your_variant": "Choose your variant",
+    "color": "Color",
+    "details": "Details",
+    "from": "From",
+    "make_your_selection": "Make your selection",
+    "pair": "Pair",
+    "per_piece": "Products per piece",
+    "piece": "Piece",
+    "quantity": "Quantity",
+    "sale": "Sale",
+    "size": "Size",
+    "sold_out": "Sold out",
+    "variant": "Variants",
+    "add_to_bag": "Add to bag",
+    "information": "Information",
+    "size_chart": "Size chart",
+    "shipping": "Shipping",
+    "returns": "Returns",
+    "select": "Select size",
+    "variants": {
+      "size": "Size",
+      "size_guide": "Size guide"
+    },
+    "tags": {
+      "sale": "Sale"
+    }
+  },
+  "sections": {
+    "account": {
+      "account_overview": "Account overview",
+      "activate_account": "activate_account",
+      "email": "Email",
+      "email_me": "Email me",
+      "name": "Name",
+      "register": "Register",
+      "password_confirmation": "Password confirmation"
+    },
+    "blog": {
+      "read_more": "Read more"
+    },
+    "cart": {
+      "added_to_bag": "Added to bag",
+      "cart_error": "There was an error while updating your cart. Please try again.",
+      "cart_quantity_error": "You can only add [quantity] of this item to your cart.",
+      "comments_and_notes": "Comments and or notes",
+      "empty": "Your cart is empty",
+      "note_placeholder": "Add here your note",
+      "proceed_to_checkout": "Proceed to checkout",
+      "remove": "Remove",
+      "total": "Total",
+      "total_discount": "Total discount",
+      "close": "Close",
+      "your_cart": "Your cart",
+      "change": "Change",
+      "quantity": "Quantity",
+      "color": "Color",
+      "confirm": "Confirm",
+      "checkout": "Checkout",
+      "you_may_also_like": "You may also like",
+      "apply": "Apply"
+    },
+    "collection": {
+      "filter": "Filter",
+      "close": "Close",
+      "clear": "Clear",
+      "apply": "Apply",
+      "sort": "Sort",
+      "collections": "Collections"
+    }
+  },
+  "templates": {
+    "gift_card": {
+      "your_giftcard": "Your {{shop}} giftcard",
+      "add_to_apple_wallet": "Add to Apple Wallet",
+      "copy_code": "Copy code",
+      "copy_code_success": "Code copied successfully",
+      "expired": "Expired",
+      "gift_card_code": "Gift card code",
+      "gift_card_code_description": "Gift card code description",
+      "print_gift_card": "Print",
+      "qr_image_alt": "QR code — scan to redeem gift card",
+      "remaining_html": "Remaining {{ balance }}",
+      "shop_link": "Continue shopping",
+      "subtext": "Your gift card",
+      "title": "Here's your {{ value }} gift card for {{ shop }}!"
+    }
+  },
+  "search": {
+    "placeholder": "Search"
+  }
+}

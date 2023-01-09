@@ -1,0 +1,14 @@
+{% comment %}
+  Renders a counter of the cart items.
+
+  Usage:
+{%- render 'cart-item-counter' -%}
+{% endcomment %}
+
+{{ 'snippet-cart-item-counter.css' | asset_url | stylesheet_tag }}
+
+{% if cart != empty %}
+  <small data-items="{{ cart.item_count }}" id="cart-item-counter">{{ cart.item_count }}</small>
+{%- else -%}
+  <small data-items="0" id="cart-item-counter">0</small>
+{%- endif -%}

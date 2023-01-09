@@ -1,0 +1,150 @@
+{{ 'section-image-section.css' | asset_url | stylesheet_tag }}
+
+<div class="image-block__inner">
+  {% for block in section.blocks %}
+    <div class="image-holder {% if block.settings.span %}image-holder--span{% endif %} {% if block.settings.hide_mobile %}image-holder--no-mobile{% endif %}" style="height: {{ block.settings.height }}">
+      {{ block.settings.image | image_url: width: original | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image' }}
+      <div class="text-holder">
+        {% if block.settings.text != blank %}
+          <p class="text-holder__text" style="color: {{ block.settings.color }}">{{ block.settings.text }}</p>
+        {% endif %}
+        {% if block.settings.button_text != blank %}
+          <a href="{{ block.settings.button_url }}" class="button button--ghost" style="color: {{ block.settings.color }}; border: 1px solid {{ block.settings.color }};">{{ block.settings.button_text }}</a>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% if section.settings.show_mobile_button %}
+  <div class="image-block__mobile-button">
+    <a href="{{ section.settings.mobile_button_url }}" class="button button--ghost">{{ section.settings.mobile_button_text }}</a>
+  </div>
+{% endif %}
+
+<style>
+  .image-block {
+    padding-top: {{ section.settings.spacing_top }}px;
+    padding-bottom: {{ section.settings.spacing_bottom }}px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Image block",
+  "tag": "section",
+  "class": "image-block",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Mobile button"
+    },
+    {
+      "id": "show_mobile_button",
+      "type": "checkbox",
+      "label": "Show mobile button"
+    },
+    {
+      "id": "mobile_button_text",
+      "type": "text",
+      "label": "Mobile button text"
+    },
+    {
+      "id": "mobile_button_url",
+      "type": "url",
+      "label": "Mobile button URL"
+    },
+    {
+      "id": "spacing_top",
+      "type": "range",
+      "label": "Spacing top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 0
+    },
+    {
+      "id": "spacing_bottom",
+      "type": "range",
+      "label": "Spacing bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image-block",
+      "name": "Image block",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Image"
+        },
+        {
+          "id": "text",
+          "type": "text",
+          "label": "Text"
+        },
+        {
+          "id": "button_text",
+          "type": "text",
+          "label": "Button text"
+        },
+        {
+          "id": "button_url",
+          "type": "url",
+          "label": "Button URL"
+        },
+        {
+          "id": "span",
+          "type": "checkbox",
+          "label": "Span over 2 grid columns"
+        },
+        {
+          "id": "hide_mobile",
+          "type": "checkbox",
+          "label": "Hide on mobile"
+        },
+        {
+          "id": "color",
+          "type": "color",
+          "label": "Color"
+        },
+        {
+          "id": "height",
+          "type": "select",
+          "label": "Height",
+          "options": [
+            {
+              "value": "unset",
+              "label": "100%"
+            },
+            {
+              "value": "75%",
+              "label": "75%"
+            },
+            {
+              "value": "50%",
+              "label": "50%"
+            },
+            {
+              "value": "25%",
+              "label": "25%"
+            }
+          ],
+          "default": "75%"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image block",
+      "category": "sections"
+    }
+  ]
+}
+{% endschema %}

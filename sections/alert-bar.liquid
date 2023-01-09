@@ -1,0 +1,75 @@
+<script src="{{- 'extender-alert-bar.js' | asset_url -}}" defer></script>
+{{ 'section-alert-bar.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.show_alert and section.settings.alert_text != blank %}
+<alert-bar>
+  <div class="alert-bar__inner">
+    <div class="text-holder">
+      <div class="js-close">
+        {% render 'icon-close' color: section.settings.text_color %}
+      </div>
+      {% if section.settings.alert_text != blank %}
+        <p class="text-holder__text">{{ section.settings.alert_text }}</p>
+      {% endif %}
+    </div>
+  </div>
+</alert-bar>
+
+<style>
+  .alert-bar__inner {
+    background-color: {{ section.settings.background_color }};
+  }
+
+  .text-holder__text {
+    color: {{ section.settings.text_color }};
+  }
+</style>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Alert Bar",
+  "tag": "section",
+  "class": "alert-bar",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "alert_text",
+      "label": "Alert Text"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_alert",
+      "label": "Show alert bar",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#EFFF3B"
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "Alert bar position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
