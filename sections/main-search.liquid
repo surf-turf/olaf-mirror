@@ -1,7 +1,47 @@
 {{ 'section-main-search.css' | asset_url | stylesheet_tag }}
+{{ 'snippet-collection-button.css' | asset_url | stylesheet_tag }}
 
 <div class="main-search__inner">
-
+  <div class="search-mobile">
+    <search-form class="form form--search">
+      <form action="{{ routes.search_url }}">
+        <input
+          type="text"
+          placeholder="{{ 'search.placeholder' | t }}"
+          name="q"
+          value="{{ search.terms | escape }}"
+          class="form__input"
+        >
+        <button class="form__button">{{ 'search.placeholder' | t }}</button>
+      </form>
+    </search-form>
+  </div>
+  <div class="search-results">
+    <p class="search-results__count {% if search.results_count == 0 %}search-results__count--black{% endif %}">
+      {{ search.results_count }}
+      {{ 'search.results' | t }}
+    </p>
+  </div>
+  {% if search.results_count > 0 %}
+    <div class="product-grid">
+      {% paginate search.results by 1000 %}
+        {% for product in search.results %}
+          {% render 'collection-button', product: product %}
+        {% endfor %}
+      {% endpaginate %}
+    </div>
+  {% else %}
+    <div class="no-results">
+      <div class="no-results__inner">
+        <h2 class="title">{{ 'search.no_results' | t: terms: search.terms }}</h2>
+        {% if section.settings.subtitle != blank %}
+          <div class="subtitle">
+            {{ section.settings.subtitle }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
 </div>
 <!-- end .main-search__inner -->
 
@@ -10,6 +50,12 @@
   "name": "Main search",
   "tag": "section",
   "class": "main-search",
-  "settings": []
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "susbtitle",
+      "label": "Subtitle"
+    }
+  ]
 }
 {% endschema %}

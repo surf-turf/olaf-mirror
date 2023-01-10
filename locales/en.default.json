@@ -208,6 +208,8 @@
     }
   },
   "search": {
-    "placeholder": "Search"
+    "placeholder": "Search",
+    "results": "Results",
+    "no_results": "Sorry, no results for '{{ terms }}'"
   }
 }
