@@ -1,0 +1,84 @@
+<div class="size-chart__inner">
+  <div class="text-holder">
+    <h2 class="text-holder__title">{{ 'size_chart.size_chart' | t }}</h2>
+    {% if section.settings.intro_text != blank %}
+      <div class="text-holder__intro">
+        {{ section.settings.intro_text }}
+      </div>
+    {% endif %}
+  <div>
+
+  {% if section.settings.chart_image != blank %}
+    <div class="image-holder chart">
+        {{
+          section.settings.chart_image
+          | image_url: width: 2048
+          | image_tag:
+            sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
+            class: 'image-holder__image',
+            loading: 'lazy'
+        }}
+    </div>
+  {% endif %}
+
+  {% if section.settings.measure_graphic != blank %}
+    <div class="image-holder measure">
+      {{
+        section.settings.chart_image
+        | image_url: width: 2048
+        | image_tag:
+          sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
+          class: 'image-holder__image',
+          loading: 'lazy'
+      }}
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Size chart",
+  "tag": "section",
+  "class": "size-chart",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "intro_text",
+      "label": "Intro text"
+    },
+    {
+      "type": "image_picker",
+      "id": "chart_image",
+      "label": "Chart image"
+    },
+    {
+      "type": "image_picker",
+      "id": "measure_graphic",
+      "label": "Measuring graphic"
+    },
+    {
+      "type": "richtext",
+      "id": "contact_text",
+      "label": "Contact text"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "return step",
+      "type": "text",
+      "settings": [
+        {
+          "type": "number",
+          "id": "step_number",
+          "label": "Step number"
+        },
+        {
+          "type": "text",
+          "id": "step_text",
+          "label": "Step text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
