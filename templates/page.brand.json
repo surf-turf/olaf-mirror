@@ -1,8 +1,43 @@
 {
   "sections": {
     "main": {
-      "type": "main-page"
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "4105ec14-6309-4161-9fcf-308d0c26540d": {
+      "type": "hero",
+      "blocks": {
+        "3f8066fb-27e2-4ad9-a836-86027bbea805": {
+          "type": "base",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/unknown_90765044_214269756486093_326920238378907013_n_2.png",
+            "hero_title": "",
+            "hero_url": "",
+            "hero_base_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "3f8066fb-27e2-4ad9-a836-86027bbea805"
+      ],
+      "settings": {
+      }
+    },
+    "2c656fe4-54ce-4217-bd00-ccdaf13daa25": {
+      "type": "scroll-text",
+      "settings": {
+        "text": "Our label is an ongoing dialogue amongst our core team and close collaborators",
+        "base_color": "#ADADAD",
+        "fill_color": "#000000",
+        "spacing_top": 16,
+        "spacing_bottom": 80
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main",
+    "4105ec14-6309-4161-9fcf-308d0c26540d",
+    "2c656fe4-54ce-4217-bd00-ccdaf13daa25"
+  ]
 }

@@ -26,7 +26,9 @@
       }
     },
     "size-chart": {
-      "type": "size-chart"
+      "type": "size-chart",
+      "settings": {
+      }
     }
   },
   "order": [
