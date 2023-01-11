@@ -24,9 +24,13 @@
       ],
       "settings": {
       }
+    },
+    "size-chart": {
+      "type": "size-chart"
     }
   },
   "order": [
-    "main"
+    "main",
+    "size-chart"
   ]
 }

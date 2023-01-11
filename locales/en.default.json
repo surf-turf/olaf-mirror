@@ -139,6 +139,7 @@
     "shipping": "Shipping",
     "returns": "Returns",
     "select": "Select size",
+    "return_policy": "Return policy",
     "variants": {
       "size": "Size",
       "size_guide": "Size guide"

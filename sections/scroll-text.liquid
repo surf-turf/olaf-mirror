@@ -1,0 +1,90 @@
+{{ 'section-scroll-text.css' | asset_url | stylesheet_tag }}
+<script src="{{- 'extender-scroll-text.js' | asset_url -}}" defer></script>
+
+{% if section.settings.text != blank %}
+  <scroll-text>
+    <div class="scroll-text__inner">
+      <article
+        class="text-holder"
+      >
+        {% assign textArray = section.settings.text | split: ' ' %}
+
+        <p
+          class="text-holder__text"
+          style="color: {{ section.settings.base_color }};"
+          data-base="{{ section.settings.base_color }}"
+          data-fill="{{ section.settings.fill_color }}"
+        >
+          {% for word in textArray %}
+            <span class="word word-{{ forloop.index | times: 2 }}">{{ word }}</span>
+          {% endfor %}
+        </p>
+      </article>
+    </div>
+  </scroll-text>
+{% endif %}
+
+<style>
+  .scroll-text__inner {
+    padding-top: {{ section.settings.spacing_top }}px;
+    padding-bottom: {{ section.settings.spacing_bottom }}px;
+  }
+
+  .word {
+    background-image: linear-gradient(to right, {{ section.settings.fill_color }} 0%, {{ section.settings.base_color }} 0%);
+    background-size: 100% 100%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Scroll text",
+  "tag": "section",
+  "class": "scroll-text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "color",
+      "id": "base_color",
+      "label": "Base color",
+      "default": "#ADADAD"
+    },
+    {
+      "type": "color",
+      "id": "fill_color",
+      "label": "Fill color",
+      "default": "#000000"
+    },
+    {
+      "id": "spacing_top",
+      "type": "range",
+      "label": "Spacing top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 0
+    },
+    {
+      "id": "spacing_bottom",
+      "type": "range",
+      "label": "Spacing bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Scroll text",
+      "category": "sections"
+    }
+  ]
+}
+{% endschema %}

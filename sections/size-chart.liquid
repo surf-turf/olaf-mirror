@@ -1,15 +1,22 @@
-<div class="size-chart__inner">
-  <div class="text-holder">
-    <h2 class="text-holder__title">{{ 'size_chart.size_chart' | t }}</h2>
-    {% if section.settings.intro_text != blank %}
-      <div class="text-holder__intro">
-        {{ section.settings.intro_text }}
-      </div>
-    {% endif %}
-  <div>
+<script src="{{- 'extender-size-chart.js' | asset_url -}}" defer></script>
+{{ 'section-size-chart.css' | asset_url | stylesheet_tag }}
 
-  {% if section.settings.chart_image != blank %}
-    <div class="image-holder chart">
+<size-chart>
+  <div class="size-chart__inner">
+    <div class="close">
+      <button>{{ 'header.close' | t }}</button>
+    </div>
+    <div class="text-holder">
+      <h2 class="text-holder__title">{{ 'size_chart.size_chart' | t }}</h2>
+      {% if section.settings.intro_text != blank %}
+        <div class="text-holder__intro">
+          {{ section.settings.intro_text }}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if section.settings.chart_image != blank %}
+      <div class="image-holder chart">
         {{
           section.settings.chart_image
           | image_url: width: 2048
@@ -18,22 +25,34 @@
             class: 'image-holder__image',
             loading: 'lazy'
         }}
-    </div>
-  {% endif %}
+      </div>
+    {% endif %}
 
-  {% if section.settings.measure_graphic != blank %}
-    <div class="image-holder measure">
-      {{
-        section.settings.chart_image
-        | image_url: width: 2048
-        | image_tag:
-          sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
-          class: 'image-holder__image',
-          loading: 'lazy'
-      }}
+    {% if section.settings.measure_graphic != blank %}
+      <div class="image-holder measure">
+        {{
+          section.settings.measure_graphic
+          | image_url: width: 2048
+          | image_tag:
+            sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
+            class: 'image-holder__image',
+            loading: 'lazy'
+        }}
+      </div>
+    {% endif %}
+
+    <div class="returns">
+      <h3>{{ 'product.return_policy' | t }}</h3>
+      <ol class="returns__list">
+        {% for block in section.blocks %}
+          <li class="returns__item">
+            <p>{{ block.settings.step_text }}</p>
+          </li>
+        {% endfor %}
+      </ol>
     </div>
-  {% endif %}
-</div>
+  </div>
+</size-chart>
 
 {% schema %}
 {
@@ -67,11 +86,6 @@
       "name": "return step",
       "type": "text",
       "settings": [
-        {
-          "type": "number",
-          "id": "step_number",
-          "label": "Step number"
-        },
         {
           "type": "text",
           "id": "step_text",

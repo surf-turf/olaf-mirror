@@ -1,0 +1,88 @@
+{{ 'section-brand-explainers.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.explainer_title != blank %}
+  <div class="brand-explainers__text">
+    <div class="text-holder">
+      {{ section.settings.explainer_title }}
+    </div>
+  </div>
+{% endif %}
+
+<div class="brand-explainers__inner">
+  {% for explainer in section.blocks %}
+    <div class="explainer">
+      <h2 class="explainer__title">{{ explainer.settings.title }}</h2>
+      <p class="explainer__content">{{ explainer.settings.content }}</p>
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+  @media only screen and (min-width: 600px) {
+    .brand-explainers__inner {
+      grid-template-columns: repeat({{ section.blocks.size }}, 1fr);
+    }
+  }
+
+  .brand-explainers {
+    padding-top: {{ section.settings.spacing_top }}px;
+    padding-bottom: {{ section.settings.spacing_bottom }}px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Brand explainers",
+  "tag": "section",
+  "class": "brand-explainers",
+  "settings": [
+    {
+      "id": "spacing_top",
+      "type": "range",
+      "label": "Spacing top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 0
+    },
+    {
+      "id": "spacing_bottom",
+      "type": "range",
+      "label": "Spacing bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 0
+    },
+    {
+      "type": "richtext",
+      "label": "Explainer title",
+      "id": "explainer_title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "explainer",
+      "type": "text",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Title",
+          "id": "title"
+        },
+        {
+          "type": "text",
+          "label": "Content",
+          "id": "content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand explainers",
+      "category": "sections"
+    }
+  ]
+}
+{% endschema %}
