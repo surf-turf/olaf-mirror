@@ -1,7 +1,9 @@
 {{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
 
 <div class="main-blog__inner">
-
+  {% for article in blog.articles %}
+    {% render 'article-card', article: article %}
+  {% endfor %}
 </div>
 <!-- end .main-blog__inner -->
 

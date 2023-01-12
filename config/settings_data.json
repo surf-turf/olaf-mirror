@@ -20,7 +20,7 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "footer_nav": "footer"
+          "footer_nav": ""
         }
       },
       "cart-drawer": {

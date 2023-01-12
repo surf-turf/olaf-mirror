@@ -28,7 +28,7 @@
       "type": "scroll-text",
       "settings": {
         "text": "Our label is an ongoing dialogue amongst our core team and close collaborators",
-        "base_color": "#adadad",
+        "base_color": "#ADADAD",
         "fill_color": "#000000",
         "spacing_top": 16,
         "spacing_bottom": 80
@@ -85,52 +85,12 @@
         "spacing_bottom": 0,
         "explainer_title": "<p>Our label is an ongoing dialogue amongst our core team and close collaborators—continuously inspired by countries, cultures and citizens. Under Olaf Hussein, a name that combines two cultures, we explore the notion of a worldly traveler. Objects, references and insights collected across the globe are the starting points of the design process. Ultimately, our label is framework to enable ourselves and others to learn, develop and produce. By doing so, we are constantly expanding on the definition of a clothing label. Read our codes of practice below.<\/p>"
       }
-    },
-    "aa62b464-714e-4c10-8bcf-d79692821bfa": {
-      "type": "image-cards",
-      "blocks": {
-        "a9dc5959-9590-4f04-bff9-444f09404e5e": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/unknown_90765044_214269756486093_326920238378907013_n_2.png",
-            "url": "shopify:\/\/products\/olaf-aop-blur-bandana-azure-blue",
-            "title": "projects",
-            "description": "<p>Object to be worn or carried. These objects have their own life but can be added to something else in order to make it more useful, versatile or attractive. Materials from Italy. Assembled in Portugal.<\/p>"
-          }
-        },
-        "3a46ba38-f285-4eb7-83ee-38075ef0469d": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Virgil_Illum_21_59292_11721753-961a-4fc3-89f9-e46a0628ec1b_1.png",
-            "url": "",
-            "title": "citizens",
-            "description": "<p>Object to be worn or carried. These objects have their own life but can be added to something else in order to make it more useful, versatile or attractive. Materials from Italy. Assembled in Portugal. Object to be worn or carried. <\/p>"
-          }
-        },
-        "2ea7069d-0d06-413d-87c4-37eeadbdd769": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/OH_FW19_C_05_580x_34bbb3f6-45b6-4f5e-a017-09ded9830d27.png",
-            "url": "shopify:\/\/products\/olaf-block-cap-black",
-            "title": "archive",
-            "description": "<p>Object to be worn or carried. These objects have their own life but can be added to something else in order to make it more useful, versatile or attractive.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "a9dc5959-9590-4f04-bff9-444f09404e5e",
-        "3a46ba38-f285-4eb7-83ee-38075ef0469d",
-        "2ea7069d-0d06-413d-87c4-37eeadbdd769"
-      ],
-      "settings": {
-      }
     }
   },
   "order": [
     "main",
     "4105ec14-6309-4161-9fcf-308d0c26540d",
     "2c656fe4-54ce-4217-bd00-ccdaf13daa25",
-    "f3c1f66d-8133-4d8c-b3ef-35e627a1b2af",
-    "aa62b464-714e-4c10-8bcf-d79692821bfa"
+    "f3c1f66d-8133-4d8c-b3ef-35e627a1b2af"
   ]
 }

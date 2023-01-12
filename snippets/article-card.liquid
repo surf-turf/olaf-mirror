@@ -1,0 +1,16 @@
+<article class="article-card">
+  <a href="{{ article.url }}" class="image-holder">
+    {{
+      article.image
+      | image_url: width: original
+      | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+    }}
+  </a>
+
+  <div class="text-holder">
+    <h3 class="text-holder__published">{{ article.published_at | date: '%d %b %Y' }}</h3>
+    <h3 class="text-holder__title">
+      {{ article.title }}
+    </h3>
+  </div>
+</article>
