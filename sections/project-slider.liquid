@@ -1,0 +1,78 @@
+<script src="{{- 'extender-coral-scroll.js' | asset_url -}}" defer></script>
+{{ 'section-product-slider.css' | asset_url | stylesheet_tag }}
+
+<div class="product-slider__inner product-slider__inner--project">
+  <coral-scroll class="coral-scroll">
+    <div class="coral-scroll__grab-overlay"></div>
+    <div class="coral-scroll__slider">
+      {% for block in section.blocks %}
+        <a href="{{ block.settings.url }}" class="project-image-holder slide">
+          {{
+            block.settings.image
+            | image_url: width: 950
+            | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'project-image-holder__image'
+          }}
+        </a>
+      {% endfor %}
+      <!-- end .slide -->
+    </div>
+    <!-- end .coral-scroll__slider -->
+
+    <div class="coral-scroll__arrows coral-scroll__arrows--project">
+      <button
+        type="button"
+        class="button arrow previous js-disabled"
+        aria-label="previous slide button"
+        name="previous slide button"
+      >
+        {%- render 'arrow-left' -%}
+      </button>
+      <!-- end .previous -->
+
+      <button type="button" class="button arrow next" aria-label="next slide button" name="next slide button">
+        {%- render 'arrow-right' -%}
+      </button>
+      <!-- end .next -->
+    </div>
+    <!-- end .coral-scroll__arrows -->
+
+    <div class="coral-scroll__indicator coral-scroll__indicator--project">
+      <button type="button" class="dot" data-index="0" aria-label="Select slide 0" name="Select slide 0"></button>
+      <!-- end .dot -->
+    </div>
+    <!-- end .coral-scroll__indicator -->
+  </coral-scroll>
+  <!-- end coral-scroll -->
+</div>
+
+{% schema %}
+{
+  "name": "Project slider",
+  "tag": "section",
+  "class": "project-slider",
+  "blocks": [
+    {
+      "name": "Slider item",
+      "type": "image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "project-slider",
+      "category": "Project"
+    }
+  ]
+}
+{% endschema %}

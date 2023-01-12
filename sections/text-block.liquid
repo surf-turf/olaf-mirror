@@ -1,0 +1,101 @@
+{{ 'section-text-block.css' | asset_url | stylesheet_tag }}
+
+<div class="text-block__inner">
+  {% if section.settings.title != blank %}
+    <h2 style="color: {{ section.settings.color }}">{{ section.settings.title }}</h2>
+  {% endif %}
+
+  {% if section.settings.content != blank %}
+    <div style="color: {{ section.settings.color }}">
+      {{ section.settings.content }}
+    </div>
+  {% endif %}
+</div>
+
+<ul class="credits">
+  {% for block in section.blocks %}
+    <li class="credits__credit">
+      <p>{{ block.settings.function_title }}</p>
+      <p>{{ block.settings.name }}</p>
+    </li>
+  {% endfor %}
+</ul>
+
+<style>
+  .text-block {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Text block",
+  "tag": "article",
+  "class": "text-block",
+  "settings": [
+    {
+      "type": "text",
+      "label": "title",
+      "id": "title"
+    },
+    {
+      "type": "richtext",
+      "label": "content",
+      "id": "content"
+    },
+    {
+      "type": "header",
+      "content": "Base settings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Color",
+      "default": "#000000"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Credit",
+      "type": "text",
+      "settings": [
+        {
+          "id": "function_title",
+          "type": "text",
+          "label": "Function title"
+        },
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text block",
+      "category": "text"
+    }
+  ]
+}
+{% endschema %}

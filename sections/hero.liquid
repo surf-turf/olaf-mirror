@@ -27,6 +27,15 @@
           </div>
         {% endif %}
       </div>
+
+      <style>
+        .js-title {
+          background-image: linear-gradient(to bottom, {{ block.settings.hero_text_color_image }} 0%, {{ block.settings.hero_text_color }} 0%);
+          background-size: 100% 100%;
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
+          }
+      </style>
     {% endif %}
 
     {% if block.type == 'base' %}
@@ -270,14 +279,16 @@
 
     {% if block.type == 'base_title_button' %}
       <a href="{{ block.settings.hero_url }}" class="hero__inner hero__inner--base-button">
-        {% if block.settings.hero_title != blank %}
+        {% if block.settings.hero_title != blank or block.settings.hero_base_button_text != blank %}
           <div class="text-holder {{ block.settings.text-position }} {{ block.settings.text-alignment }}">
-            <h2
-              class="text-holder__title text-holder__title--base"
-              style="color: {{ block.settings.hero_base_text_color }}"
-            >
-              {{ block.settings.hero_title }}
-            </h2>
+            {% if block.settings.hero_title != blank %}
+              <h2
+                class="text-holder__title text-holder__title--base"
+                style="color: {{ block.settings.hero_base_text_color }}"
+              >
+                {{ block.settings.hero_title }}
+              </h2>
+            {% endif %}
             {% if block.settings['button-position'] == false %}
               <button class="button button--ghost button--base-text">{{ block.settings.hero_base_button_text }}</button>
             {% endif %}
@@ -623,7 +634,7 @@
         {
           "id": "text-alignment",
           "type": "select",
-          "label": "Text position",
+          "label": "Button position",
           "options": [
             {
               "value": "align-left",

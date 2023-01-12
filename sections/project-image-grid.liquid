@@ -1,0 +1,45 @@
+{{ 'section-product-image-grid.css' | asset_url | stylesheet_tag }}
+
+<div class="project-image-grid__inner">
+  {% for block in section.blocks %}
+    <a href="{{ block.settings.url }}" class="image-holder">
+      {{
+        block.settings.image
+        | image_url: width: 950
+        | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+      }}
+    </a>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Project image grid",
+  "tag": "section",
+  "class": "project-image-grid",
+  "blocks": [
+    {
+      "name": "Image",
+      "type": "image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "image"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Project image grid",
+      "category": "Project"
+    }
+  ]
+}
+{% endschema %}
