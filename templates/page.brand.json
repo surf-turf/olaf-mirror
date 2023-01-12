@@ -97,10 +97,20 @@
             "title": "projects",
             "description": "<p>Object to be worn or carried. These objects have their own life but can be added to something else in order to make it more useful, versatile or attractive. Materials from Italy. Assembled in Portugal.<\/p>"
           }
+        },
+        "3a46ba38-f285-4eb7-83ee-38075ef0469d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Virgil_Illum_21_59292_11721753-961a-4fc3-89f9-e46a0628ec1b_1.png",
+            "url": "",
+            "title": "citizens",
+            "description": "<p>Object to be worn or carried. These objects have their own life but can be added to something else in order to make it more useful, versatile or attractive. Materials from Italy. Assembled in Portugal. Object to be worn or carried. <\/p>"
+          }
         }
       },
       "block_order": [
-        "a9dc5959-9590-4f04-bff9-444f09404e5e"
+        "a9dc5959-9590-4f04-bff9-444f09404e5e",
+        "3a46ba38-f285-4eb7-83ee-38075ef0469d"
       ],
       "settings": {
       }
