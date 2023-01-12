@@ -1,0 +1,21 @@
+<article class="image-card">
+  <a href="{{ settings.url }}" class="image-holder">
+    {{
+      settings.image
+      | image_url: width: original
+      | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+    }}
+  </a>
+
+  <div class="text-holder">
+    {% if settings.title != blank %}
+      <h3 class="text-holder__title">{{ settings.title }}</h3>
+    {% endif %}
+
+    {% if settings.description != blank %}
+      <div class="text-holder__description">
+        {{ settings.description }}
+      </div>
+    {% endif %}
+  </div>
+</article>

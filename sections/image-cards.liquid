@@ -1,0 +1,50 @@
+{{ 'section-image-cards.css' | asset_url | stylesheet_tag }}
+
+<div class="image-cards__inner">
+  {% for block in section.blocks %}
+    {% render 'image-card', settings: block.settings %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Image cards",
+  "tag": "section",
+  "class": "image-cards",
+  "settings": [],
+  "blocks": [
+    {
+      "name": "Image card",
+      "type": "image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Url"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image cards",
+      "category": "Sections"
+    }
+  ]
+}
+{% endschema %}
