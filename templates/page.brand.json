@@ -106,11 +106,21 @@
             "title": "citizens",
             "description": "<p>Object to be worn or carried. These objects have their own life but can be added to something else in order to make it more useful, versatile or attractive. Materials from Italy. Assembled in Portugal. Object to be worn or carried. <\/p>"
           }
+        },
+        "2ea7069d-0d06-413d-87c4-37eeadbdd769": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/OH_FW19_C_05_580x_34bbb3f6-45b6-4f5e-a017-09ded9830d27.png",
+            "url": "shopify:\/\/products\/olaf-block-cap-black",
+            "title": "archive",
+            "description": "<p>Object to be worn or carried. These objects have their own life but can be added to something else in order to make it more useful, versatile or attractive.<\/p>"
+          }
         }
       },
       "block_order": [
         "a9dc5959-9590-4f04-bff9-444f09404e5e",
-        "3a46ba38-f285-4eb7-83ee-38075ef0469d"
+        "3a46ba38-f285-4eb7-83ee-38075ef0469d",
+        "2ea7069d-0d06-413d-87c4-37eeadbdd769"
       ],
       "settings": {
       }
