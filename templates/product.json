@@ -26,13 +26,19 @@
       }
     },
     "size-chart": {
-      "type": "size-chart"
+      "type": "size-chart",
+      "settings": {
+      }
     },
     "recommended-products": {
-      "type": "recommended-products"
+      "type": "recommended-products",
+      "settings": {
+      }
     },
     "product-additional-media": {
-      "type": "product-additional-media"
+      "type": "product-additional-media",
+      "settings": {
+      }
     }
   },
   "order": [

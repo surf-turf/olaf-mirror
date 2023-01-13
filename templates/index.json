@@ -194,8 +194,8 @@
       ],
       "settings": {
         "show_mobile_button": true,
-        "mobile_button_text": "EXPLORE MORE",
-        "mobile_button_url": "shopify:\/\/products\/olaf-aop-puffer-jacket-multi",
+        "mobile_button_text": "",
+        "mobile_button_url": "",
         "spacing_top": 0,
         "spacing_bottom": 0
       }
