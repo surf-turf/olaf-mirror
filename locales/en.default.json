@@ -140,6 +140,8 @@
     "returns": "Returns",
     "select": "Select size",
     "return_policy": "Return policy",
+    "you_may_also_like": "You may also like",
+    "pair_it_with": "Pair it with",
     "variants": {
       "size": "Size",
       "size_guide": "Size guide"

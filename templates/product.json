@@ -27,10 +27,18 @@
     },
     "size-chart": {
       "type": "size-chart"
+    },
+    "recommended-products": {
+      "type": "recommended-products"
+    },
+    "product-additional-media": {
+      "type": "product-additional-media"
     }
   },
   "order": [
     "main",
-    "size-chart"
+    "size-chart",
+    "product-additional-media",
+    "recommended-products"
   ]
 }

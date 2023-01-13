@@ -1,0 +1,63 @@
+{{ 'section-recommended-products.css' | asset_url | stylesheet_tag }}
+{{ 'snippet-collection-button.css' | asset_url | stylesheet_tag }}
+
+{%- if recommendations.performed? -%}
+  <div id="product-recommendations" class="product-recommendations__inner">
+    {%- if recommendations.products_count > 0 -%}
+      {% if recommendations.intent == 'related' %}
+        <h2 class="title">{{ 'product.you_may_also_like' | t }}</h2>
+      {% elsif recommendations.intent == 'complementary' %}
+        <h2 class="title">{{ 'product.pair_it_with' | t }}</h2>
+      {% endif %}
+
+      <div class="recommended-product-grid">
+        {%- for product in recommendations.products -%}
+          {% render 'collection-button', product: product %}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}
+
+<script>
+  const productRecommendationsSection = document.querySelector('.product-recommendations');
+  fetch(
+    '{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=6&intent={{ section.settings.intent }}'
+  )
+    .then((response) => response.text())
+    .then((text) => {
+      const html = document.createElement('div');
+      html.innerHTML = text;
+      const recommendations = html.querySelector('.product-recommendations');
+
+      if (recommendations && recommendations.innerHTML.trim().length) {
+        productRecommendationsSection.innerHTML = recommendations.innerHTML;
+      }
+    });
+</script>
+
+{% schema %}
+{
+  "name": "Product recommendations",
+  "tag": "section",
+  "class": "product-recommendations",
+  "settings": [
+    {
+      "type": "select",
+      "id": "intent",
+      "label": "Recommended products intent",
+      "options": [
+        {
+          "value": "related",
+          "label": "Related products"
+        },
+        {
+          "value": "complementary",
+          "label": "Complementary products"
+        }
+      ],
+      "default": "related"
+    }
+  ]
+}
+{% endschema %}

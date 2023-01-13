@@ -14,20 +14,49 @@
 {{ 'snippet-product-button.css' | asset_url | stylesheet_tag }}
 
 <product-button class="product-button slide">
-  <a class="image-holder" href="{{ product.url }}">
+  <a class="image-holder {% if product.images[1] != blank %}image-holder--hover{% endif %}" href="{{ product.url }}">
     {{
       product.images[0]
-      | image_url: width: original
-      | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+      | image_url: width: 950
+      | image_tag:
+        sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
+        class: 'image-holder__image',
+        loading: 'lazy'
     }}
     {{
       product.images[1]
-      | image_url: width: original
-      | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image--hover'
+      | image_url: width: 950
+      | image_tag:
+        sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
+        class: 'image-holder__image--hover',
+        loading: 'lazy'
     }}
+
+    {% if product.metafields.custom.color_dot_products != blank %}
+      <div class="dot-grid">
+        {% for dotProduct in product.metafields.custom.color_dot_products.value %}
+          <button
+            class="dot-grid__button"
+            data-id="{{ dotProduct.id }}"
+            data-featured-image="{{ dotProduct.featured_image | image_url: width: original }}"
+            data-featured-image-hover="{{ dotProduct.images[1] | image_url: width: original }}"
+            data-url="{{ dotProduct.url }}"
+          >
+            <div
+              style="background-color: {{ dotProduct.metafields.custom.color_dot_color }}"
+              class="dot-grid__dot"
+            ></div>
+          </button>
+        {% endfor %}
+      </div>
+    {% endif %}
   </a>
   <div class="text-holder">
-    <p>{{ product.title }}</p>
+    {% if product.metafields.custom.color_name != blank %}
+      <p>{{ product.title | remove: '-' | remove: product.metafields.custom.color_name.value[0] }}</p>
+    {% else %}
+      <p>{{ product.title }}</p>
+    {% endif %}
     {% render 'product-price', product: product %}
   </div>
 </product-button>

@@ -1,0 +1,38 @@
+{{ 'section-additional-media.css' | asset_url | stylesheet_tag }}
+
+<div class="additional-media__inner">
+  {% for media in product.metafields.custom.additional_media.value %}
+    <script>
+      console.log({{ product.metafields.custom.additional_media.value | json }})
+    </script>
+    {% if media.media_type == 'video' %}
+      <div class="image-holder">
+        <video playsinline muted autoplay loop class="image-holder__image" loading="lazy">
+          {% for source in media.sources %}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+          {% endfor %}
+        </video>
+      </div>
+    {% else %}
+      <div class="image-holder">
+        {{
+          media
+          | image_url: width: 2048
+          | image_tag:
+            sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
+            class: 'image-holder__image',
+            loading: 'lazy'
+        }}
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Additional media",
+  "tag": "section",
+  "class": "additional-media",
+  "settings": []
+}
+{% endschema %}
