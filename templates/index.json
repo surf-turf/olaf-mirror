@@ -239,10 +239,21 @@
             "text_padding_left": true,
             "height": "100%"
           }
+        },
+        "f1381c68-2840-4bba-8a35-3db1a613b5f7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/OH_FW19_C_05_580x_34bbb3f6-45b6-4f5e-a017-09ded9830d27.png",
+            "url": "shopify:\/\/products\/3-pack-olaf-italic-socks-black",
+            "description": "Heavyweight Studio Hoodie",
+            "text_padding_left": false,
+            "height": "100%"
+          }
         }
       },
       "block_order": [
-        "cd65f1e5-8370-438d-a3dd-342358f91b4a"
+        "cd65f1e5-8370-438d-a3dd-342358f91b4a",
+        "f1381c68-2840-4bba-8a35-3db1a613b5f7"
       ],
       "settings": {
         "title": "continuously inspired by countries, cultures and citizens.",
