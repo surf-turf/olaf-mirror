@@ -249,11 +249,22 @@
             "text_padding_left": false,
             "height": "100%"
           }
+        },
+        "36eaec82-8e93-4320-917d-96ba18b7c2dd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Virgil_Illum_21_59292_11721753-961a-4fc3-89f9-e46a0628ec1b_1.png",
+            "url": "shopify:\/\/pages\/brand",
+            "description": "Heavyweight Studio Hoodie",
+            "text_padding_left": true,
+            "height": "100%"
+          }
         }
       },
       "block_order": [
         "cd65f1e5-8370-438d-a3dd-342358f91b4a",
-        "f1381c68-2840-4bba-8a35-3db1a613b5f7"
+        "f1381c68-2840-4bba-8a35-3db1a613b5f7",
+        "36eaec82-8e93-4320-917d-96ba18b7c2dd"
       ],
       "settings": {
         "title": "continuously inspired by countries, cultures and citizens.",
