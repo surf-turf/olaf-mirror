@@ -259,12 +259,23 @@
             "text_padding_left": true,
             "height": "100%"
           }
+        },
+        "58138375-147f-4873-8144-751a6e7702a7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_2022-11-15_at_09.56_2_f73f6ac5-b6ee-4334-9bbf-683b6132ee89.png",
+            "url": "shopify:\/\/pages\/brand",
+            "description": "Heavyweight Studio Hoodie",
+            "text_padding_left": true,
+            "height": "100%"
+          }
         }
       },
       "block_order": [
         "cd65f1e5-8370-438d-a3dd-342358f91b4a",
         "f1381c68-2840-4bba-8a35-3db1a613b5f7",
-        "36eaec82-8e93-4320-917d-96ba18b7c2dd"
+        "36eaec82-8e93-4320-917d-96ba18b7c2dd",
+        "58138375-147f-4873-8144-751a6e7702a7"
       ],
       "settings": {
         "title": "continuously inspired by countries, cultures and citizens.",
