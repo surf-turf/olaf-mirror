@@ -1,0 +1,68 @@
+{{ 'section-citizens-hero.css' | asset_url | stylesheet_tag }}
+
+<div class="citizens-hero__inner">
+  {% if section.settings.image != blank %}
+    <div class="image-holder">
+      {{
+        block.settings.image
+        | image_url: width: 2048
+        | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+      }}
+    </div>
+  {% endif %}
+
+  {% if section.settings.title_1 != blank or section.settings.title_2 != blank or section.settings.title_3 != blank %}
+    <div class="text-holder">
+      <h2 class="text-holder--title title1">{{ section.settings.title_1 }}</h2>
+      <h2 class="text-holder--title title2">{{ section.settings.title_2 }}</h2>
+      <h2 class="text-holder--title title3">{{ section.settings.title_2 }}</h2>
+    </div>
+  {% endif %}
+</div>
+
+<style>
+  .text-holder--title {
+    color: {{ section.settings.color }};
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Citizens schema",
+  "tag": "section",
+  "class": "citizens-hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "label": "Image",
+      "id": "image"
+    },
+    {
+      "type": "url",
+      "label": "Video url",
+      "id": "video_url"
+    },
+    {
+      "type": "text",
+      "label": "Title 1",
+      "id": "title_1"
+    },
+    {
+      "type": "text",
+      "label": "Title 2",
+      "id": "title_2"
+    },
+    {
+      "type": "text",
+      "label": "Title 2",
+      "id": "title_3"
+    },
+    {
+      "type": "color",
+      "label": "Text color",
+      "id": "color",
+      "default": "#000000"
+    }
+  ]
+}
+{% endschema %}

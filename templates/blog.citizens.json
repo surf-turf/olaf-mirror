@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "main": {
+      "type": "citizens-hero"
+    }
+  },
+  "order": ["main"]
+}

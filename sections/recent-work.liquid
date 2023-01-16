@@ -17,7 +17,7 @@
       >
         {{
           block.settings.image
-          | image_url: width: original
+          | image_url: width: 1050
           | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
         }}
 
@@ -34,6 +34,12 @@
       </a>
     {% endfor %}
   </div>
+
+  {% if section.settings.button_title != blank %}
+    <div class="button-holder">
+      <a class="button button--ghost" href="{{ section.settings.button_link }}">{{ section.settings.button_title }}</a>
+    </div>
+  {% endif %}
 </recent-work>
 
 <style>
