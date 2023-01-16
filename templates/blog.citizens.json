@@ -2,7 +2,13 @@
   "sections": {
     "main": {
       "type": "citizens-hero"
+    },
+    "citizens-main": {
+      "type": "citizens-main"
     }
   },
-  "order": ["main"]
+  "order": [
+    "main",
+    "citizens-main"
+  ]
 }

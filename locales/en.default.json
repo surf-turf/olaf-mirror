@@ -217,5 +217,8 @@
   },
   "size_chart": {
     "size_chart": "Size chart"
+  },
+  "blog": {
+    "read_more": "Read more"
   }
 }

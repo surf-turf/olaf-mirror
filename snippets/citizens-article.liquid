@@ -1,0 +1,27 @@
+<article class="citizens-article">
+  <div class="citizens-article__inner">
+    {% if article.image != blank %}
+      <div class="image-holder">
+        {{
+          article.image
+          | image_url: width: 1050
+          | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+        }}
+      </div>
+    {% endif %}
+    <div class="text-holder">
+      <div>
+        <h2 class="text-holder__title">{{ article.title }}</h2>
+        <p class="text-holder__content">
+          {{ article.excerpt }}
+          <a href="{{ article.url }}">{{ 'blog.read_more' | t }}</a>
+        </p>
+        {% for tags in article.tags %}
+          <button class="button button--tag">{{ tag }}</button>
+        {% endfor %}
+      </div>
+
+      <p class="text-holder__date">{{ article.published_at | date: '%d %b %Y' }}</p>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,27 @@
+{{ 'snippet-citizens-article.css' | asset_url | stylesheet_tag }}
+{{ 'section-citizens-main.css' | asset_url | stylesheet_tag }}
+
+<div class="citizens-main__inner">
+  <div class="tags">
+    {% for tag in blog.all_tags %}
+      <a
+        href="{{ blog.url }}?tag={{ tag | url_encode }}"
+        class="tags__item{% if tag == blog.tag %} tags__item--active{% endif %}"
+      >
+        {{- tag -}}
+      </a>
+    {% endfor %}
+  </div>
+  {% for article in blog.articles %}
+    {% render 'citizens-article', article: article %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "citizens-main",
+  "tag": "section",
+  "class": "citizens-main",
+  "settings": []
+}
+{% endschema %}
