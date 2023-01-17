@@ -1,21 +1,25 @@
 {{ 'section-citizens-hero.css' | asset_url | stylesheet_tag }}
 
 <div class="citizens-hero__inner">
-  {% if section.settings.image != blank %}
-    <div class="image-holder">
+  <div class="image-holder">
+    {% if section.settings.video_url != blank %}
+      <video class="image-holder__image" muted autoplay playsinline>
+        <source src="{{ section.settings.video_url.src }}" type="video/mp4">
+      </video>
+    {% elsif section.settings.image != blank %}
       {{
         section.settings.image
         | image_url: width: 2048
         | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
       }}
-    </div>
-  {% endif %}
+    {% endif %}
+  </div>
 
   {% if section.settings.title_1 != blank or section.settings.title_2 != blank or section.settings.title_3 != blank %}
     <div class="text-holder">
       <h2 class="text-holder__title title1">{{ section.settings.title_1 }}</h2>
       <h2 class="text-holder__title title2">{{ section.settings.title_2 }}</h2>
-      <h2 class="text-holder__title title3">{{ section.settings.title_2 }}</h2>
+      <h2 class="text-holder__title title3">{{ section.settings.title_3 }}</h2>
     </div>
   {% endif %}
 </div>
@@ -54,7 +58,7 @@
     },
     {
       "type": "text",
-      "label": "Title 2",
+      "label": "Title 3",
       "id": "title_3"
     },
     {
