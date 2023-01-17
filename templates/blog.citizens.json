@@ -1,20 +1,10 @@
 {
   "sections": {
     "main": {
-      "type": "citizens-hero",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/TAURILLON_MONOGRAM_MACASSAR_07_1.png",
-        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/02f962618b5e409db3d33372eafe8a56.mp4",
-        "title_1": "countries",
-        "title_2": "cultures",
-        "title_3": "citizens",
-        "color": "#efff3b"
-      }
+      "type": "citizens-hero"
     },
     "citizens-main": {
-      "type": "citizens-main",
-      "settings": {
-      }
+      "type": "citizens-main"
     }
   },
   "order": [

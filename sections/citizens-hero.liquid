@@ -4,7 +4,7 @@
   <div class="image-holder">
     {% if section.settings.video_url != blank %}
       <video class="image-holder__image" muted autoplay playsinline>
-        <source src="{{ section.settings.video_url.src }}" type="video/mp4">
+        <source src="{{ section.settings.video_url }}" type="video/mp4">
       </video>
     {% elsif section.settings.image != blank %}
       {{
