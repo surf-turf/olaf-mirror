@@ -1,0 +1,13 @@
+{{ 'snippet-citizens-base-image.css' | asset_url | stylesheet_tag }}
+
+<section class="citizens-base-image">
+  <div class="citizens-base-image__inner">
+    <div class="image-holder">
+      <img src="{{ image[0][0].src }}" alt="{{ image[0][0].alt }}" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<script>
+  console.log({{ image | json }})
+</script>

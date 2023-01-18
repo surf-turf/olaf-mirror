@@ -220,5 +220,8 @@
   },
   "blog": {
     "read_more": "Read more"
+  },
+  "article": {
+    "biography": "Biography"
   }
 }

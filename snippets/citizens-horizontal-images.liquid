@@ -1,0 +1,11 @@
+{{ 'snippet-citizens-horizontal-images.css' | asset_url | stylesheet_tag }}
+
+<section class="citizens-horizontal-images">
+  <div class="citizens-horizontal-images__inner">
+    {% for image in images[0] %}
+      <div class="image-holder">
+        <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy">
+      </div>
+    {% endfor %}
+  </div>
+</section>

@@ -1,7 +1,11 @@
 {{ 'section-main-article.css' | asset_url | stylesheet_tag }}
 
 <div class="main-article__inner">
-
+  {% comment %}
+    <script>
+      console.log({{ article.metafields.accentuate.hero_image | json }})
+    </script>
+  {% endcomment %}
 </div>
 <!-- end .main-article__inner -->
 

@@ -1,0 +1,34 @@
+<div class="article-base__inner">
+  {% for fields in shop.metafields.acf_settings.article %}
+    <script>
+      console.log({{ fields | json }})
+    </script>
+    {% for field in fields[1] %}
+      {% case field.name %}
+        {% when 'hero_image' %}
+          {% render 'citizens-article-hero', settings: article.metafields.accentuate.hero_image %}
+        {% when 'citizens_intro' %}
+          {% render 'citizens-article-intro', settings: article.metafields.accentuate.citizens_intro %}
+        {% when 'citizens_text_block_biography' %}
+          {% render 'citizens-text-block-biography',
+            settings: article.metafields.accentuate.citizens_text_block_biography
+          %}
+        {% when 'citizens_horizontal_images' %}
+          {% render 'citizens-horizontal-images', images: article.metafields.accentuate.citizens_horizontal_images %}
+        {% when 'citizens_base_text' %}
+          {% render 'citizens-base-text', settings: article.metafields.accentuate.citizens_base_text %}
+        {% when 'citizens_base_image' %}
+          {% render 'citizens-base-image', image: article.metafields.accentuate.citizens_base_image %}
+      {% endcase %}
+    {% endfor %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Article base",
+  "tag": "section",
+  "class": "article-base",
+  "settings": []
+}
+{% endschema %}

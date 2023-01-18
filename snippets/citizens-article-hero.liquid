@@ -1,0 +1,17 @@
+{{ 'section-blog-hero.css' | asset_url | stylesheet_tag }}
+
+<div class="blog-hero__inner">
+  <div class="image-holder">
+    {% if settings[0].media_type == 'video' %}
+      <video class="image-holder__image" playsinline autoplay looped muted>
+        <source src="{{ settings[0].src }}" type="{{ settings[0].mime_type }}">
+      </video>
+    {% else %}
+      <img src="{{ settings[0].src }}" class="image-holder__image">
+    {% endif %}
+  </div>
+  <div class="text-holder">
+    <h2 class="text-holder__title">{{ article.title }}</h2>
+    {% render 'icon-down' %}
+  </div>
+</div>

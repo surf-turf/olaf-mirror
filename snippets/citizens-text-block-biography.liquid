@@ -1,0 +1,33 @@
+{{ 'snippet-citizens-text-block-biography.css' | asset_url | stylesheet_tag }}
+
+<section class="text-with-biography">
+  <div class="text-with-biography__inner">
+    <div class="categories">
+      {% for tag in article.tags %}
+        <a href="{{ tag }}" class="button button--tag">{{ tag }}</a>
+      {% endfor %}
+    </div>
+
+    <article class="article wysiwyg">
+      {{ settings[0].html }}
+    </article>
+
+    <div class="biography">
+      {% if article.metafields.accentuate.citizens_biography_image != blank %}
+        <div class="image-holder">
+          <img
+            src="{{ article.metafields.accentuate.citizens_biography_image[0].src }}"
+            class="image-holder__image"
+            alt="{{ sarticle.metafields.accentuate.citizens_biography_image[0].alt }}"
+            loading="lazy"
+          >
+        </div>
+      {% endif %}
+
+      {% if article.metafields.accentuate.citizens_biography_text != blank %}
+        <h3 class="biography__title">{{ 'article.biography' | t }}</h3>
+        <p class="biography__text">{{ article.metafields.accentuate.citizens_biography_text }}</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
