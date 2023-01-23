@@ -4,7 +4,7 @@
   <div class="text-with-biography__inner">
     <div class="categories">
       {% for tag in article.tags %}
-        <a href="{{ tag }}" class="button button--tag">{{ tag }}</a>
+        <a href="{{ blog.url }}?tag={{ tag | url_encode }}" class="button button--tag">{{ tag }}</a>
       {% endfor %}
     </div>
 
@@ -14,14 +14,18 @@
 
     <div class="biography">
       {% if article.metafields.accentuate.citizens_biography_image != blank %}
-        <div class="image-holder">
-          <img
-            src="{{ article.metafields.accentuate.citizens_biography_image[0].src }}"
-            class="image-holder__image"
-            alt="{{ sarticle.metafields.accentuate.citizens_biography_image[0].alt }}"
-            loading="lazy"
-          >
-        </div>
+        {% for image in article.metafields.accentuate.citizens_biography_image %}
+          <div class="image-holder">
+            <img
+              src="{{ image[0].src }}"
+              class="image-holder__image"
+              alt="{{ image[0].alt }}"
+              loading="lazy"
+              width="234"
+              height="305"
+            >
+          </div>
+        {% endfor %}
       {% endif %}
 
       {% if article.metafields.accentuate.citizens_biography_text != blank %}

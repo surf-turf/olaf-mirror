@@ -1,0 +1,1 @@
+.spacer__inner{padding:100px 10px}@media(min-width: 768px){.spacer__inner{padding:var(--spacing-8x) 10px}}.spacer__inner .image-holder{display:flex;justify-content:center;width:100%}

@@ -219,7 +219,9 @@
     "size_chart": "Size chart"
   },
   "blog": {
-    "read_more": "Read more"
+    "read_more": "Read more...",
+    "more_articles": "More articles",
+    "back_to_overview": "Back to overview"
   },
   "article": {
     "biography": "Biography"

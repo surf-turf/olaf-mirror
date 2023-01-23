@@ -1,10 +1,24 @@
 {{ 'snippet-citizens-horizontal-images.css' | asset_url | stylesheet_tag }}
 
-<section class="citizens-horizontal-images">
+<section class="citizens-horizontal-images index-{{ index }}">
   <div class="citizens-horizontal-images__inner">
-    {% for image in images[0] %}
+    {% assign imageOffset = index | times: 2 %}
+    {% for image in article.metafields.accentuate.citizens_horizontal_images[index] %}
       <div class="image-holder">
-        <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy">
+        {% if image.media_type == 'video' %}
+          <video class="image-holder__image" autoplay loop muted playsinline>
+            <source src="{{ image.src }}" type="{{ image.mime_type }}">
+          </video>
+        {% else %}
+          <img
+            src="{{ image.src }}"
+            alt="{{ image.alt }}"
+            loading="lazy"
+            class="image-holder__image"
+            width="{{ image.width }}"
+            height="{{ image.height }}"
+          >
+        {% endif %}
       </div>
     {% endfor %}
   </div>

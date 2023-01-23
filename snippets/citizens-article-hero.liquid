@@ -1,9 +1,9 @@
 {{ 'section-blog-hero.css' | asset_url | stylesheet_tag }}
 
-<div class="blog-hero__inner">
+<section class="blog-hero__inner">
   <div class="image-holder">
     {% if settings[0].media_type == 'video' %}
-      <video class="image-holder__image" playsinline autoplay looped muted>
+      <video class="image-holder__image" playsinline autoplay loop muted>
         <source src="{{ settings[0].src }}" type="{{ settings[0].mime_type }}">
       </video>
     {% else %}
@@ -14,4 +14,4 @@
     <h2 class="text-holder__title">{{ article.title }}</h2>
     {% render 'icon-down' %}
   </div>
-</div>
+</section>

@@ -1,0 +1,36 @@
+{{ 'section-featured-citizens.css' | asset_url | stylesheet_tag }}
+
+<div class="title-holder">
+  <h2 class="title-holder__title">{{ 'blog.more_articles' | t }}</h2>
+  <a href="{{ blog.url }}" class="title-holder__url button button--ghost">{{ 'blog.back_to_overview' | t }}</a>
+</div>
+
+<section class="featured-citizens {% if template.name == 'article' %}featured-citizens--article{% endif %}">
+  {% for article in blog.articles limit: 3 %}
+    <div class="featured-citizens__inner">
+      <div class="citizen" style="background-color: {{ article.metafields.custom.article_theme_color }}">
+        {% if article.image != blank %}
+          <a href="{{ article.url }}" class="image-holder">
+            {{
+              article.image
+              | image_url: width: original
+              | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+            }}
+          </a>
+        {% endif %}
+
+        <div class="text-holder">
+          <h3 class="text-holder__title">{{ article.title }}</h3>
+          <div>
+            <p>{{ article.excerpt_or_content | truncatewords: 8 }}</p>
+            <a href="{{ article.url }}">{{ 'blog.read_more' | t }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+<div class="overview-link">
+  <a href="{{ blog.url }}" class="overview-link__url button button--ghost">{{ 'blog.back_to_overview' | t }}</a>
+</div>

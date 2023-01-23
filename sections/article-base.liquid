@@ -1,28 +1,38 @@
-<div class="article-base__inner">
-  {% for fields in shop.metafields.acf_settings.article %}
-    <script>
-      console.log({{ fields | json }})
-    </script>
-    {% for field in fields[1] %}
-      {% case field.name %}
-        {% when 'hero_image' %}
-          {% render 'citizens-article-hero', settings: article.metafields.accentuate.hero_image %}
-        {% when 'citizens_intro' %}
-          {% render 'citizens-article-intro', settings: article.metafields.accentuate.citizens_intro %}
-        {% when 'citizens_text_block_biography' %}
-          {% render 'citizens-text-block-biography',
-            settings: article.metafields.accentuate.citizens_text_block_biography
-          %}
-        {% when 'citizens_horizontal_images' %}
-          {% render 'citizens-horizontal-images', images: article.metafields.accentuate.citizens_horizontal_images %}
-        {% when 'citizens_base_text' %}
-          {% render 'citizens-base-text', settings: article.metafields.accentuate.citizens_base_text %}
-        {% when 'citizens_base_image' %}
-          {% render 'citizens-base-image', image: article.metafields.accentuate.citizens_base_image %}
-      {% endcase %}
-    {% endfor %}
+<script src="{{- 'extender-section-fade.js' | asset_url -}}" defer></script>
+
+<section-fade class="article-base__inner">
+  {% assign sections = shop.metafields.acf_settings.article_layouts
+    | where: 'id', article.id
+    | first
+    | map: 'sections'
+    | where: 'visible'
+  %}
+  {% for section in sections %}
+    {% case section.name %}
+      {% when 'citizens_1' %}
+        {% render 'citizens-article-hero', settings: article.metafields.accentuate.hero_image %}
+      {% when 'citizens_intro_text' %}
+        {% render 'citizens-article-intro', settings: article.metafields.accentuate.citizens_intro %}
+      {% when 'text_with_biography' %}
+        {% render 'citizens-text-block-biography',
+          settings: article.metafields.accentuate.citizens_text_block_biography
+        %}
+      {% when 'citizens_horizontal_image_grid' %}
+        {% render 'citizens-horizontal-images',
+          images: article.metafields.accentuate.citizens_horizontal_images,
+          index: section.index
+        %}
+      {% when 'citizens_base_text_block' %}
+        {% render 'citizens-base-text', settings: article.metafields.accentuate.citizens_base_text %}
+      {% when 'citizens_base_image_block' %}
+        {% render 'citizens-base-image', image: article.metafields.accentuate.citizens_base_image %}
+      {% when 'spacer' %}
+        {% render 'citizens-spacer', image: article.metafields.accentuate.spacer %}
+    {% endcase %}
   {% endfor %}
-</div>
+
+  {% render 'citizens-more-articles' %}
+</section-fade>
 
 {% schema %}
 {

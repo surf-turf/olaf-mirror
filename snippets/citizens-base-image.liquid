@@ -2,12 +2,25 @@
 
 <section class="citizens-base-image">
   <div class="citizens-base-image__inner">
-    <div class="image-holder">
-      <img src="{{ image[0][0].src }}" alt="{{ image[0][0].alt }}" loading="lazy">
-    </div>
+    {% if article.metafields.accentuate.citizens_base_image != blank %}
+      {% for image in article.metafields.accentuate.citizens_base_image %}
+        <div class="image-holder">
+          {% if image[0].media_type == 'video' %}
+            <video class="image-holder__image" autoplay loop muted playsinline>
+              <source src="{{ image[0].src }}" type="{{ image[0].mime_type }}">
+            </video>
+          {% else %}
+            <img
+              src="{{ image[0].src }}"
+              alt="{{ image[0].alt }}"
+              loading="lazy"
+              width="{{ image[0].width }}"
+              height="{{ image[0].height }}"
+              class="image-holder__image"
+            >
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% endif %}
   </div>
 </section>
-
-<script>
-  console.log({{ image | json }})
-</script>

@@ -1,0 +1,19 @@
+{{ 'snippet-citizens-spacer.css' | asset_url | stylesheet_tag }}
+
+<section class="spacer">
+  <div class="spacer__inner">
+    {% if article.metafields.accentuate.spacer_image != blank %}
+      {% for image in article.metafields.accentuate.spacer_image %}
+        <div class="image-holder">
+          <img
+            src="{{ image[0].src }}"
+            alt="{{ image[0].alt }}"
+            width="{{ image[0].width }}"
+            height="{{ image[0].height }}"
+            loading="lazy"
+          >
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</section>
