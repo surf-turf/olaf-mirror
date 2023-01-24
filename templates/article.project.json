@@ -1,8 +1,43 @@
 {
   "sections": {
     "main": {
-      "type": "main-article"
+      "type": "main-article",
+      "settings": {
+      }
+    },
+    "b5bba6c5-e65e-49b9-881e-39d5ea695198": {
+      "type": "hero",
+      "blocks": {
+        "5426aab1-8a50-4c5a-929c-45a28d46fcf8": {
+          "type": "base",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/TAURILLON_MONOGRAM_MACASSAR_07_1.png",
+            "hero_title": "",
+            "hero_url": "",
+            "hero_base_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "5426aab1-8a50-4c5a-929c-45a28d46fcf8"
+      ],
+      "settings": {
+      }
+    },
+    "dae94539-c1ae-43f2-8fa8-5dae3c1a7f38": {
+      "type": "text-block",
+      "settings": {
+        "title": "SS23",
+        "content": "<p>Our design is contemporary yet timeless, classy yet functional. We only use carefully selected high-quality fabrics and manufacture as locally as possible. This means that most of our products are made in Germany and some pieces in Italy. Globally stocked in around 80 boutiques and department stores as well as in our own retail outposts, you can convince yourself of our outstanding quality and service.<\/p>",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "color": "#000000"
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main",
+    "b5bba6c5-e65e-49b9-881e-39d5ea695198",
+    "dae94539-c1ae-43f2-8fa8-5dae3c1a7f38"
+  ]
 }
