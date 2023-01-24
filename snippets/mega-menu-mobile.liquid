@@ -14,8 +14,11 @@
           <ul class="mega-list">
             {% for link in nav.links %}
               <li class="mega-list__item">
-                <button class="button button-l-1">{{ link.title }}</button>
+                {% if link.links.size <= 0 %}
+                  <a class="button button-l-1" href="{{ link.url }}">{{ link.title }}</a>
+                {% endif %}
                 {% if link.links.size > 0 %}
+                  <button class="button button-l-1">{{ link.title }}</button>
                   <ul class="child-list hidden">
                     {% for child_link in link.links %}
                       <li class="child-list__item">

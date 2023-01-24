@@ -4,4 +4,9 @@
   <div class="article-intro__inner wysiwyg">
     {{ settings.html }}
   </div>
+
+  <div class="article-intro__publisher">
+    <h3 class="date">{{ article.published_at | date: '%d %b %Y' }}</h3>
+    <h3 class="date">{{ article.author }}</h3>
+  </div>
 </section>
