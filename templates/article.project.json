@@ -26,6 +26,50 @@
     },
     "dae94539-c1ae-43f2-8fa8-5dae3c1a7f38": {
       "type": "text-block",
+      "blocks": {
+        "09ad7801-d0f4-40b8-9822-6782ea028fad": {
+          "type": "text",
+          "settings": {
+            "function_title": "Photography",
+            "name": "bleumode"
+          }
+        },
+        "1d1b5194-2dff-4b32-9438-4292095856aa": {
+          "type": "text",
+          "settings": {
+            "function_title": "styling",
+            "name": "crystal j kim"
+          }
+        },
+        "6cf8ca67-a015-4834-a156-eb8aebabd2b8": {
+          "type": "text",
+          "settings": {
+            "function_title": "producer",
+            "name": "tarifa productions"
+          }
+        },
+        "735b539d-b71a-41e6-ad9e-0542a438be4e": {
+          "type": "text",
+          "settings": {
+            "function_title": "hmu",
+            "name": "mabel boon"
+          }
+        },
+        "d17aba7d-eb49-4ef4-a416-5c542415b9ef": {
+          "type": "text",
+          "settings": {
+            "function_title": "Art direction",
+            "name": "paolo gattone"
+          }
+        }
+      },
+      "block_order": [
+        "09ad7801-d0f4-40b8-9822-6782ea028fad",
+        "1d1b5194-2dff-4b32-9438-4292095856aa",
+        "6cf8ca67-a015-4834-a156-eb8aebabd2b8",
+        "735b539d-b71a-41e6-ad9e-0542a438be4e",
+        "d17aba7d-eb49-4ef4-a416-5c542415b9ef"
+      ],
       "settings": {
         "title": "SS23",
         "content": "<p>Our design is contemporary yet timeless, classy yet functional. We only use carefully selected high-quality fabrics and manufacture as locally as possible. This means that most of our products are made in Germany and some pieces in Italy. Globally stocked in around 80 boutiques and department stores as well as in our own retail outposts, you can convince yourself of our outstanding quality and service.<\/p>",
