@@ -2,6 +2,18 @@
   "sections": {
     "main": {
       "type": "faq",
+      "blocks": {
+        "a3c19ee4-9443-46ac-bed2-11797a4b2bc1": {
+          "type": "text",
+          "settings": {
+            "question": "Shipping update for the UK",
+            "answer": "We are currently not able to ship our products to the UK. In the meantime, we are doing our best to make this possible again as soon as we can."
+          }
+        }
+      },
+      "block_order": [
+        "a3c19ee4-9443-46ac-bed2-11797a4b2bc1"
+      ],
       "settings": {
         "title": "orders & delivery"
       }
