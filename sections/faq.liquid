@@ -1,22 +1,25 @@
 {{ 'section-faq-item.css' | asset_url | stylesheet_tag }}
+<script src="{{- 'extender-faq-item.js' | asset_url -}}" defer></script>
 
-<div class="faq-item__inner">
-  {% if section.settings.title != blank %}
-    <button class="title-holder">
-      <h2>{{ section.settings.title }}</h2>
-      {% render 'icon-faq' %}
-    </button>
+<faq-item>
+  <div class="faq-item__inner">
+    {% if section.settings.title != blank %}
+      <button class="title-holder">
+        <h2>{{ section.settings.title }}</h2>
+        {% render 'icon-faq' %}
+      </button>
 
-    <article class="content-holder">
-      {% for block in section.blocks %}
-        <div class="content-holder__item">
-          <p class="question">{{ block.settings.question }}</p>
-          <p class="answer">{{ block.settings.answer }}</p>
-        </div>
-      {% endfor %}
-    </article>
-  {% endif %}
-</div>
+      <article class="content-holder">
+        {% for block in section.blocks %}
+          <div class="content-holder__item">
+            <p class="question">{{ block.settings.question }}</p>
+            <p class="answer">{{ block.settings.answer }}</p>
+          </div>
+        {% endfor %}
+      </article>
+    {% endif %}
+  </div>
+</faq-item>
 
 {% schema %}
 {
