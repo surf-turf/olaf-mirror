@@ -9,10 +9,18 @@
             "question": "Shipping update for the UK",
             "answer": "We are currently not able to ship our products to the UK. In the meantime, we are doing our best to make this possible again as soon as we can."
           }
+        },
+        "ca3ff5f6-be4b-42e7-9588-5b237a508df8": {
+          "type": "text",
+          "settings": {
+            "question": "Why haven’t I received my order information?",
+            "answer": "Sometimes, your confirmation may take a little longer when we have many orders. Please wait up to an hour for your confirmation to arrive at your"
+          }
         }
       },
       "block_order": [
-        "a3c19ee4-9443-46ac-bed2-11797a4b2bc1"
+        "a3c19ee4-9443-46ac-bed2-11797a4b2bc1",
+        "ca3ff5f6-be4b-42e7-9588-5b237a508df8"
       ],
       "settings": {
         "title": "orders & delivery"
