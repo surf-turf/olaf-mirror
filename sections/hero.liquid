@@ -17,24 +17,36 @@
           </div>
         {% endif %}
 
-        {% if block.settings.hero_image != blank %}
+        {% if block.settings.hero_video != blank %}
           <div class="image-holder">
-            {{
-              block.settings.hero_image
-              | image_url: width: 2048
-              | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
-            }}
+            <video class="image-holder__image" loop muted playsinline autoplay>
+              <source src="{{ block.settings.hero_video }}">
+            </video>
           </div>
+        {% else %}
+          {% if block.settings.hero_image != blank %}
+            <div class="image-holder">
+              {{
+                block.settings.hero_image
+                | image_url: width: 2048
+                | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+              }}
+            </div>
+          {% endif %}
         {% endif %}
       </div>
 
       <style>
         .js-title {
-          background-image: linear-gradient(to bottom, {{ block.settings.hero_text_color_image }} 0%, {{ block.settings.hero_text_color }} 0%);
+          background-image: linear-gradient(
+            to bottom,
+            {{block.settings.hero_text_color_image}} 0%,
+            {{block.settings.hero_text_color}} 0%
+          );
           background-size: 100% 100%;
           -webkit-text-fill-color: transparent;
           -webkit-background-clip: text;
-          }
+        }
       </style>
     {% endif %}
 
@@ -347,6 +359,11 @@
           "id": "hero_image",
           "type": "image_picker",
           "label": "Hero Image"
+        },
+        {
+          "id": "hero_video",
+          "type": "url",
+          "label": "Hero video"
         },
         {
           "id": "hero_title",

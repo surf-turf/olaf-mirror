@@ -1,50 +1,54 @@
-<section class="grid-of-two" style="grid-row: {{ block.settings.grid_position }}">
-  <div class="grid-of-two__inner">
-    <article
-      class="grid-of-two__item {% if block.settings.show_on_mobile == 'left' %}grid-of-two__item--mobile{% endif %}"
-      style="width: {{ block.settings.image_width }}%"
-    >
-      <a
-        {% if block.settings.url_left != blank %}
-          href="{{ section.settings.url_left }}"
-        {% endif %}
-        class="grid-of-two__link image-holder"
-      >
-        {% if block.settings.image_left != blank %}
-          {{
-            block.settings.image_left
-            | image_url: width: 1050
-            | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
-          }}
-        {% endif %}
-        {% if block.settings.title_left != blank %}
-          <div class="subtitle" style="color: {{ block.settings.color_1 }}">
-            {{ block.settings.title_left }}
-          </div>
-        {% endif %}
-      </a>
-    </article>
+{% assign position = block.settings.grid_position | plus: 0 %}
 
-    <article class="grid-of-two__item {% if block.settings.show_on_mobile == 'right' %}grid-of-two__item--mobile{% endif %}">
-      <a
-        {% if block.settings.url_right != blank %}
-          href="{{ section.settings.url_right }}"
-        {% endif %}
-        class="grid-of-two__link image-holder"
+{% if position < productIndex %}
+  <section class="grid-of-two" style="grid-row: {{ block.settings.grid_position }}">
+    <div class="grid-of-two__inner">
+      <article
+        class="grid-of-two__item {% if block.settings.show_on_mobile == 'left' %}grid-of-two__item--mobile{% endif %}"
+        style="width: {{ block.settings.image_width }}%"
       >
-        {% if block.settings.image_right != blank %}
-          {{
-            block.settings.image_right
-            | image_url: width: 1050
-            | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
-          }}
-        {% endif %}
-        {% if block.settings.title_right != blank %}
-          <div class="subtitle" style="color: {{ block.settings.color_2 }}">
-            {{ block.settings.title_right }}
-          </div>
-        {% endif %}
-      </a>
-    </article>
-  </div>
-</section>
+        <a
+          {% if block.settings.url_left != blank %}
+            href="{{ section.settings.url_left }}"
+          {% endif %}
+          class="grid-of-two__link image-holder"
+        >
+          {% if block.settings.image_left != blank %}
+            {{
+              block.settings.image_left
+              | image_url: width: 1050
+              | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+            }}
+          {% endif %}
+          {% if block.settings.title_left != blank %}
+            <div class="subtitle" style="color: {{ block.settings.color_1 }}">
+              {{ block.settings.title_left }}
+            </div>
+          {% endif %}
+        </a>
+      </article>
+
+      <article class="grid-of-two__item {% if block.settings.show_on_mobile == 'right' %}grid-of-two__item--mobile{% endif %}">
+        <a
+          {% if block.settings.url_right != blank %}
+            href="{{ section.settings.url_right }}"
+          {% endif %}
+          class="grid-of-two__link image-holder"
+        >
+          {% if block.settings.image_right != blank %}
+            {{
+              block.settings.image_right
+              | image_url: width: 1050
+              | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+            }}
+          {% endif %}
+          {% if block.settings.title_right != blank %}
+            <div class="subtitle" style="color: {{ block.settings.color_2 }}">
+              {{ block.settings.title_right }}
+            </div>
+          {% endif %}
+        </a>
+      </article>
+    </div>
+  </section>
+{% endif %}

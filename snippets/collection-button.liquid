@@ -61,7 +61,10 @@
     {% if product.metafields.custom.color_name != blank %}
       <p>{{ product.title | remove: '-' | remove: product.metafields.custom.color_name.value[0] }}</p>
     {% else %}
-      <p>{{ product.title }}</p>
+      <div class="text-holder__title">
+        <p>{{ product.title | split: '-' | first }}</p>
+        <p>{{ product.title | split: '-' | last }}</p>
+      </div>
     {% endif %}
     {% render 'product-price', product: product %}
   </div>

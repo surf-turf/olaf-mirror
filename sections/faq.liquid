@@ -1,0 +1,52 @@
+{{ 'section-faq-item.css' | asset_url | stylesheet_tag }}
+
+<div class="faq-item__inner">
+  {% if section.settings.title != blank %}
+    <button class="title-holder">
+      <h2>{{ section.settings.title }}</h2>
+      {% render 'icon-faq' %}
+    </button>
+
+    <article class="content-holder">
+      {% for block in section.blocks %}
+        <div class="content-holder__item">
+          <p class="question">{{ block.settings.question }}</p>
+          <p class="answer">{{ block.settings.answer }}</p>
+        </div>
+      {% endfor %}
+    </article>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "FAQ Item",
+  "tag": "section",
+  "class": "faq-item",
+  "settings": [
+    {
+      "id": "title",
+      "label": "title",
+      "type": "text"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Question",
+      "type": "text",
+      "settings": [
+        {
+          "id": "question",
+          "type": "text",
+          "label": "Question"
+        },
+        {
+          "id": "answer",
+          "label": "Answer",
+          "type": "textarea"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

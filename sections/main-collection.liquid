@@ -3,7 +3,6 @@
 {{ 'snippet-collection-grid-of-two.css' | asset_url | stylesheet_tag }}
 {{ 'snippet-collection-text.css' | asset_url | stylesheet_tag }}
 {{ 'snippet-collection-full-width-image.css' | asset_url | stylesheet_tag }}
-{{ 'snippet-collection-grid-of-two.css' | asset_url | stylesheet_tag }}
 <script src="{{- 'extender-main-collection.js' | asset_url -}}" defer></script>
 
 <main-collection>
@@ -13,19 +12,20 @@
   <div class="main-collection__inner">
     {% paginate collection.products by 1000 %}
       {% for product in collection.products %}
+        {% assign productIndex = forloop.index %}
         {% render 'collection-button', product: product %}
       {% endfor %}
       {%- liquid
         for block in section.blocks
           case block.type
             when 'grid-3'
-              render 'collection-grid-of-three', block: block
+              render 'collection-grid-of-three', block: block, productIndex: productIndex
             when 'grid-2'
-              render 'collection-grid-of-two', block: block
+              render 'collection-grid-of-two', block: block, productIndex: productIndex
             when 'text'
-              render 'collection-text-block', block: block
+              render 'collection-text-block', block: block, productIndex: productIndex
             when 'image'
-              render 'collection-full-width-image', block: block
+              render 'collection-full-width-image', block: block, productIndex: productIndex
             else
               break
           endcase
