@@ -1,7 +1,10 @@
 {
   "sections": {
     "main": {
-      "type": "faq"
+      "type": "faq",
+      "settings": {
+        "title": "orders & delivery"
+      }
     }
   },
   "order": [
