@@ -77,11 +77,69 @@
         "padding_bottom": 40,
         "color": "#000000"
       }
+    },
+    "8333d2d0-4787-4829-abd5-f8eb0c66cff7": {
+      "type": "project-image-grid",
+      "blocks": {
+        "a8c1bbce-e564-4cf9-9cd0-fa1c9234fe13": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/OH_FW19_C_02_580x_800761ad-c66a-4715-b294-001d3fe45ec0.png",
+            "url": ""
+          }
+        },
+        "ff0e9b83-4f2f-4ad4-a1bb-cd9fe6d7ba1e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/OH_FW19_C_03_580x_af5cf9a3-206a-4b56-8ecc-35d0ffacf76c.png",
+            "url": ""
+          }
+        },
+        "db78429b-9632-4cd4-a685-461653a343d0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/OH_FW19_C_05_580x_34bbb3f6-45b6-4f5e-a017-09ded9830d27.png",
+            "url": ""
+          }
+        },
+        "bd914829-6822-4b5f-8882-88edf1cfe943": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/OH_FW19_C_01_580x_2dbdc5fc-03b5-4aa2-a76c-2f5b4037ce2e.png",
+            "url": ""
+          }
+        },
+        "be9221bf-16df-4aad-843c-8654664b889e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/OH_FW19_C_02_580x_800761ad-c66a-4715-b294-001d3fe45ec0.png",
+            "url": ""
+          }
+        },
+        "f41b66f0-a6c0-4b71-8af6-8a65210b9bf3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/OH_FW19_C_05_580x_34bbb3f6-45b6-4f5e-a017-09ded9830d27.png",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "a8c1bbce-e564-4cf9-9cd0-fa1c9234fe13",
+        "ff0e9b83-4f2f-4ad4-a1bb-cd9fe6d7ba1e",
+        "db78429b-9632-4cd4-a685-461653a343d0",
+        "bd914829-6822-4b5f-8882-88edf1cfe943",
+        "be9221bf-16df-4aad-843c-8654664b889e",
+        "f41b66f0-a6c0-4b71-8af6-8a65210b9bf3"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
     "b5bba6c5-e65e-49b9-881e-39d5ea695198",
-    "dae94539-c1ae-43f2-8fa8-5dae3c1a7f38"
+    "dae94539-c1ae-43f2-8fa8-5dae3c1a7f38",
+    "8333d2d0-4787-4829-abd5-f8eb0c66cff7"
   ]
 }
