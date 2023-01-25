@@ -1,0 +1,32 @@
+{{ 'section-support-links.css' | asset_url | stylesheet_tag }}
+
+<div class="support-links__inner">
+  <ul class="support-links__list">
+    {% for link in section.settings.links.links %}
+      <li class="support-links__item">
+        <a href="{{ link.url }}" class="support-links__link">{{ link.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+{
+  "name": "Support links",
+  "tag": "section",
+  "class": "support-links",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "links",
+      "label": "Link list"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Support links",
+      "category": "Sections"
+    }
+  ]
+}
+{% endschema %}

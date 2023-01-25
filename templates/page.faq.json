@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "faq",
+      "type": "faq-item",
       "blocks": {
         "a3c19ee4-9443-46ac-bed2-11797a4b2bc1": {
           "type": "text",
