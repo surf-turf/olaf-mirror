@@ -32,10 +32,62 @@
         "title": "orders & delivery",
         "show_faq_title": true
       }
+    },
+    "88a350c1-b643-448a-9c3b-c8c40368dd74": {
+      "type": "faq-item",
+      "blocks": {
+        "ab2b0cc2-f182-41c7-9213-52a71469c0cd": {
+          "type": "text",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        }
+      },
+      "block_order": [
+        "ab2b0cc2-f182-41c7-9213-52a71469c0cd"
+      ],
+      "settings": {
+        "title": "Returns & refunds",
+        "show_faq_title": false
+      }
+    },
+    "348f3e38-8c7e-48b3-8a54-3145835d23da": {
+      "type": "faq-item",
+      "settings": {
+        "title": "Payments",
+        "show_faq_title": false
+      }
+    },
+    "e9b579d3-51e8-4933-aaa2-ccbce2a9a899": {
+      "type": "faq-item",
+      "settings": {
+        "title": "Accounts",
+        "show_faq_title": false
+      }
+    },
+    "cdf88629-23f6-4286-b8a6-b42c3e896803": {
+      "type": "faq-item",
+      "settings": {
+        "title": "Press",
+        "show_faq_title": false
+      }
+    },
+    "774726dc-7bd7-4c54-bcab-0a050a6d5c6f": {
+      "type": "faq-item",
+      "settings": {
+        "title": "Customer service",
+        "show_faq_title": false
+      }
     }
   },
   "order": [
     "support-links",
-    "main"
+    "main",
+    "88a350c1-b643-448a-9c3b-c8c40368dd74",
+    "348f3e38-8c7e-48b3-8a54-3145835d23da",
+    "e9b579d3-51e8-4933-aaa2-ccbce2a9a899",
+    "cdf88629-23f6-4286-b8a6-b42c3e896803",
+    "774726dc-7bd7-4c54-bcab-0a050a6d5c6f"
   ]
 }
