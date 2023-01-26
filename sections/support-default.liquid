@@ -1,12 +1,17 @@
 {{ 'section-support-default.css' | asset_url | stylesheet_tag }}
 
 <div class="support-default__inner">
-  <div class="title-holder">
-    <h1>{{ page.title }}</h1>
-  </div>
-  <div class="content-holder wysiwyg">
-    {{ page.content }}
-  </div>
+  {% comment %}
+    <div class="title-holder">
+      <h1>{{ page.title }}</h1>
+    </div>
+  {% endcomment %}
+  {% assign content = page.content | split: 'split-columns' %}
+  {% for column in content %}
+    <div class="content-holder wysiwyg">
+      {{ column }}
+    </div>
+  {% endfor %}
 </div>
 
 {% schema %}
