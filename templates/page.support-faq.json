@@ -1,7 +1,10 @@
 {
   "sections": {
     "support-links": {
-      "type": "support-links"
+      "type": "support-links",
+      "settings": {
+        "links": ""
+      }
     },
     "main": {
       "type": "faq-item",
@@ -26,7 +29,8 @@
         "ca3ff5f6-be4b-42e7-9588-5b237a508df8"
       ],
       "settings": {
-        "title": "orders & delivery"
+        "title": "orders & delivery",
+        "show_faq_title": true
       }
     }
   },
