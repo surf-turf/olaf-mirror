@@ -74,7 +74,9 @@
       "name": "Name",
       "title": "Or send a message. We will answer your request shortly",
       "full_name": "Full name",
-      "subject": "Subject"
+      "subject": "Subject",
+      "type_here": "Type here",
+      "submit": "Submit"
     },
     "title": "Contact",
     "address": "Address",

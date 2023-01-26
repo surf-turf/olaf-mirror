@@ -18,26 +18,32 @@
     {% endif %}
 
     {% if section.settings.opening_hours %}
-      <h2>{{ 'contact.opening_hours' }}</h2>
+      <h2>{{ 'contact.opening_hours' | t }}</h2>
       <div class="text-holder__hours">
         {{ section.settings.opening_hours }}
       </div>
     {% endif %}
   </div>
 
-  <div class="contact-form">
+  <div class="contact">
     <h2>{{ 'contact.contact_us' | t }}</h2>
     {% form 'contact' %}
       {{ form.errors | default_errors }}
 
       <div class="full-name">
         <label for="full-name">{{ 'contact.form.full_name' | t }} *</label>
-        <input type="text" name="contact[full-name]" id="full-name" required>
+        <input
+          type="text"
+          name="contact[full-name]"
+          id="full-name"
+          required
+          placeholder="{{ 'contact.form.type_here' | t }}"
+        >
       </div>
 
       <div class="email">
         <label for="email">{{ 'contact.form.email' | t }} *</label>
-        <input type="email" name="contact[email]" id="email" required>
+        <input type="email" name="contact[email]" id="email" required placeholder="{{ 'contact.form.type_here' | t }}">
       </div>
 
       <div class="subject">
@@ -55,7 +61,7 @@
       </div>
 
       <div class="submit">
-        <input type="submit" value="Create" class="button button--primary">
+        <input type="submit" value="{{ 'contact.form.submit' | t }}" class="button button--primary">
       </div>
     {% endform %}
   </div>
