@@ -1,1 +1,1 @@
-.main-article{margin-top:var(--header-offset-mobile)}@media(min-width: 768px){.main-article{margin-top:var(--header-offset)}}
+.main-article{margin-top:var(--header-offset-mobile)}@media(min-width: 1024px){.main-article{margin-top:var(--header-offset)}}

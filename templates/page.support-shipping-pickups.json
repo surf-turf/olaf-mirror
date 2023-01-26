@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "support-links": {
+      "type": "support-links",
+      "settings": {
+        "links": ""
+      }
+    },
+    "main": {
+      "type": "support-default"
+    }
+  },
+  "order": [
+    "support-links",
+    "main"
+  ]
+}
