@@ -3,8 +3,14 @@
 
 <faq-item>
   <div class="faq-item__inner">
+    {% if section.settings.show_faq_title %}
+      <div class="title">
+        <h1>{{ 'faq.title' | t }}</h1>
+      </div>
+    {% endif %}
+
     {% if section.settings.title != blank %}
-      <button class="title-holder">
+      <button class="title-holder {% if section.settings.show_faq_title %}title-holder--first{% endif %}">
         <h2>{{ section.settings.title }}</h2>
         {% render 'icon-faq' %}
       </button>
@@ -31,6 +37,11 @@
       "id": "title",
       "label": "title",
       "type": "text"
+    },
+    {
+      "id": "show_faq_title",
+      "label": "Show FAQ title",
+      "type": "checkbox"
     }
   ],
   "blocks": [
