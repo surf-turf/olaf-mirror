@@ -3,7 +3,7 @@
     "support-links": {
       "type": "support-links",
       "settings": {
-        "links": ""
+        "links": "support-links"
       }
     },
     "main": {
