@@ -72,9 +72,14 @@
       "message": "Message",
       "message_placeholder": "Please write your message here",
       "name": "Name",
-      "title": "Or send a message. We will answer your request shortly"
+      "title": "Or send a message. We will answer your request shortly",
+      "full_name": "Full name",
+      "subject": "Subject"
     },
-    "title": "Contact"
+    "title": "Contact",
+    "address": "Address",
+    "opening_hours": "Store opening hours",
+    "contact_us": "Contact us"
   },
   "faq": {
     "title": "Faq"

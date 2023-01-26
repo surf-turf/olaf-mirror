@@ -3,7 +3,7 @@
 <div class="support-links__inner">
   <ul class="support-links__list">
     {% for link in section.settings.links.links %}
-      <li class="support-links__item">
+      <li class="support-links__item {% if link.url contains page.handle %}support-links__item--active{% endif %}">
         <a href="{{ link.url }}" class="support-links__link">{{ link.title }}</a>
       </li>
     {% endfor %}

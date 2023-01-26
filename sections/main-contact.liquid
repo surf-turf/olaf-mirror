@@ -1,0 +1,100 @@
+{{ 'section-main-contact.css' | asset_url | stylesheet_tag }}
+
+<div class="contact__inner">
+  <div class="text-holder">
+    <h1>{{ 'contact.title' | t }}</h1>
+
+    {% if section.settings.contact_intro %}
+      <div class="text-holder__intro">
+        {{ section.settings.contact_intro }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.address != blank %}
+      <h2>{{ 'contact.address' | t }}</h2>
+      <div class="text-holder__address">
+        {{ section.settings.address }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.opening_hours %}
+      <h2>{{ 'contact.opening_hours' }}</h2>
+      <div class="text-holder__hours">
+        {{ section.settings.opening_hours }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="contact-form">
+    <h2>{{ 'contact.contact_us' | t }}</h2>
+    {% form 'contact' %}
+      {{ form.errors | default_errors }}
+
+      <div class="full-name">
+        <label for="full-name">{{ 'contact.form.full_name' | t }} *</label>
+        <input type="text" name="contact[full-name]" id="full-name" required>
+      </div>
+
+      <div class="email">
+        <label for="email">{{ 'contact.form.email' | t }} *</label>
+        <input type="email" name="contact[email]" id="email" required>
+      </div>
+
+      <div class="subject">
+        <label for="subject">{{ 'contact.form.subject' | t }} *</label>
+        <select name="contact[subject]" id="subject" required>
+          {% for block in section.blocks %}
+            <option>{{ block.settings.subject }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="message">
+        <label for="message">{{ 'contact.form.message' | t }}</label>
+        <textarea name="contact[body]" id="message"></textarea>
+      </div>
+
+      <div class="submit">
+        <input type="submit" value="Create" class="button button--primary">
+      </div>
+    {% endform %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Contact",
+  "tag": "section",
+  "class": "contact",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "contact_intro",
+      "label": "Contact intro"
+    },
+    {
+      "type": "richtext",
+      "id": "address",
+      "label": "Address"
+    },
+    {
+      "type": "richtext",
+      "id": "opening_hours",
+      "label": "Opening hours"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Subject option",
+      "type": "text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "subject",
+          "label": "Subject"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
