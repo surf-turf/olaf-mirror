@@ -15,22 +15,15 @@
 
 <product-button class="product-button slide">
   <a class="image-holder {% if product.images[1] != blank %}image-holder--hover{% endif %}" href="{{ product.url }}">
-    {{
-      product.images[0]
-      | image_url: width: 950
-      | image_tag:
-        sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
-        class: 'image-holder__image',
-        loading: 'lazy'
-    }}
-    {{
-      product.images[1]
-      | image_url: width: 950
-      | image_tag:
-        sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
-        class: 'image-holder__image--hover',
-        loading: 'lazy'
-    }}
+    {%- liquid
+      for image in product.images limit: 2
+        if forloop.index == 2
+          render 'picture', image: image, class: 'image-holder__image--hover'
+        else
+          render 'picture', image: image, class: 'image-holder__image'
+        endif
+      endfor
+    -%}
 
     {% if product.metafields.custom.color_dot_products != blank %}
       <div class="dot-grid">
