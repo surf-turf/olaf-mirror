@@ -13,7 +13,7 @@
     {% paginate collection.products by 1000 %}
       {% for product in collection.products %}
         {% assign productIndex = forloop.index %}
-        {% render 'collection-button', product: product %}
+        {% render 'collection-button', product: product, productIndex: productIndex %}
       {% endfor %}
       {%- liquid
         for block in section.blocks

@@ -44,6 +44,9 @@
             width="147"
             height="213"
             class="{{ class }}"
+            {% if productIndex > 4 %}
+              loading="lazy"
+            {% endif %}
           >
         </picture>
       {% endfor %}
@@ -51,9 +54,9 @@
       {%- liquid
         for image in product.images limit: 2
           if forloop.index == 2
-            render 'picture', image: image, class: 'image-holder__image--hover'
+            render 'picture', image: image, class: 'image-holder__image--hover', productIndex: productIndex
           else
-            render 'picture', image: image, class: 'image-holder__image'
+            render 'picture', image: image, class: 'image-holder__image', productIndex: productIndex
           endif
         endfor
       -%}

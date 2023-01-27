@@ -11,6 +11,8 @@
     width="147"
     height="213"
     class="{{ class }}"
-    loading="lazy"
+    {% if productIndex > 4 %}
+      loading="lazy"
+    {% endif %}
   >
 </picture>
