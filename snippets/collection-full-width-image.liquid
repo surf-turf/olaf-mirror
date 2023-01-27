@@ -15,7 +15,10 @@
           {{
             block.settings.image
             | image_url: width: 2048
-            | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+            | image_tag:
+              sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
+              class: 'image-holder__image',
+              loading: 'lazy'
           }}
         {% endif %}
       {% endif %}

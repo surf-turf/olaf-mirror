@@ -17,7 +17,10 @@
             {{
               block.settings.image_left
               | image_url: width: 1050
-              | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+              | image_tag:
+                sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
+                class: 'image-holder__image',
+                loading: 'lazy'
             }}
           {% endif %}
           {% if block.settings.title_left != blank %}
@@ -39,7 +42,10 @@
             {{
               block.settings.image_right
               | image_url: width: 1050
-              | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+              | image_tag:
+                sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
+                class: 'image-holder__image',
+                loading: 'lazy'
             }}
           {% endif %}
           {% if block.settings.title_right != blank %}
