@@ -48,30 +48,15 @@
         </picture>
       {% endfor %}
     {% else %}
-      {% if product.images[0] != blank %}
-        {{
-          product.images[0]
-          | image_url: width: 950
-          | image_tag:
-            sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
-            class: 'image-holder__image',
-            width: 500,
-            height: 740,
-            loading: 'lazy'
-        }}
-      {% endif %}
-      {% if product.images[1] != blank %}
-        {{
-          product.images[1]
-          | image_url: width: 950
-          | image_tag:
-            sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
-            class: 'image-holder__image--hover',
-            width: 500,
-            height: 740,
-            loading: 'lazy'
-        }}
-      {% endif %}
+      {%- liquid
+        for image in product.images limit: 2
+          if forloop.index == 2
+            render 'picture', image: image, class: 'image-holder__image--hover'
+          else
+            render 'picture', image: image, class: 'image-holder__image'
+          endif
+        endfor
+      -%}
     {% endif %}
 
     {% if product.metafields.custom.color_dot_products != blank %}
