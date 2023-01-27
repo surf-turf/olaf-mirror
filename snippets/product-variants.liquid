@@ -2,7 +2,7 @@
   {% for option in product.options_with_values %}
     <div class="option">
       <h3 class="option__title">{{ option.name }}</h3>
-      <fieldset class="option__fieldset">
+      <fieldset class="option__fieldset js-fieldset-desktop" data-fieldset-name="fieldset-{{ option.name }}">
         {% for value in option.values %}
           <label class="option__label">
             <input
