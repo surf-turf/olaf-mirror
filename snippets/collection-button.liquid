@@ -13,29 +13,65 @@
 
 <product-button class="collection-button">
   <a class="image-holder {% if product.images[1] != blank %}image-holder--hover{% endif %}" href="{{ product.url }}">
-    {% if product.images[0] != blank %}
-      {{
-        product.images[0]
-        | image_url: width: 950
-        | image_tag:
-          sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
-          class: 'image-holder__image',
-          width: 500,
-          height: 740,
-          loading: 'lazy'
-      }}
-    {% endif %}
-    {% if product.images[1] != blank %}
-      {{
-        product.images[1]
-        | image_url: width: 950
-        | image_tag:
-          sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
-          class: 'image-holder__image--hover',
-          width: 500,
-          height: 740,
-          loading: 'lazy'
-      }}
+    {% if collection.handle contains 'women' or collection.handle contains 'wmn' %}
+      {% assign imageArray = '' %}
+      {% for image in product.images %}
+        {% assign downcasedAlt = image.alt | downcase %}
+        {% if downcasedAlt == 'wmn' %}
+          {% assign imageUrl = image | image_url: width: original %}
+          {% assign imageArray = imageArray | append: imageUrl | append: ',' %}
+        {% endif %}
+      {% endfor %}
+
+      {% assign splittedImageArray = imageArray | split: ',' %}
+      {% for image in splittedImageArray limit: 2 %}
+        {% if forloop.index == 2 %}
+          {% assign class = 'image-holder__image--hover' %}
+        {% else %}
+          {% assign class = 'image-holder__image' %}
+        {% endif %}
+
+        <picture>
+          <source srcset="{{ image | append: '&width=1200' }}" media="(min-width: 1200px)">
+          <source srcset="{{ image | append: '&width=1100' }}" media="(min-width: 1100px)">
+          <source srcset="{{ image | append: '&width=1000' }}" media="(min-width: 1000px)">
+          <source srcset="{{ image | append: '&width=900' }}" media="(min-width: 900px)">
+          <source srcset="{{ image | append: '&width=800' }}" media="(min-width: 800px)">
+          <source srcset="{{ image | append: '&width=700' }}" media="(min-width: 700px)">
+          <img
+            src="{{ image | append: '&width=280' }}"
+            alt="{{ image.alt }}"
+            width="147"
+            height="213"
+            class="{{ class }}"
+          >
+        </picture>
+      {% endfor %}
+    {% else %}
+      {% if product.images[0] != blank %}
+        {{
+          product.images[0]
+          | image_url: width: 950
+          | image_tag:
+            sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
+            class: 'image-holder__image',
+            width: 500,
+            height: 740,
+            loading: 'lazy'
+        }}
+      {% endif %}
+      {% if product.images[1] != blank %}
+        {{
+          product.images[1]
+          | image_url: width: 950
+          | image_tag:
+            sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px',
+            class: 'image-holder__image--hover',
+            width: 500,
+            height: 740,
+            loading: 'lazy'
+        }}
+      {% endif %}
     {% endif %}
 
     {% if product.metafields.custom.color_dot_products != blank %}

@@ -8,6 +8,14 @@
       </li>
     {% endfor %}
   </ul>
+
+  <ul class="support-links__list">
+    {% for link in section.settings.policies.links %}
+      <li class="support-links__item {% if link.url contains page.handle %}support-links__item--active{% endif %}">
+        <a href="{{ link.url }}" class="support-links__link">{{ link.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 </div>
 
 {% schema %}
@@ -20,6 +28,11 @@
       "type": "link_list",
       "id": "links",
       "label": "Link list"
+    },
+    {
+      "type": "link_list",
+      "id": "policies",
+      "label": "Policies"
     }
   ],
   "presets": [
