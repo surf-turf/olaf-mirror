@@ -34,9 +34,6 @@
               <div class="values">
                 {% for filter_value in filter.values %}
                   <div class="values__value">
-                    <script>
-                      console.log({{ filter_value.param_name | json }})
-                    </script>
                     <input
                       type="checkbox"
                       name="{{ filter.label }}"

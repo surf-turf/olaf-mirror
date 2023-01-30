@@ -13,11 +13,19 @@
     <div class="product-media__inner">
       {% for media in product.media %}
         <div class="image-holder" data-index="{{ forloop.index0 }}">
-          {{
-            media
-            | image_url: width: original
-            | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
-          }}
+          {% if media.media_type == 'video' %}
+            <video autoplay muted playsinline loop class="image-holder__image">
+              {% for source in media.sources %}
+                <source src="{{ source.url }}" type="{{ source.mime_type }}">
+              {% endfor %}
+            </video>
+          {% else %}
+            {{
+              media
+              | image_url: width: original
+              | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+            }}
+          {% endif %}
         </div>
         {% if forloop.index == 1 %}
           <div class="mobile-form image-holder">

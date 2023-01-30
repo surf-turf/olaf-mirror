@@ -15,12 +15,26 @@
   data-variant-id="{{ item.id }}"
 >
   <a class="image-holder" href="{{ item.url }}">
-    {% if item.image != blank %}
-      {{
-        item.image
-        | image_url: width: original
-        | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
-      }}
+    {% if item.properties._gender == 'Women' %}
+      {% for image in item.product.media %}
+        {% if image.alt contains 'wmn' %}
+          {{
+            image
+            | image_url: width: original
+            | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+          }}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+
+    {% else %}
+      {% if item.image != blank %}
+        {{
+          item.image
+          | image_url: width: original
+          | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+        }}
+      {% endif %}
     {% endif %}
   </a>
 

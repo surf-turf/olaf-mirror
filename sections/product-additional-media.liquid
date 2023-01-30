@@ -2,9 +2,6 @@
 
 <div class="additional-media__inner">
   {% for media in product.metafields.custom.additional_media.value %}
-    <script>
-      console.log({{ product.metafields.custom.additional_media.value | json }})
-    </script>
     {% if media.media_type == 'video' %}
       <div class="image-holder">
         <video playsinline muted autoplay loop class="image-holder__image" loading="lazy">
