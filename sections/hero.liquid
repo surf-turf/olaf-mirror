@@ -60,14 +60,22 @@
           </div>
         {% endif %}
 
-        {% if block.settings.hero_image != blank %}
+        {% if block.settings.hero_video != blank %}
           <div class="image-holder">
-            {{
-              block.settings.hero_image
-              | image_url: width: 2048
-              | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
-            }}
+            <video class="image-holder__image" loop muted playsinline autoplay>
+              <source src="{{ block.settings.hero_video }}">
+            </video>
           </div>
+        {% else %}
+          {% if block.settings.hero_image != blank %}
+            <div class="image-holder">
+              {{
+                block.settings.hero_image
+                | image_url: width: 2048
+                | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+              }}
+            </div>
+          {% endif %}
         {% endif %}
 
         {% if block.settings.hero_video != blank %}
@@ -94,14 +102,22 @@
             {% endif %}
           </div>
 
-          {% if block.settings.hero_image_left != blank %}
+          {% if block.settings.hero_video_left != blank %}
             <div class="image-holder">
-              {{
-                block.settings.hero_image_left
-                | image_url: width: 2048
-                | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
-              }}
+              <video class="image-holder__image" loop muted playsinline autoplay>
+                <source src="{{ block.settings.hero_video_left }}">
+              </video>
             </div>
+          {% else %}
+            {% if block.settings.hero_image_left != blank %}
+              <div class="image-holder">
+                {{
+                  block.settings.hero_image_left
+                  | image_url: width: 2048
+                  | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+                }}
+              </div>
+            {% endif %}
           {% endif %}
         </a>
 
@@ -118,14 +134,22 @@
             </div>
           {% endif %}
 
-          {% if block.settings.hero_image_right != blank %}
+          {% if block.settings.hero_video_right != blank %}
             <div class="image-holder">
-              {{
-                block.settings.hero_image_right
-                | image_url: width: 2048
-                | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
-              }}
+              <video class="image-holder__image" loop muted playsinline autoplay>
+                <source src="{{ block.settings.hero_video_right }}">
+              </video>
             </div>
+          {% else %}
+            {% if block.settings.hero_image_right != blank %}
+              <div class="image-holder">
+                {{
+                  block.settings.hero_image_right
+                  | image_url: width: 2048
+                  | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+                }}
+              </div>
+            {% endif %}
           {% endif %}
         </a>
       </section>
@@ -181,14 +205,22 @@
             {% endif %}
           </div>
 
-          {% if block.settings.hero_image_left != blank %}
+          {% if block.settings.hero_video_left != blank %}
             <div class="image-holder">
-              {{
-                block.settings.hero_image_left
-                | image_url: width: 2048
-                | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
-              }}
+              <video class="image-holder__image" loop muted playsinline autoplay>
+                <source src="{{ block.settings.hero_video_left }}">
+              </video>
             </div>
+          {% else %}
+            {% if block.settings.hero_image_left != blank %}
+              <div class="image-holder">
+                {{
+                  block.settings.hero_image_left
+                  | image_url: width: 2048
+                  | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+                }}
+              </div>
+            {% endif %}
           {% endif %}
         </a>
 
@@ -203,14 +235,22 @@
             {% endif %}
           </div>
 
-          {% if block.settings.hero_image_mid != blank %}
+          {% if block.settings.hero_video_mid != blank %}
             <div class="image-holder">
-              {{
-                block.settings.hero_image_mid
-                | image_url: width: 2048
-                | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
-              }}
+              <video class="image-holder__image" loop muted playsinline autoplay>
+                <source src="{{ block.settings.hero_video_mid }}">
+              </video>
             </div>
+          {% else %}
+            {% if block.settings.hero_image_mid != blank %}
+              <div class="image-holder">
+                {{
+                  block.settings.hero_image_mid
+                  | image_url: width: 2048
+                  | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+                }}
+              </div>
+            {% endif %}
           {% endif %}
         </a>
 
@@ -229,14 +269,22 @@
             </div>
           {% endif %}
 
-          {% if block.settings.hero_image_right != blank %}
+          {% if block.settings.hero_video != blank %}
             <div class="image-holder">
-              {{
-                block.settings.hero_image_right
-                | image_url: width: 2048
-                | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
-              }}
+              <video class="image-holder__image" loop muted playsinline autoplay>
+                <source src="{{ block.settings.hero_video }}">
+              </video>
             </div>
+          {% else %}
+            {% if block.settings.hero_image != blank %}
+              <div class="image-holder">
+                {{
+                  block.settings.hero_image
+                  | image_url: width: 2048
+                  | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+                }}
+              </div>
+            {% endif %}
           {% endif %}
         </a>
       </section>
@@ -397,6 +445,11 @@
           "label": "Hero Title"
         },
         {
+          "id": "hero_video",
+          "type": "url",
+          "label": "Hero video"
+        },
+        {
           "id": "hero_url",
           "type": "url",
           "label": "hero url"
@@ -420,6 +473,11 @@
           "id": "hero_image_left",
           "type": "image_picker",
           "label": "Hero Image left"
+        },
+        {
+          "id": "hero_video_left",
+          "type": "url",
+          "label": "Hero video left"
         },
         {
           "id": "hero_title_left",
@@ -449,6 +507,11 @@
           "id": "hero_image_right",
           "type": "image_picker",
           "label": "Hero Image right"
+        },
+        {
+          "id": "hero_video_right",
+          "type": "url",
+          "label": "Hero video right"
         },
         {
           "id": "hero_title_right",
@@ -496,6 +559,11 @@
           "label": "Hero Image left"
         },
         {
+          "id": "hero_video_left",
+          "type": "image_picker",
+          "label": "Hero video left"
+        },
+        {
           "id": "hero_title_left",
           "type": "text",
           "label": "Hero title left"
@@ -525,6 +593,11 @@
           "label": "Hero Image middle"
         },
         {
+          "id": "hero_video_mid",
+          "type": "image_picker",
+          "label": "Hero video mid"
+        },
+        {
           "id": "hero_title_mid",
           "type": "text",
           "label": "Hero title middle"
@@ -552,6 +625,11 @@
           "id": "hero_image_right",
           "type": "image_picker",
           "label": "Hero Image right"
+        },
+        {
+          "id": "hero_video_right",
+          "type": "image_picker",
+          "label": "Hero video right"
         },
         {
           "id": "hero_title_right",
@@ -593,6 +671,11 @@
           "id": "hero_image",
           "type": "image_picker",
           "label": "Hero Image"
+        },
+        {
+          "id": "hero_video",
+          "type": "url",
+          "label": "Hero video"
         },
         {
           "id": "hero_title",
