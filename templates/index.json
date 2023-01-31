@@ -285,6 +285,31 @@
         "spacing_top": 0,
         "spacing_bottom": 0
       }
+    },
+    "4cf5d0d7-0a30-4c0e-8fc9-6f49b081354e": {
+      "type": "hero",
+      "blocks": {
+        "0d0eb324-96ca-45d3-811c-18b456dfc507": {
+          "type": "base_title_button",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/TAURILLON_MONOGRAM_MACASSAR_07_1.png",
+            "hero_video": "",
+            "hero_title": "pre-order now",
+            "hero_base_button_text": "Shop now",
+            "text-position": "mid mid--left",
+            "text-alignment": "align-center",
+            "hero_base_text_size": 88,
+            "button-position": false,
+            "hero_url": "",
+            "hero_base_text_color": "#efff3b"
+          }
+        }
+      },
+      "block_order": [
+        "0d0eb324-96ca-45d3-811c-18b456dfc507"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -294,6 +319,7 @@
     "e1fd0b58-60a3-497c-baf2-7cc5f2b4ba15",
     "fd9e16cf-c2dd-400b-ac4f-0cef8b1accc9",
     "2559746f-0b63-4e76-ac39-e111ac2a4894",
-    "7bad1b91-8eb7-4473-98c5-6eb0ff16366b"
+    "7bad1b91-8eb7-4473-98c5-6eb0ff16366b",
+    "4cf5d0d7-0a30-4c0e-8fc9-6f49b081354e"
   ]
 }
