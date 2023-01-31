@@ -3,27 +3,19 @@
     "c81d0255-774b-4d8a-9626-c692347a332b": {
       "type": "hero",
       "blocks": {
-        "f672a729-652f-4369-b897-f4753c2c4d6e": {
-          "type": "three_images",
+        "626eb87b-893a-411a-8a8c-f71441b9bc5d": {
+          "type": "sticky",
           "settings": {
-            "hero_title_left": "",
-            "hero_button_text_left": "",
-            "hero_url_left": "",
-            "hero_base_text_color_left": "",
-            "hero_title_mid": "",
-            "hero_button_text_mid": "",
-            "hero_url_mid": "",
-            "hero_base_text_color_mid": "",
-            "hero_title_right": "",
-            "hero_button_text_right": "",
-            "hero_url_right": "",
-            "hero_base_text_color_right": "",
-            "hero_three_width_animation": true
+            "hero_image": "shopify:\/\/shop_images\/TAURILLON_MONOGRAM_MACASSAR_07_1.png",
+            "hero_video": "",
+            "hero_title": "continuously inspired by countries, cultures and citizens.",
+            "hero_text_color": "#000000",
+            "hero_text_color_image": "#efff3b"
           }
         }
       },
       "block_order": [
-        "f672a729-652f-4369-b897-f4753c2c4d6e"
+        "626eb87b-893a-411a-8a8c-f71441b9bc5d"
       ],
       "settings": {
       }
