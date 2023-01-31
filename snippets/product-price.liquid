@@ -31,7 +31,7 @@
           </s>
         {% endif %}
 
-        <p class="price price--has-compare-price">
+        <p class="price {% if product.compare_at_price > 0 %}price--has-compare-price{% endif %}">
           {{ product.price | money_without_currency | remove: ',00' }}
           {{ cart.currency.iso_code }}
         </p>
