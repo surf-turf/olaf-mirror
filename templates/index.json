@@ -3,18 +3,27 @@
     "c81d0255-774b-4d8a-9626-c692347a332b": {
       "type": "hero",
       "blocks": {
-        "000164cf-262f-4c58-959f-4fbd655c50e6": {
-          "type": "sticky",
+        "f672a729-652f-4369-b897-f4753c2c4d6e": {
+          "type": "three_images",
           "settings": {
-            "hero_image": "shopify:\/\/shop_images\/09_1_2x_5efd6777-cf3f-4f80-96d0-9f2491830c0f.jpg",
-            "hero_title": "continuously inspired by countries, cultures and citizens.",
-            "hero_text_color": "#000000",
-            "hero_text_color_image": "#efff3b"
+            "hero_title_left": "",
+            "hero_button_text_left": "",
+            "hero_url_left": "",
+            "hero_base_text_color_left": "",
+            "hero_title_mid": "",
+            "hero_button_text_mid": "",
+            "hero_url_mid": "",
+            "hero_base_text_color_mid": "",
+            "hero_title_right": "",
+            "hero_button_text_right": "",
+            "hero_url_right": "",
+            "hero_base_text_color_right": "",
+            "hero_three_width_animation": true
           }
         }
       },
       "block_order": [
-        "000164cf-262f-4c58-959f-4fbd655c50e6"
+        "f672a729-652f-4369-b897-f4753c2c4d6e"
       ],
       "settings": {
       }
@@ -49,7 +58,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/kenny_eclipse_0330-1000x1500.jpg",
             "url": "shopify:\/\/products\/olaf-block-cap-ocean-green",
-            "height": "75%"
+            "height": "unset"
           }
         }
       },
