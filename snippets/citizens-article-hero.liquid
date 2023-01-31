@@ -7,7 +7,13 @@
         <source src="{{ settings[0].src }}" type="{{ settings[0].mime_type }}">
       </video>
     {% else %}
-      <img src="{{ settings[0].src }}" class="image-holder__image">
+      {% for setting in settings %}
+        {% if setting[0] != blank %}
+          <img src="{{ setting[0].src }}" class="image-holder__image">
+        {% else %}
+          <img src="{{ setting.src }}" class="image-holder__image">
+        {% endif %}
+      {% endfor %}
     {% endif %}
   </div>
   <div class="text-holder">

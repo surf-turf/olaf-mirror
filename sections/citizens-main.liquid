@@ -3,9 +3,15 @@
 
 <div class="citizens-main__inner">
   <div class="tags">
+    <a
+      href="{{ blog.url }}"
+      class="tags__item"
+    >
+      All
+    </a>
     {% for tag in blog.all_tags %}
       <a
-        href="{{ blog.url }}?tag={{ tag | url_encode }}"
+        href="{{ blog.url }}/tagged/{{ tag | url_encode }}"
         class="tags__item{% if tag == blog.tag %} tags__item--active{% endif %}"
       >
         {{- tag -}}

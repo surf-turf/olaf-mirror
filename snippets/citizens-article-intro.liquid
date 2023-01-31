@@ -2,7 +2,9 @@
 
 <section class="article-intro">
   <div class="article-intro__inner wysiwyg">
-    {{ settings.html }}
+    {% for setting in settings %}
+      {{ setting.html }}
+    {% endfor %}
   </div>
 
   <div class="article-intro__publisher">

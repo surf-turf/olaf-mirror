@@ -232,5 +232,10 @@
   },
   "article": {
     "biography": "Biography"
+  },
+  "newsletter": {
+    "close": "Close",
+    "input_placeholder": "Enter your email here",
+    "send": "Send"
   }
 }

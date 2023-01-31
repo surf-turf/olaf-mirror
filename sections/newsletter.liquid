@@ -1,0 +1,57 @@
+<div class="newsletter-modal__inner">
+  <div class="image-holder">
+    {{
+      section.settings.image
+      | image_url: width: 408
+      | image_tag: alt: section.settings.title, loading: 'lazy', class: 'image-holder__image'
+    }}
+    <button class="js-close">{{ 'newsletter.close' | t }}</button>
+  </div>
+
+  <div class="text-holder">
+    {% if section.settings.title != blank %}
+      <h2 class="text-holder__text">{{ section.settings.title }}</h2>
+    {% endif %}
+
+    <div class="text-holder__form">
+      {% if section.settings.description != blank %}
+        <p>{{ section.settings.description }}</p>
+      {% endif %}
+
+      <form>
+        <input type="text" placeholder="{{ 'newsletter.input_placeholder' | t }}">
+        <button>{{ 'newsletter.send' | t }}</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Newsletter modal",
+  "tag": "section",
+  "class": "newsletter-modal",
+  "settings": [
+    {
+      "id": "image",
+      "type": "image_picker",
+      "label": "Image"
+    },
+    {
+      "id": "title",
+      "type": "text",
+      "label": "Title"
+    },
+    {
+      "id": "description",
+      "type": "text",
+      "label": "Description"
+    },
+    {
+      "id": "timing",
+      "type": "number",
+      "label": "Activation time (in ms)"
+    }
+  ]
+}
+{% endschema %}
