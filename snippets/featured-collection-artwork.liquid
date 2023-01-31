@@ -1,14 +1,18 @@
 <a href="{{ settings.url }}" class="featured-collection-artwork">
   <article class="featured-collection-artwork__inner">
     <div class="image-holder">
-      {{ settings.image | image_url: width: original | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image' }}
+      {{
+        settings.image
+        | image_url: width: original
+        | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+      }}
     </div>
   </article>
 </a>
 
 <style>
   .featured-collection-artwork .image-holder {
-    height: {{ settings.height }}
+    height: {{ settings.collection_artwork_height }}
   }
 
   @media only screen and (max-width: 600px) {
