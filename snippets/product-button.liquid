@@ -45,8 +45,8 @@
     {% endif %}
 
     {% if product.metafields.custom.product_label != blank %}
-      {% assign text = product.metafields.custom.product_label | split '#' | first %}
-      {% assign color = product.metafields.custom.product_label | split '#' | last %}
+      {% assign text = product.metafields.custom.product_label | split: '#' | first %}
+      {% assign color = product.metafields.custom.product_label | split: '#' | last %}
 
       <div class="product-label" style="color: {{ color }}">
         <p>{{ text }}</p>
