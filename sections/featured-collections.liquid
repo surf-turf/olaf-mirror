@@ -3,7 +3,7 @@
 {{ 'snippet-featured-collection-artwork.css' | asset_url | stylesheet_tag }}
 
 <div class="featured-collections__inner">
-  {%- liquid 
+  {%- liquid
     for block in section.blocks
       case block.type
         when 'collection_card'
@@ -11,7 +11,8 @@
         when 'artwork'
           render 'featured-collection-artwork', settings: block.settings
       endcase
-    endfor -%}
+    endfor
+  -%}
 </div>
 
 <style>
@@ -98,7 +99,7 @@
           "label": "Url"
         },
         {
-          "id": "height",
+          "id": "collection_artwork_height",
           "type": "select",
           "label": "Height",
           "options": [

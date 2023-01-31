@@ -1,8 +1,8 @@
 <picture>
-  <source srcset="{{ image | image_url: width: 630 }}" media="(min-width: 2500px)">
-  <source srcset="{{ image | image_url: width: 493 }}" media="(min-width: 2000px)">
-  <source srcset="{{ image | image_url: width: 372 }}" media="(min-width: 1500px)">
-  <source srcset="{{ image | image_url: width: 293 }}" media="(min-width: 1200px)">
+  <source srcset="{{ image | image_url: width: 1260 }}" media="(min-width: 2500px)">
+  <source srcset="{{ image | image_url: width: 986 }}" media="(min-width: 2000px)">
+  <source srcset="{{ image | image_url: width: 746 }}" media="(min-width: 1500px)">
+  <source srcset="{{ image | image_url: width: 586 }}" media="(min-width: 1200px)">
   <img
     src="{{ image | image_url: width: 280 }}"
     alt="{{ image.alt }}"
@@ -11,6 +11,7 @@
     class="{{ class }}"
     {% if productIndex > 4 %}
       loading="lazy"
+      decoding="async"
     {% endif %}
   >
 </picture>

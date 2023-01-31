@@ -1,5 +1,6 @@
 {% assign position = block.settings.grid_position | plus: 0 %}
-{% if position < productIndex %}
+{% assign devidedIndex = productIndex | divided_by: 2 %}
+{% if position < devidedIndex %}
   <div class="grid-of-three" style="grid-row: {{ block.settings.grid_position }}">
     <div class="grid-of-three__title">
       <h2>{{ block.settings.title }}</h2>

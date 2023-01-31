@@ -36,7 +36,7 @@
                       href="{{ grand_child_link.url }}"
                       class="link-item__url"
                       style="color: #{{ color }}"
-                      data-featured-image="{{ featured_image | image_url: width: 491 }}"
+                      data-featured-image="{% if featured_image != blank %}{{ featured_image | image_url: width: 491 }}{% endif %}"
                     >
                       {{- grand_child_link.title | remove: color | remove: '#' -}}
                     </a>

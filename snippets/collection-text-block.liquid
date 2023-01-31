@@ -1,13 +1,18 @@
-<section class="text-block" style="grid-row: {{ block.settings.grid_position }}">
-  <article class="text-block__inner" style="padding: {{ block.settings.grid_padding }}px 0">
-    {% if block.settings.title != blank %}
-      <h2 style="color: {{ block.settings.color }}">{{ block.settings.title }}</h2>
-    {% endif %}
+{% assign position = block.settings.grid_position | plus: 0 %}
+{% assign devidedIndex = productIndex | divided_by: 2 %}
 
-    {% if block.settings.content != blank %}
-      <div style="color: {{ block.settings.color }}">
-        {{ block.settings.content }}
-      </div>
-    {% endif %}
-  </article>
-</section>
+{% if position < devidedIndex %}
+  <section class="text-block" style="grid-row: {{ block.settings.grid_position }}">
+    <article class="text-block__inner" style="padding: {{ block.settings.grid_padding }}px 0">
+      {% if block.settings.title != blank %}
+        <h2 style="color: {{ block.settings.color }}">{{ block.settings.title }}</h2>
+      {% endif %}
+
+      {% if block.settings.content != blank %}
+        <div style="color: {{ block.settings.color }}">
+          {{ block.settings.content }}
+        </div>
+      {% endif %}
+    </article>
+  </section>
+{% endif %}

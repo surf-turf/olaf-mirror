@@ -80,6 +80,15 @@
         {% endfor %}
       </div>
     {% endif %}
+
+    {% if product.metafields.custom.product_label != blank %}
+      {% assign text = product.metafields.custom.product_label | split: '#' | first %}
+      {% assign color = product.metafields.custom.product_label | split: '#' | last %}
+
+      <div class="product-label" style="background-color: #{{ color | remove: ']' | remove: '"' }}">
+        <p>{{ text | remove: '[' | remove: '"' }}</p>
+      </div>
+    {% endif %}
   </a>
   <div class="text-holder">
     {% if product.metafields.custom.color_name != blank %}

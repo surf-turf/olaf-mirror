@@ -1,6 +1,7 @@
 {% assign position = block.settings.grid_position | plus: 0 %}
+{% assign devidedIndex = productIndex | divided_by: 2 %}
 
-{% if position < productIndex %}
+{% if position < devidedIndex %}
   <section class="grid-of-two" style="grid-row: {{ block.settings.grid_position }}">
     <div class="grid-of-two__inner">
       <article
