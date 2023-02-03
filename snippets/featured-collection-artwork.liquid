@@ -1,11 +1,13 @@
 <a href="{{ settings.url }}" class="featured-collection-artwork">
   <article class="featured-collection-artwork__inner">
     <div class="image-holder">
-      {{
-        settings.image
-        | image_url: width: original
-        | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
-      }}
+      {% if settings.image != blank %}
+        {{
+          settings.image
+          | image_url: width: original
+          | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+        }}
+      {% endif %}
     </div>
   </article>
 </a>

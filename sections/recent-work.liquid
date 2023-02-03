@@ -15,11 +15,13 @@
         class="image-holder"
         style="height: {{ block.settings.height }}"
       >
-        {{
-          block.settings.image
-          | image_url: width: 1050
-          | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
-        }}
+        {% if block.settings.image != blank %}
+          {{
+            block.settings.image
+            | image_url: width: 1050
+            | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
+          }}
+        {% endif %}
 
         {% if block.settings.description != blank %}
           <div
