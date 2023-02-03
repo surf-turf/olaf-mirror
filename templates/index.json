@@ -6,7 +6,7 @@
         "626eb87b-893a-411a-8a8c-f71441b9bc5d": {
           "type": "sticky",
           "settings": {
-            "hero_image": "shopify:\/\/shop_images\/TAURILLON_MONOGRAM_MACASSAR_07_1.png",
+            "hero_image": "shopify:\/\/shop_images\/09_1.jpg",
             "hero_video": "",
             "hero_title": "continuously inspired by countries, cultures and citizens.",
             "hero_text_color": "#000000",
@@ -26,7 +26,7 @@
         "b1e6caad-e7e9-4a0f-9a88-6dfd34558868": {
           "type": "collection_card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/2210120-Social28_1.png",
+            "image": "shopify:\/\/shop_images\/221129-Website-Banner-Puffer0.jpg",
             "name": "Women",
             "label_desktop": "New Arrivals",
             "label_mobile": "New",
@@ -37,7 +37,7 @@
         "711a9a5e-2e5f-4c47-8ede-c2c825062ecc": {
           "type": "collection_card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/OH_FW19_C_01_580x_2dbdc5fc-03b5-4aa2-a76c-2f5b4037ce2e.png",
+            "image": "shopify:\/\/shop_images\/2210120-PUFFER-Website.jpg",
             "name": "Mens",
             "label_desktop": "New Arrivals",
             "label_mobile": "New",
@@ -48,9 +48,8 @@
         "7ed2a76a-153d-4b09-b98d-b53a831264e0": {
           "type": "artwork",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ignant-photography-david-paige-04-1440x960_1.png",
             "url": "shopify:\/\/products\/olaf-block-cap-ocean-green",
-            "height": "unset"
+            "collection_artwork_height": "75%"
           }
         }
       },
@@ -82,7 +81,6 @@
         "92d1e949-0c5e-468e-bfa5-a068c0417569": {
           "type": "artwork",
           "settings": {
-            "image": "shopify:\/\/shop_images\/kenny_eclipse_0356-1000x1500.jpg",
             "url": "shopify:\/\/products\/olaf-aop-puffer-jacket-multi",
             "height": "50%",
             "show_mobile": false
@@ -91,7 +89,6 @@
         "a17c144a-81a2-4e59-978f-b75bbdce9c21": {
           "type": "image_text",
           "settings": {
-            "image": "shopify:\/\/shop_images\/kenny_eclipse_0330-1000x1500_781cdb5f-adf3-43ad-8282-7425546fe53b.jpg",
             "url": "",
             "height": "75%",
             "color": "#fcfafa",
@@ -127,7 +124,6 @@
           "type": "text",
           "settings": {
             "text": "<p>Virgil Nicholas<br\/><br\/>With honesty, well-being, and respect for oneself and,<br\/><a href=\"\/pages\/store\" title=\"Bilderdijkstraat 112-114\">Read more...<\/a><\/p>",
-            "image": "shopify:\/\/shop_images\/kenny_eclipse_0330-1000x1500_781cdb5f-adf3-43ad-8282-7425546fe53b.jpg",
             "background_color": "#ddd26d",
             "color": "#000000"
           }
@@ -136,7 +132,6 @@
           "type": "text",
           "settings": {
             "text": "<p>Virgil Nicholas<br\/><br\/>With honesty, well-being, and respect for oneself and,<br\/><a href=\"\/blogs\/projects\" title=\"Projects\">Read more...<\/a><\/p>",
-            "image": "shopify:\/\/shop_images\/wynona_knit_vest_0507-1000x1500.jpg",
             "background_color": "#7a9dc6",
             "color": "#000000"
           }
@@ -145,7 +140,6 @@
           "type": "text",
           "settings": {
             "text": "<p>Virgil Nicholas<br\/><br\/>With honesty, well-being, and respect for oneself and, Read more...<\/p>",
-            "image": "shopify:\/\/shop_images\/kenny_eclipse_0330-1000x1500.jpg",
             "background_color": "#f16539",
             "color": "#000000"
           }
@@ -165,7 +159,6 @@
         "e80a7574-1de2-42b5-a0fd-c8c7d9123636": {
           "type": "image-block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/kenny_eclipse_0330-1000x1500_781cdb5f-adf3-43ad-8282-7425546fe53b.jpg",
             "text": "Heavyweight Studio Hoodie In various colours",
             "button_text": "Explore more",
             "button_url": "shopify:\/\/products\/olaf-block-cap-ocean-green",
@@ -178,7 +171,6 @@
         "8190fe4c-01c8-4c03-b54a-697772c97e10": {
           "type": "image-block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/09_1_2x_5efd6777-cf3f-4f80-96d0-9f2491830c0f.jpg",
             "text": "Heavyweight Studio Hoodie",
             "button_text": "explore more",
             "button_url": "shopify:\/\/pages\/faq",
@@ -234,7 +226,6 @@
         "cd65f1e5-8370-438d-a3dd-342358f91b4a": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/OH_FW19_C_01_580x_2dbdc5fc-03b5-4aa2-a76c-2f5b4037ce2e.png",
             "url": "",
             "description": "Heavyweight Studio Hoodie",
             "text_padding_left": true,
@@ -244,7 +235,6 @@
         "f1381c68-2840-4bba-8a35-3db1a613b5f7": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/OH_FW19_C_05_580x_34bbb3f6-45b6-4f5e-a017-09ded9830d27.png",
             "url": "shopify:\/\/products\/3-pack-olaf-italic-socks-black",
             "description": "Heavyweight Studio Hoodie",
             "text_padding_left": false,
@@ -254,7 +244,6 @@
         "36eaec82-8e93-4320-917d-96ba18b7c2dd": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Virgil_Illum_21_59292_11721753-961a-4fc3-89f9-e46a0628ec1b_1.png",
             "url": "shopify:\/\/pages\/brand",
             "description": "Heavyweight Studio Hoodie",
             "text_padding_left": true,
@@ -264,7 +253,6 @@
         "58138375-147f-4873-8144-751a6e7702a7": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Screenshot_2022-11-15_at_09.56_2_f73f6ac5-b6ee-4334-9bbf-683b6132ee89.png",
             "url": "shopify:\/\/pages\/brand",
             "description": "Heavyweight Studio Hoodie",
             "text_padding_left": true,
@@ -292,7 +280,6 @@
         "0d0eb324-96ca-45d3-811c-18b456dfc507": {
           "type": "base_title_button",
           "settings": {
-            "hero_image": "shopify:\/\/shop_images\/TAURILLON_MONOGRAM_MACASSAR_07_1.png",
             "hero_video": "",
             "hero_title": "pre-order now",
             "hero_base_button_text": "Shop now",
