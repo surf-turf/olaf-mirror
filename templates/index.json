@@ -82,6 +82,7 @@
         "92d1e949-0c5e-468e-bfa5-a068c0417569": {
           "type": "artwork",
           "settings": {
+            "image": "shopify:\/\/shop_images\/221124-Repurpose-Website-Banner.jpg",
             "url": "shopify:\/\/products\/olaf-aop-puffer-jacket-multi",
             "height": "50%",
             "show_mobile": false
@@ -90,16 +91,17 @@
         "a17c144a-81a2-4e59-978f-b75bbdce9c21": {
           "type": "image_text",
           "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_1686_2_0a6162c1-de6f-4dd2-b7ba-f1b8581fa7cf.jpg",
             "url": "",
             "height": "75%",
-            "color": "#fcfafa",
+            "color": "#ffffff",
             "title_mobile": "",
             "button_1_text_mobile": "",
             "button_1_url_mobile": "",
             "button_2_text_mobile": "",
             "button_2_url_mobile": "",
-            "title_desktop": "",
-            "button_1_text_desktop": "",
+            "title_desktop": "fadf",
+            "button_1_text_desktop": "fad",
             "button_1_url_desktop": "",
             "button_2_text_desktop": "",
             "button_2_url_desktop": "",
@@ -125,6 +127,7 @@
           "type": "text",
           "settings": {
             "text": "<p>Virgil Nicholas<br\/><br\/>With honesty, well-being, and respect for oneself and,<br\/><a href=\"\/pages\/store\" title=\"Bilderdijkstraat 112-114\">Read more...<\/a><\/p>",
+            "image": "shopify:\/\/shop_images\/IMG_2656.jpg",
             "background_color": "#ddd26d",
             "color": "#000000"
           }
@@ -133,6 +136,7 @@
           "type": "text",
           "settings": {
             "text": "<p>Virgil Nicholas<br\/><br\/>With honesty, well-being, and respect for oneself and,<br\/><a href=\"\/blogs\/projects\" title=\"Projects\">Read more...<\/a><\/p>",
+            "image": "shopify:\/\/shop_images\/221129-Website-Banner-Puffer1.jpg",
             "background_color": "#7a9dc6",
             "color": "#000000"
           }
@@ -141,6 +145,7 @@
           "type": "text",
           "settings": {
             "text": "<p>Virgil Nicholas<br\/><br\/>With honesty, well-being, and respect for oneself and, Read more...<\/p>",
+            "image": "shopify:\/\/shop_images\/2210120-Social22.jpg",
             "background_color": "#f16539",
             "color": "#000000"
           }
@@ -160,6 +165,7 @@
         "e80a7574-1de2-42b5-a0fd-c8c7d9123636": {
           "type": "image-block",
           "settings": {
+            "image": "shopify:\/\/shop_images\/men_705df103-8af7-4906-9064-2125a26e7862.jpg",
             "text": "Heavyweight Studio Hoodie In various colours",
             "button_text": "Explore more",
             "button_url": "shopify:\/\/products\/olaf-block-cap-ocean-green",
@@ -172,6 +178,7 @@
         "8190fe4c-01c8-4c03-b54a-697772c97e10": {
           "type": "image-block",
           "settings": {
+            "image": "shopify:\/\/shop_images\/2210120-Social27.jpg",
             "text": "Heavyweight Studio Hoodie",
             "button_text": "explore more",
             "button_url": "shopify:\/\/pages\/faq",
