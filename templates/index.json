@@ -234,6 +234,7 @@
         "cd65f1e5-8370-438d-a3dd-342358f91b4a": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_2656.jpg",
             "url": "",
             "description": "Heavyweight Studio Hoodie",
             "text_padding_left": true,
@@ -243,6 +244,7 @@
         "f1381c68-2840-4bba-8a35-3db1a613b5f7": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_3382_3.jpg",
             "url": "shopify:\/\/products\/3-pack-olaf-italic-socks-black",
             "description": "Heavyweight Studio Hoodie",
             "text_padding_left": false,
@@ -252,6 +254,7 @@
         "36eaec82-8e93-4320-917d-96ba18b7c2dd": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_7853_2.jpg",
             "url": "shopify:\/\/pages\/brand",
             "description": "Heavyweight Studio Hoodie",
             "text_padding_left": true,
@@ -261,10 +264,21 @@
         "58138375-147f-4873-8144-751a6e7702a7": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_4433.jpg",
             "url": "shopify:\/\/pages\/brand",
             "description": "Heavyweight Studio Hoodie",
             "text_padding_left": true,
             "height": "75%"
+          }
+        },
+        "af2e82ca-b427-4a51-ade6-3f01a7f8560f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_8304_2.jpg",
+            "url": "",
+            "description": "",
+            "text_padding_left": false,
+            "height": "100%"
           }
         }
       },
@@ -272,7 +286,8 @@
         "cd65f1e5-8370-438d-a3dd-342358f91b4a",
         "f1381c68-2840-4bba-8a35-3db1a613b5f7",
         "36eaec82-8e93-4320-917d-96ba18b7c2dd",
-        "58138375-147f-4873-8144-751a6e7702a7"
+        "58138375-147f-4873-8144-751a6e7702a7",
+        "af2e82ca-b427-4a51-ade6-3f01a7f8560f"
       ],
       "settings": {
         "title": "continuously inspired by countries, cultures and citizens.",
