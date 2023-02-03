@@ -11,10 +11,10 @@
       "header": {
         "type": "header",
         "settings": {
-          "header_nav": "main-menu",
-          "mobile_nav": "main-menu",
-          "mobile_nav_sub": "bottom-menu",
-          "image": "shopify:\/\/shop_images\/kenny_eclipse_0356-1000x1500.jpg"
+          "header_nav": "s-t-main-menu",
+          "mobile_nav": "s-t-main-menu",
+          "mobile_nav_sub": "s-t-test-bottom-menu-mobile",
+          "image": "shopify:\/\/shop_images\/230104-SS23-Cecilia-Reeve-HEADER.jpg"
         }
       },
       "footer": {
