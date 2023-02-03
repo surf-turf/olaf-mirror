@@ -1,7 +1,23 @@
 {{ 'section-main-login.css' | asset_url | stylesheet_tag }}
 
 <div class="main-login__inner">
+  <h1>{{ 'account.customer_login' | t }}</h1>
 
+  {% form 'customer_login' %}
+    {{ form.errors | default_errors }}
+
+    <div class="email">
+      <input type="email" name="customer[email]" placeholder="{{ 'account.email' | t }}">
+    </div>
+
+    <div class="password">
+      <input type="password" name="customer[password]" placeholder="{{ 'account.password' | t }}">
+    </div>
+
+    <div class="submit">
+      <input type="submit" value="Sign in">
+    </div>
+  {% endform %}
 </div>
 <!-- end .main-login__inner -->
 

@@ -3,8 +3,7 @@
     "support-links": {
       "type": "support-links",
       "settings": {
-        "links": "information",
-        "policies": "footer"
+        "links": "support-links"
       }
     },
     "main": {

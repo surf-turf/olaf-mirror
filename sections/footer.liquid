@@ -11,13 +11,13 @@
             <a href="{{ item.url }}" class="nav__link">{{ item.title }}</a>
           </li>
 
-          {% for child_link in item.links %}
-            <div class="children">
+          <div class="children">
+            {% for child_link in item.links %}
               <li class="nav__child">
                 <a href="{{ child_link.url }}">{{ child_link.title }}</a>
               </li>
-            </div>
-          {% endfor %}
+            {% endfor %}
+          </div>
         </ul>
       {% endfor %}
     </div>

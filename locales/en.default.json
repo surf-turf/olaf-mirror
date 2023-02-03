@@ -50,7 +50,8 @@
     "total": "Total",
     "total_discount": "Total discount",
     "view_addresses": "View addresses",
-    "zip": "Postal code"
+    "zip": "Postal code",
+    "customer_login": "Customer login"
   },
   "collection": {
     "clear_all_filters": "Clear all filters",
