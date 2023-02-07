@@ -1,7 +1,37 @@
 {{ 'section-main-register.css' | asset_url | stylesheet_tag }}
 
 <div class="main-register__inner">
+  {% form 'create_customer' %}
+    {{ form.errors | default_errors }}
 
+    <div class="first-name">
+      <input type="text" name="customer[first_name]" placeholder="{{ 'account.first_name' | t }}">
+    </div>
+
+    <div class="last-name">
+      <input type="text" name="customer[last_name]" placeholder="{{ 'account.last_name' | t }}">
+    </div>
+
+    <div class="email">
+      <input type="email" name="customer[email]" placeholder="{{ 'account.email' | t }}">
+    </div>
+
+    <div class="password">
+      <input type="password" name="customer[password]" placeholder="{{ 'account.password' | t }}">
+    </div>
+
+    <div class="submit">
+      <input type="submit" value="{{ 'account.sign_up' | t }}" class="button-row__submit">
+    </div>
+
+    <div class="url">
+      <a href="{{ routes.account_addresses_url }}">{{ 'account.returning_customer' | t }}</a>
+    </div>
+
+    <div class="submit">
+      <input type="submit" value="{{ 'account.login' | t }}" class="button-row__signup">
+    </div>
+  {% endform %}
 </div>
 <!-- end .main-register__inner -->
 

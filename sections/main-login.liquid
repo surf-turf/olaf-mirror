@@ -14,10 +14,24 @@
       <input type="password" name="customer[password]" placeholder="{{ 'account.password' | t }}">
     </div>
 
-    <div class="submit">
-      <input type="submit" value="Sign in">
+    <div class="button-row">
+      <div class="submit">
+        <input type="submit" value="{{ 'account.login' | t }}" class="button-row__submit">
+      </div>
+
+      <div class="submit">
+        <a href="{{ routes.account_register_url }}" class="button-row__signup">
+          {{- 'account.sign_up' | t -}}
+        </a>
+      </div>
+    </div>
+
+    <div class="forgot-password">
+      <button class="js-forgot" type="button">{{ 'account.forgot_password_title' | t }}</button>
     </div>
   {% endform %}
+
+  {% render 'reset-password-form' %}
 </div>
 <!-- end .main-login__inner -->
 

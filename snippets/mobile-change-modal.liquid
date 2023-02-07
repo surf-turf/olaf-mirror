@@ -1,10 +1,6 @@
 <script src="{{- 'extender-mobile-change.js' | asset_url -}}" defer></script>
 {{ 'snippet-mobile-change-modal.css' | asset_url | stylesheet_tag }}
 
-<script>
-  console.log({{ item.variant | json }})
-</script>
-
 <mobile-change-modal>
   <div class="mobile-change-modal">
     {% for option in item.product.options_with_values %}

@@ -24,7 +24,7 @@
     "first_name": "First name",
     "forgot_password": "forgot_password",
     "forgot_password_description": "Reset it here!",
-    "forgot_password_title": "Forgotten your password?",
+    "forgot_password_title": "Forgot your password?",
     "fulfillment_status": "Fulfillment Status",
     "help": "Help",
     "last_name": "Last name",
@@ -51,7 +51,13 @@
     "total_discount": "Total discount",
     "view_addresses": "View addresses",
     "zip": "Postal code",
-    "customer_login": "Customer login"
+    "customer_login": "Customer login",
+    "sign_up": "Sign up",
+    "returning_customer": "Returning customer",
+    "create_account": "Create account",
+    "stay_up_to_date": "STAY UP TO DATE ON THE LATEST RELEASES, COLLABORATIONS AND DEALS.",
+    "reset_info": "We will send you an email to reset your password.",
+    "reset_password": "Reset your password"
   },
   "collection": {
     "clear_all_filters": "Clear all filters",
