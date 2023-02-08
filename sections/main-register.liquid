@@ -1,6 +1,9 @@
 {{ 'section-main-register.css' | asset_url | stylesheet_tag }}
 
 <div class="main-register__inner">
+  <h1>{{ 'account.create_account' | t }}</h1>
+  <h2>{{ 'account.stay_up_to_date' | t }}</h2>
+
   {% form 'create_customer' %}
     {{ form.errors | default_errors }}
 
