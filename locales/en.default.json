@@ -57,7 +57,13 @@
     "create_account": "Create account",
     "stay_up_to_date": "STAY UP TO DATE ON THE LATEST RELEASES, COLLABORATIONS AND DEALS.",
     "reset_info": "We will send you an email to reset your password.",
-    "reset_password": "Reset your password"
+    "reset_password": "Reset your password",
+    "order_history": "Order history",
+    "order_number": "Order number",
+    "date": "Date",
+    "delivery": "Delivery",
+    "status": "Status",
+    "welcome": "Welcome back"
   },
   "collection": {
     "clear_all_filters": "Clear all filters",

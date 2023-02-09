@@ -1,7 +1,71 @@
 {{ 'section-main-account.css' | asset_url | stylesheet_tag }}
+<script src="{{- 'extender-order-details.js' | asset_url -}}" defer></script>
 
 <div class="main-account__inner">
+  <div class="support-nav">
+    <div class="support-nav__welcome">
+      <p>{{ 'account.welcome' | t }}</p>
+      <p>{{ customer.name }}</p>
+    </div>
 
+    {% if section.settings.links != blank %}
+      <ul class="support-nav__list">
+        {% for link in section.settings.links.links %}
+          <li class="support-nav__list-item">
+            <a
+              href="{{ link.url }}"
+              class="support-nav__link {% if link.handle == page.handle %}support-nav__link--active{% endif %}"
+            >
+              {{- link.title -}}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+
+  <div class="content">
+    <div class="title-holder">
+      <h1 class="title-holder__title">{{ 'account.order_history' | t }}</h1>
+    </div>
+
+    <div class="table-holder">
+      <div class="table-holder__head">
+        <p>{{ 'account.order_number' | t }}</p>
+        <p>{{ 'account.date' | t }}</p>
+        <p>{{ 'account.total' | t }}</p>
+        <p>{{ 'account.payment_status' | t }}</p>
+        <p>{{ 'account.delivery' | t }}</p>
+      </div>
+
+      {% for order in customer.orders %}
+        <div class="table-holder__row">
+          <order-details>
+            <div class="summary">
+              <p class="summary__id">{{ order.id }}</p>
+              <p class="summary__created">{{ order.created_at | date: '%a, %b %d, %y' }}</p>
+              <p class="summary__price">{{ order.total_price | money }}</p>
+              <p class="summary__financial-status">{{ order.financial_status }}</p>
+              <p class="summary__status {% if order.fulfillment_status == 'fulfilled' %}summary__status--green{% else %}summary__status--yellow{% endif %}">
+                {{ order.fulfillment_status }}
+              </p>
+              <div class="expand">
+                {% render 'icon-plus' %}
+              </div>
+            </div>
+            <div class="details">
+              <p class="details__status">{{ 'account.status' | t }}: {{ order.fulfillment_status }}</p>
+              <div class="products">
+                {% for line_item in order.line_items %}
+                  {% render 'product-button', product: line_item.product %}
+                {% endfor %}
+              </div>
+            </div>
+          </order-details>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
 <!-- end .main-account__inner -->
 
@@ -9,6 +73,13 @@
 {
   "name": "Main account",
   "tag": "section",
-  "class": "main-account"
+  "class": "main-account",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "links",
+      "label": "Link"
+    }
+  ]
 }
 {% endschema %}
