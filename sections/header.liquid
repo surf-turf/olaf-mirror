@@ -5,13 +5,16 @@
   <div class="header__inner header__inner--desktop">
     <div class="logo">
       <a href="{{ shop.url }}" class="logo__url">
-        <h1 class="logo__title">Olaf</h1>
+        {% if section.settings.logo != blank %}
+          {% comment %} <h1 class="logo__title">Olaf</h1> {% endcomment %}
+          {{ section.settings.logo | image_url: width: 35 | image_tag: section.settings.logo.alt, 'logo__image' }}
+        {% endif %}
       </a>
     </div>
     <!-- end .logo -->
 
     <ul class="menu">
-      {% render 'mega-menu-desktop', nav: linklists[section.settings.header_nav] %}
+      {% render 'mega-menu-desktop', nav: linklists[section.settings.header_nav], blocks: section.blocks %}
       {% render 'cart-counter' %}
     </ul>
 
@@ -70,6 +73,30 @@
       "id": "image",
       "type": "image_picker",
       "label": "Menu image"
+    },
+    {
+      "id": "logo",
+      "type": "image_picker",
+      "label": "Logo"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Menu image",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Menu image"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Belongs to link:",
+          "info": "This needs to be an exact match with the link title in the menu for the image to show."
+        }
+      ]
     }
   ]
 }

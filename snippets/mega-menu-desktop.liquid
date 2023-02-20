@@ -31,6 +31,12 @@
                     {% assign featured_image = collections[grand_child_link.handle].featured_image %}
                   {% endif %}
 
+                  {% for block in blocks %}
+                    {% if block.settings.link == grand_child_link.url %}
+                      {% assign featured_image = block.settings.image | image_url: width: 491 %}
+                    {% endif %}
+                  {% endfor %}
+
                   <li class="link-item">
                     <a
                       href="{{ grand_child_link.url }}"

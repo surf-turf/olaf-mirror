@@ -3,7 +3,6 @@
     "main": {
       "type": "main-account",
       "settings": {
-        "links": "info-sidebar"
       }
     }
   },
