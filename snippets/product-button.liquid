@@ -15,14 +15,21 @@
 
 <product-button class="product-button slide">
   <a class="image-holder {% if product.images[1] != blank %}image-holder--hover{% endif %}" href="{{ product.url }}">
+    {% comment %}
+      {%- liquid
+        for image in product.images limit: 2
+          if forloop.index == 2
+            render 'picture', image: image, class: 'image-holder__image--hover'
+          else
+            render 'picture', image: image, class: 'image-holder__image'
+          endif
+        endfor
+      -%}
+    {% endcomment %}
+
     {%- liquid
-      for image in product.images limit: 2
-        if forloop.index == 2
-          render 'picture', image: image, class: 'image-holder__image--hover'
-        else
-          render 'picture', image: image, class: 'image-holder__image'
-        endif
-      endfor
+      render 'picture', image: product.images[0], class: 'image-holder__image', productIndex: productIndex
+      render 'picture', image: product.images[2], class: 'image-holder__image--hover', productIndex: productIndex
     -%}
 
     {% if product.metafields.custom.color_dot_products != blank %}

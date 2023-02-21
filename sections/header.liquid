@@ -32,12 +32,18 @@
     </search-form>
 
     <div class="menu-toggle">
-      <button class="js-toggle">
-        {{ 'header.menu' | t -}}
-        {%- if cart.item_count > 0 %}
-          <span>({{ cart.item_count }})</span>
-        {% endif -%}
-      </button>
+      {%- if cart.item_count > 0 %}
+        <button>
+          <div class="js-toggle">{{ 'header.menu' | t -}}</div>
+          {%- if cart.item_count > 0 %}
+            <span class="js-cart-toggle">({{ cart.item_count }})</span>
+          {% endif -%}
+        </button>
+      {% else %}
+        <button class="js-toggle">
+          {{ 'header.menu' | t -}}
+        </button>
+      {% endif -%}
     </div>
   </div>
   <!-- end .header__inner -->

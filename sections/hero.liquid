@@ -254,8 +254,8 @@
           {% endif %}
         </a>
 
-        <a href="{{ block.settings.hero_url_left }}" class="right">
-          {% if block.settings.hero_title_left != blank %}
+        <a href="{{ block.settings.hero_url_right }}" class="right">
+          {% if block.settings.hero_title_right != blank %}
             <div class="text-holder">
               {% if block.settings.hero_title_right != blank %}
                 <p class="text-holder__title text-holder__title--three-right">{{ block.settings.hero_title_right }}</p>
@@ -269,17 +269,17 @@
             </div>
           {% endif %}
 
-          {% if block.settings.hero_video != blank %}
+          {% if block.settings.hero_video_right != blank %}
             <div class="image-holder">
               <video class="image-holder__image" loop muted playsinline autoplay>
-                <source src="{{ block.settings.hero_video }}">
+                <source src="{{ block.settings.hero_video_right }}">
               </video>
             </div>
           {% else %}
-            {% if block.settings.hero_image != blank %}
+            {% if block.settings.hero_image_right != blank %}
               <div class="image-holder">
                 {{
-                  block.settings.hero_image
+                  block.settings.hero_image_right
                   | image_url: width: 2048
                   | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
                 }}
@@ -349,11 +349,11 @@
                 {{ block.settings.hero_title }}
               </h2>
             {% endif %}
-            {% if block.settings['button-position'] == false %}
+            {% if block.settings['button-position'] == false and block.settings.hero_base_button_text != blank %}
               <button class="button button--ghost button--base-text">{{ block.settings.hero_base_button_text }}</button>
             {% endif %}
           </div>
-          {% if block.settings['button-position'] %}
+          {% if block.settings['button-position'] and block.settings.hero_base_button_text != blank %}
             <button class="button button--ghost button--base-text button-bottom">
               {{ block.settings.hero_base_button_text }}
             </button>
@@ -755,7 +755,7 @@
           "id": "hero_base_text_size",
           "type": "range",
           "min": 8,
-          "max": 120,
+          "max": 300,
           "step": 8,
           "unit": "px",
           "default": 32,

@@ -153,7 +153,7 @@
     "size": "Size",
     "sold_out": "Sold out",
     "variant": "Variants",
-    "add_to_bag": "Add to bag",
+    "add_to_bag": "Add to cart",
     "information": "Information",
     "size_chart": "Size chart",
     "shipping": "Shipping",
@@ -162,6 +162,7 @@
     "return_policy": "Return policy",
     "you_may_also_like": "You may also like",
     "pair_it_with": "Pair it with",
+    "style_with": "Style with",
     "variants": {
       "size": "Size",
       "size_guide": "Size guide"

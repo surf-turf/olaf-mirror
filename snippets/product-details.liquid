@@ -18,7 +18,18 @@
         <article class="product-details__information collapsable">
           <button class="collapsable__button">{{ block.settings.title }}</button>
           <div class="collapsable__content">
-            <p>{{ block.settings.product_information }}</p>
+            {% if block.settings.product_information contains '|' %}
+              {% assign splittedInfo = block.settings.product_information | split: '|' %}
+
+              <div class="table">
+                {% for info in splittedInfo %}
+                  <p>{{ info }}</p>
+                {% endfor %}
+              </div>
+
+            {% else %}
+              <p>{{ block.settings.product_information }}</p>
+            {% endif %}
           </div>
         </article>
       {% endif %}
