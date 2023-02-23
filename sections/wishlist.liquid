@@ -1,0 +1,18 @@
+<div class="wishlist__inner">
+  {% for item in customer.metafields.surfturf.wishlist %}
+    <script>
+      console.log({{ item | json }})
+    </script>
+    {% assign wishlistProduct = all_products[item] %}
+    {% render 'product-button', product: wishlistProduct %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Wishlist",
+  "tag": "section",
+  "class": "wishlist",
+  "settings": []
+}
+{% endschema %}

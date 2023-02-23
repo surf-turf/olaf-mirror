@@ -10,6 +10,7 @@
 
 {%- comment -%}Include the product form html extender{%- endcomment -%}
 <script src="{{- 'extender-product-form.js' | asset_url -}}" defer></script>
+<script src="{{- 'extender-wishlist.js' | asset_url -}}" defer></script>
 
 <product-form class="product-info__form product-form {{ viewport }}">
   {%- form 'product',
@@ -63,9 +64,22 @@
         <div class="loading"></div>
       </button>
 
-      <div class="js-wishlist">
-        {% render 'icon-wishlist' %}
-      </div>
+      {% assign product_in_wishlist = false %}
+      {% assign stringId = product.id | escape %}
+      {% if customer.metafields.surfturf.wishlist.value contains stringId %}
+        {% assign product_in_wishlist = true %}
+      {% endif %}
+
+      <wishlist-handler>
+        <div
+          class="js-wishlist"
+          data-customer="{{ customer.id }}"
+          data-current-ids="{{ customer.metafields.surfturf.wishlist | escape }}"
+          data-product="{{ product.id }}"
+        >
+          {% render 'icon-wishlist', active: product_in_wishlist %}
+        </div>
+      </wishlist-handler>
     </div>
     <!-- end .button--add-to-bag -->
   {%- endform -%}
