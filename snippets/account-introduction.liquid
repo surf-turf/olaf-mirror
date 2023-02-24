@@ -1,0 +1,16 @@
+<script src="{{- 'extender-account-introduction.js' | asset_url -}}" defer></script>
+{{ 'snippet-account-introduction.css' | asset_url | stylesheet_tag }}
+
+<account-introduction>
+  <section class="account-introduction">
+    <div class="account-introduction__inner">
+      <h1 class="title">
+        {{ 'account.welcome' | t }}
+        {% assign letterArray = customer.name | split: '' %}
+        {% for letter in letterArray %}
+          <span id="{{ forloop.index }}">{{ letter }}</span>
+        {% endfor %}
+      </h1>
+    </div>
+  </section>
+</account-introduction>
