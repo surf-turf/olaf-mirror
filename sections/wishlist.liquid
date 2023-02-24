@@ -1,11 +1,54 @@
-<div class="wishlist__inner">
-  {% for item in customer.metafields.surfturf.wishlist %}
-    <script>
-      console.log({{ item | json }})
-    </script>
-    {% assign wishlistProduct = all_products[item] %}
-    {% render 'product-button', product: wishlistProduct %}
-  {% endfor %}
+{{ 'section-wishlist.css' | asset_url | stylesheet_tag }}
+{{ 'snippet-collection-button.css' | asset_url | stylesheet_tag }}
+<script src="{{- 'extender-wishlist-item.js' | asset_url -}}" defer></script>
+
+<div class="wishlist__inner" data-section-id="{{ section.id }}">
+  <h2 class="wishlist__title">{{ 'sections.account.wishlist' | t }}</h2>
+  <div
+    class="wishlist-grid"
+    data-current-items="{{ customer.metafields.surfturf.wishlist.value | escape }}"
+    data-customer="{{ customer.id }}"
+  >
+    {% for item in customer.metafields.surfturf.wishlist.value %}
+      {% assign productId = item | plus: 0 %}
+      {% assign wishlistProduct = '' %}
+      {% assign wishlistVariant = '' %}
+
+      {% for collection in collections %}
+        {% for product in collection.products %}
+          {% for variant in product.variants %}
+            {% if variant.id == productId %}
+              {% assign wishlistProduct = variant.product %}
+              {% assign wishlistVariant = variant %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      {% endfor %}
+
+      <wishlist-item class="wishlist-item">
+        <div class="js-delete">
+          {% render 'icon-close' %}
+        </div>
+        {% render 'collection-button', product: wishlistProduct %}
+        <div class="variant-data">
+          {% assign colorName = wishlistVariant.product.title | split: '-' | last %}
+          <div class="variant-data__line">
+            <p>{{ 'product.size' | t }}</p>
+            <p>{{ wishlistVariant.title }}</p>
+          </div>
+          <div class="variant-data__line">
+            <p>{{ 'product.color' | t }}</p>
+            <p>
+              {{ colorName }}
+            </p>
+          </div>
+        </div>
+        <button class="button button--primary js-add" data-variant-id="{{ wishlistVariant.id }}">
+          {{ 'product.add_to_bag' | t }}
+        </button>
+      </wishlist-item>
+    {% endfor %}
+  </div>
 </div>
 
 {% schema %}

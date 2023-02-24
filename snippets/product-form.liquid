@@ -65,23 +65,29 @@
       </button>
 
       {% assign product_in_wishlist = false %}
-      {% assign stringId = product.id | escape %}
-      {% if customer.metafields.surfturf.wishlist.value contains stringId %}
-        {% assign product_in_wishlist = true %}
-      {% endif %}
+      {% for variant in product.variants %}
+        {% assign stringId = variant.id | escape %}
+        {% if customer.metafields.surfturf.wishlist.value contains stringId %}
+          {% assign product_in_wishlist = true %}
+        {% endif %}
+      {% endfor %}
 
       <wishlist-handler>
         <div
           class="js-wishlist"
           data-customer="{{ customer.id }}"
           data-current-ids="{{ customer.metafields.surfturf.wishlist | escape }}"
-          data-product="{{ product.id }}"
+          data-product="{{ product.selected_or_first_available_variant.id }}"
         >
           {% render 'icon-wishlist', active: product_in_wishlist %}
         </div>
       </wishlist-handler>
     </div>
     <!-- end .button--add-to-bag -->
+
+    <div class="error-text">
+      {{ 'product.wishlist_error_html' | t }}
+    </div>
   {%- endform -%}
 
   {% render 'product-details', blocks: blocks %}

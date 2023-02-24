@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "support-links": {
+      "type": "support-links",
+      "settings": {
+        "links": "support-links"
+      }
+    },
+    "main": {
+      "type": "wishlist"
+    }
+  },
+  "order": ["support-links","main"]
+}

@@ -163,6 +163,7 @@
     "you_may_also_like": "You may also like",
     "pair_it_with": "Pair it with",
     "style_with": "Style with",
+    "wishlist_error_html": "<p>There was an error while adding this product to your wishlist. Please make sure you are logged into your <a href='/account/login'>account.</a></p>",
     "variants": {
       "size": "Size",
       "size_guide": "Size guide"
@@ -179,7 +180,8 @@
       "email_me": "Email me",
       "name": "Name",
       "register": "Register",
-      "password_confirmation": "Password confirmation"
+      "password_confirmation": "Password confirmation",
+      "wishlist": "Wishlist"
     },
     "blog": {
       "read_more": "Read more"
