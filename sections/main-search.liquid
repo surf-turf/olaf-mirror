@@ -26,7 +26,11 @@
     <div class="product-grid">
       {% paginate search.results by 1000 %}
         {% for product in search.results %}
-          {% render 'collection-button', product: product %}
+          {% if product.template_suffix == 'citizens' or product.template_suffix == 'projects' %}
+            {% render 'search-article-button', article: product %}
+          {% else %}
+            {% render 'collection-button', product: product %}
+          {% endif %}
         {% endfor %}
       {% endpaginate %}
     </div>

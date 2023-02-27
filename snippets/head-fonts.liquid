@@ -43,8 +43,9 @@
     name|weight|file_name
   {% endcomment %}
   {%- capture fonts -%}
-F Grotesk Demi|600|F-Grotesk-Demi.woff
-{%- endcapture -%}
+  F Grotesk Demi|600|F-Grotesk-Demi.woff
+  F Grotesk Thin|400|F-Grotesk-Thin.woff2
+  {%- endcapture -%}
 
   {% liquid
     assign fonts = fonts | split: ','

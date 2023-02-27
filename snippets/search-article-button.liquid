@@ -1,0 +1,10 @@
+{{ 'snippet-search-blog-button.css' | asset_url | stylesheet_tag }}
+
+<article class="search-blog-button">
+  <a href="{{ article.url }}" class="search-blog-button__inner">
+    <div class="image-holder">
+      {{ article.image | image_url: width: 1050 | image_tag: class: 'image-holder__image' }}
+    </div>
+    <p>{{ article.title }}</p>
+  </a>
+</article>

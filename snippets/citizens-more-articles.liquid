@@ -4,9 +4,13 @@
   <h2 class="title-holder__title">{{ 'blog.more_articles' | t }}</h2>
   <a href="{{ blog.url }}" class="title-holder__url button button--ghost">{{ 'blog.back_to_overview' | t }}</a>
 </div>
+{% assign featured_amount = 3 %}
+{% if article.metafields.custom.featured_article_amount != blank %}
+  {% assign featured_amount = article.metafields.custom.featured_article_amount %}
+{% endif %}
 
-<section class="featured-citizens {% if template.name == 'article' %}featured-citizens--article{% endif %}">
-  {% for article in blog.articles limit: 3 %}
+<section class="featured-citizens featured-citizens--{{ article.metafields.custom.featured_article_amount }} {% if template.name == 'article' %}featured-citizens--article{% endif %}">
+  {% for article in blog.articles limit: featured_amount %}
     <div class="featured-citizens__inner">
       <div class="citizen" style="background-color: {{ article.metafields.custom.article_theme_color }}">
         {% if article.image != blank %}
@@ -20,12 +24,20 @@
         {% endif %}
 
         <div class="text-holder">
-          <h3 class="text-holder__title">{{ article.title }}</h3>
+          <h3 class="text-holder__title">{{ article.title | remove: 'ØLÅF CITIZENS:' | remove: 'ØLÅF CITIZENS :' }}</h3>
           <div>
-            <p>{{ article.excerpt_or_content | truncatewords: 5 | strip_html }}</p>
+            <p>{{ article.excerpt_or_content | truncatewords: 10 | strip_html }}</p>
             <a href="{{ article.url }}">{{ 'blog.read_more' | t }}</a>
           </div>
         </div>
+
+        <div class="tags">
+          {% for tag in article.tags %}
+            <a class="button button--tag" href="{{ blog.url }}?tag={{ tag | url_encode }}">{{ tag }}</a>
+          {% endfor %}
+        </div>
+
+        <p class="date">{{ article.published_at | date: '%d %b %Y' }}</p>
       </div>
     </div>
   {% endfor %}

@@ -1,5 +1,5 @@
 <article class="citizens-article">
-  <div class="citizens-article__inner">
+  <div class="citizens-article__inner {% if article.metafields.custom.article_overview_image_width != blank %}citizens-article__inner--{{ article.metafields.custom.article_overview_image_width | downcase }}{%  endif %}">
     {% if article.image != blank %}
       <a class="image-holder" href="{{ article.url }}">
         {{
@@ -13,7 +13,7 @@
       <div>
         <h2 class="text-holder__title">{{ article.title }}</h2>
         <p class="text-holder__content">
-          {{ article.excerpt }}
+          {{ article.excerpt_or_content | strip_html | truncate: 200 }}
           <a href="{{ article.url }}">{{ 'blog.read_more' | t }}</a>
         </p>
         <div class="text-holder__tags">
