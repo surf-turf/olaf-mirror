@@ -4,7 +4,7 @@
 <hero-section>
   {% for block in section.blocks %}
     {% if block.type == 'sticky' %}
-      <div class="hero__inner hero__inner--sticky">
+      <div class="hero__inner hero__inner--{{ section.id }} hero__inner--sticky">
         {% if block.settings.hero_title != blank %}
           <div class="text-holder">
             <h2
@@ -14,6 +14,12 @@
             >
               {{ block.settings.hero_title }}
             </h2>
+
+            {% if block.settings.hero_sticky_button_text != blank %}
+              <a href="{{ block.settings.hero_sticky_button_url }}" class="button button--ghost sticky-cta">
+                {{- block.settings.hero_sticky_button_text -}}
+              </a>
+            {% endif %}
           </div>
         {% endif %}
 
@@ -28,7 +34,7 @@
             <div class="image-holder">
               {{
                 block.settings.hero_image
-                | image_url: width: 2048
+                | image_url: width: original
                 | image_tag: sizes: '(min-width: 750px) calc(100vw - 22rem), 1920px', class: 'image-holder__image'
               }}
             </div>
@@ -47,11 +53,16 @@
           -webkit-text-fill-color: transparent;
           -webkit-background-clip: text;
         }
+
+        .sticky-cta {
+          border: 1px solid {{ block.settings.hero_text_color_image }};
+          color: {{ block.settings.hero_text_color_image }};
+        }
       </style>
     {% endif %}
 
     {% if block.type == 'base' %}
-      <a href="{{ block.settings.hero_url }}" class="hero__inner hero__inner--base">
+      <a href="{{ block.settings.hero_url }}" class="hero__inner hero__inner--{{ section.id }} hero__inner--base">
         {% if block.settings.hero_title != blank %}
           <div class="text-holder">
             <h2 class="text-holder__title" style="color: {{ block.settings.hero_base_text_color }}">
@@ -89,7 +100,7 @@
     {% if block.type == 'two_images' %}
       <section
         href="{{ block.settings.hero_url_left }}"
-        class="hero__inner hero__inner--two-images {% if block.settings.hero_two_width_animation %}width-animation{% endif %}"
+        class="hero__inner hero__inner--{{ section.id }} hero__inner--two-images {% if block.settings.hero_two_width_animation %}width-animation{% endif %}"
       >
         <a href="{{ block.settings.hero_url_left }}" class="left">
           <div class="text-holder">
@@ -190,7 +201,7 @@
     {% if block.type == 'three_images' %}
       <section
         href="{{ block.settings.hero_url_left }}"
-        class="hero__inner hero__inner--three-images {% if block.settings.hero_three_width_animation %}width-animation{% endif %}"
+        class="hero__inner hero__inner--{{ section.id }} hero__inner--three-images {% if block.settings.hero_three_width_animation %}width-animation{% endif %}"
       >
         <a href="{{ block.settings.hero_url_left }}" class="left">
           <div class="text-holder">
@@ -334,6 +345,8 @@
           border: 1px solid {{ block.settings.hero_base_text_color_right }};
           color: {% if block.settings.hero_base_text_color_right == '#ffffff' %}#00000{% else %}#ffffff{% endif %};
         }
+
+        .hero
       </style>
     {% endif %}
 
@@ -392,12 +405,39 @@
   {% endfor %}
 </hero-section>
 
+<style>
+  .hero__inner--{{ section.id }} {
+    padding-top: {{ section.settings.spacing_top }}px;
+    padding-bottom: {{ section.settings.spacing_bottom }}px;
+  }
+</style>
+
 {% schema %}
 {
   "name": "Hero",
   "tag": "section",
   "class": "hero",
   "max_blocks": 1,
+  "settings": [
+    {
+      "id": "spacing_top",
+      "type": "range",
+      "label": "Spacing top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 0
+    },
+    {
+      "id": "spacing_bottom",
+      "type": "range",
+      "label": "Spacing bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 0
+    }
+  ],
   "blocks": [
     {
       "type": "sticky",
@@ -427,6 +467,16 @@
           "id": "hero_text_color_image",
           "type": "color",
           "label": "Hero Text color (over image)"
+        },
+        {
+          "id": "hero_sticky_button_text",
+          "type": "text",
+          "label": "Hero sticky button text"
+        },
+        {
+          "id": "hero_sticky_button_url",
+          "type": "url",
+          "label": "Hero sticky button url"
         }
       ]
     },

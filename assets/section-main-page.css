@@ -1,1 +1,1 @@
-
+.main-page:not(:empty){margin-top:var(--header-offset-mobile);display:flex;justify-content:center}@media(min-width: 1024px){.main-page:not(:empty){margin-top:var(--header-offset)}}.main-page__inner{padding:var(--spacing-5x) 10px}@media(min-width: 768px){.main-page__inner{max-width:1080px;padding:var(--spacing-5x) 5px}}

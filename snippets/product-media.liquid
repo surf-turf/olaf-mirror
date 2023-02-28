@@ -41,16 +41,18 @@
       {% endfor %}
     </div>
 
-    <div class="style-with">
-      <p class="style-with__title">{{ 'product.style_with' | t }}</p>
-      <div class="style-with__inner">
-        {% if product.metafields.custom.style_with_products != blank %}
-          {% for product in product.metafields.custom.style_with_products.value %}
-            {% render 'product-button', product: product %}
-          {% endfor %}
-        {% endif %}
+    {% if product.metafields.custom.style_with_products != blank %}
+      <div class="style-with">
+        <p class="style-with__title">{{ 'product.style_with' | t }}</p>
+        <div class="style-with__inner">
+          {% if product.metafields.custom.style_with_products != blank %}
+            {% for product in product.metafields.custom.style_with_products.value %}
+              {% render 'product-button', product: product %}
+            {% endfor %}
+          {% endif %}
+        </div>
       </div>
-    </div>
+    {% endif %}
   </div>
   <!-- end .product-media -->
 
