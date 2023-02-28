@@ -2,7 +2,7 @@
   <li class="menu__item">
     <a href="{{ link.url }}" class="menu__url">{{ link.title }}</a>
   </li>
-  {% if link.links.size > 0 %}
+  {% if link.links.size > 0 and link.title != 'Account' %}
     <div class="child-menu">
       <div class="child-menu__inner">
         {% for child_link in link.links %}

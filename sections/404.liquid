@@ -1,0 +1,78 @@
+{{ 'section-404.css' | asset_url | stylesheet_tag }}
+
+<div class="error404__inner">
+  <div class="text-holder">
+    {% if section.settings.title != blank %}
+      <h1>{{ section.settings.title }}</h1>
+    {% endif %}
+
+    <div class="text-holder__row">
+      {% if section.settings.subtitle != blank %}
+        <p>{{ section.settings.subtitle }}</p>
+      {% endif %}
+
+      {% if section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_link }}" class="button button--ghost">{{ section.settings.button_text }}</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .error404 {
+    background-color: {{ section.settings.background_color }};
+  }
+
+  .error404 h1 {
+    color: {{ section.settings.text_color }};
+  }
+
+  .error404 p {
+    color: {{ section.settings.text_color }};
+  }
+
+  .error404 a {
+    color: {{ section.settings.text_color }};
+    border: 1px solid {{ section.settings.text_color }};
+  }
+</style>
+
+{% schema %}
+{
+  "name": "404",
+  "class": "error404",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "Title"
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "label": "Subtitle"
+    },
+    {
+      "id": "button_text",
+      "type": "text",
+      "label": "Button Text"
+    },
+    {
+      "id": "button_link",
+      "type": "url",
+      "label": "Button link"
+    },
+    {
+      "id": "background_color",
+      "type": "color",
+      "label": "Background Color"
+    },
+    {
+      "id": "text_color",
+      "type": "color",
+      "label": "Text Color"
+    }
+  ]
+}
+{% endschema %}
