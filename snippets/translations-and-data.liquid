@@ -1,5 +1,13 @@
 <script>
   
+  
+  
+  
+  
+  
+  
+  
+  
   window.product = {
     money_format: '{{ shop.money_format }}',
   };
@@ -29,8 +37,19 @@
     register: `{{ 'account.register' | t }}`,
   };
 
+  window.giftcard = {
+    current_balance: `{{ 'account.current_balance' | t }}`,
+    shop_now: `{{ 'account.shop_now' | t }}`,
+    expiration_date: `{{ 'account.expiration_date' | t }}`,
+    login: `{{ 'account.please_login_credit' | t }}`,
+  }
+
   window.text = {};
   window.text.form = "{{ 'product.from' | t }}";
   document.documentElement.className = document.documentElement.className.replace('no-js', 'has-js');
+
+
+
+
 
 </script>

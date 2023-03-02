@@ -63,7 +63,12 @@
     "date": "Date",
     "delivery": "Delivery",
     "status": "Status",
-    "welcome": "Welcome back"
+    "welcome": "Welcome back",
+    "current_balance": "Current balance",
+    "shop_now": "Shop now",
+    "expiration_date": "Expiration date",
+    "store_credit": "Store credit",
+    "please_login_credit": "Please login to your account to see your store credit"
   },
   "collection": {
     "clear_all_filters": "Clear all filters",

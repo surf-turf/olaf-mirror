@@ -1,0 +1,28 @@
+{{ 'section-store-credit.css' | asset_url | stylesheet_tag }}
+<script src="{{- 'extender-store-credit.js' | asset_url -}}" defer></script>
+
+<h1>{{ 'account.store_credit' | t }}</h1>
+
+<store-credit>
+  <div class="store-credit__inner" data-customer-email="{{ customer.email }}">
+    <div class="giftcard-grid">
+      {% if customer.email != blank %}
+        <div class="giftcard giftcard--loading"></div>
+      {% else %}
+        <div>
+          <p class="login">{{ 'account.please_login_credit' | t }}</p>
+          <a href="{{ routes.account_login_url }}" class="button button--primary">{{ 'account.login' | t }}</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</store-credit>
+
+{% schema %}
+{
+  "name": "Store credit",
+  "tag": "section",
+  "class": "store-credit",
+  "settings": []
+}
+{% endschema %}
