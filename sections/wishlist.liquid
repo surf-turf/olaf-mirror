@@ -48,6 +48,14 @@
         </button>
       </wishlist-item>
     {% endfor %}
+
+    <div class="wishlist-item">
+      <a href="{{ section.settings.cta_url }}" class="collection-button collection-button--background">
+        <div class="image-holder">
+          <p>{{ section.settings.cta_text }}</p>
+        </div>
+      </a>
+    </div>
   </div>
 </div>
 
@@ -56,6 +64,17 @@
   "name": "Wishlist",
   "tag": "section",
   "class": "wishlist",
-  "settings": []
+  "settings": [
+    {
+      "id": "cta_url",
+      "type": "url",
+      "label": "CTA Url"
+    },
+    {
+      "id": "cta_text",
+      "type": "text",
+      "label": "CTA Text"
+    }
+  ]
 }
 {% endschema %}

@@ -1,0 +1,72 @@
+{{ 'section-base-text.css' | asset_url | stylesheet_tag }}
+
+<div class="base-text__inner base-text--{{ section.id }}">
+  {% if section.settings.base_text != blank %}
+    <div class="text-holder">
+      <h3 class="text-holder__title">{{ section.settings.base_text }}</h3>
+    </div>
+  {% endif %}
+</div>
+
+<style>
+  .base-text--{{ section.id }} {
+    padding-top: {{ section.settings.spacing_top }}px;
+    padding-bottom: {{ section.settings.spacing_bottom }}px;
+  }
+
+  .base-text--{{ section.id }} .text-holder__title {
+    font-size: {{ section.settings.font_size | divided_by: 2 }}px;
+
+    @media (min-width: 768px) {
+      font-size: {{ section.settings.font_size }}px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Base text",
+  "class": "base-text",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "base_text",
+      "label": "Text",
+      "type": "richtext"
+    },
+    {
+      "id": "spacing_top",
+      "type": "range",
+      "label": "Spacing top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 0
+    },
+    {
+      "id": "spacing_bottom",
+      "type": "range",
+      "label": "Spacing bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "default": 0
+    },
+    {
+      "id": "font_size",
+      "type": "range",
+      "label": "Font size",
+      "min": 24,
+      "max": 160,
+      "step": 8,
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Base text",
+      "category": "sections"
+    }
+  ]
+}
+{% endschema %}

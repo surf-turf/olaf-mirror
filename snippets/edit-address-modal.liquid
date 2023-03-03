@@ -1,0 +1,114 @@
+{% comment %}
+    Renders an add address modal.
+
+    Usage:
+  {%- render 'add address modal', address: address -%}
+{% endcomment %}
+
+{{ 'snippet-address-modal.css' | asset_url | stylesheet_tag }}
+
+<div class="modal-overlay js-edit-modal">
+  <div class="modal js-modal">
+    <div class="modal__inner">
+      <div class="close js-close-modal">
+        {%- render 'icon-close', style: 'dark' -%}
+      </div>
+      <!-- end .close -->
+
+      <h6>{{ 'account.add_address' | t }}</h6>
+      {%- form 'customer_address', address, class: 'address-form form' -%}
+        <div class="input input--primary">
+          <input
+            class="input--primary field--input"
+            id="first_name"
+            name="address[first_name]"
+            value="{{ address.first_name }}"
+            type="text"
+            placeholder="{{ 'account.first_name' | t }}"
+          >
+        </div>
+
+        <div class="input input--primary">
+          <input
+            class="input--primary field--input"
+            id="last_name"
+            name="address[last_name]"
+            value="{{ address.last_name }}"
+            type="text"
+            placeholder="{{ 'account.last_name' | t }}"
+          >
+        </div>
+        <!-- end .form__last-name -->
+
+        <div class="input input--primary">
+          <input
+            class="input--primary field--input"
+            id="address"
+            name="address[address1]"
+            value="{{ address.street }}"
+            type="text"
+            placeholder="{{ 'account.street_form' | t }}"
+          >
+        </div>
+        <!-- end .form__address -->
+
+        <div class="input input--primary">
+          <input
+            class="input--primary field--input"
+            id="zip"
+            name="address[zip]"
+            value="{{ address.zip }}"
+            type="text"
+            autocapitalize="characters"
+            placeholder="{{ 'account.zip' | t }}"
+          >
+        </div>
+        <!-- end .form__address -->
+
+        <div class="input input--primary">
+          <input
+            class="input--primary field--input"
+            id="addressCity"
+            name="address[city]"
+            value="{{ address.city }}"
+            type="text"
+            placeholder="{{ 'account.city' | t }}"
+          >
+        </div>
+        <!-- end .form__email -->
+
+        <div class="select select--ghost">
+          <select
+            id="addressCountry"
+            name="address[country]"
+            data-default="{{ form.country.iso_code }}"
+            class="field--select"
+          >
+            {{ country_option_tags }}
+          </select>
+        </div>
+        <!-- end .form__country -->
+
+        <div class="input input--primary">
+          <input
+            class="input--primary field--input"
+            id="addressPhone"
+            name="address[phone]"
+            value="{{ address.phone }}"
+            type="tel"
+            placeholder="{{ 'account.phone_number' | t }}"
+          >
+        </div>
+        <!-- end .form__phone_number -->
+
+        <div class="form__submit-button">
+          <button class="button button--primary">{{ 'account.add_address' | t }}</button>
+        </div>
+      {%- endform -%}
+      <!-- end .form -->
+    </div>
+    <!-- end .modal__inner -->
+  </div>
+  <!-- end .modal -->
+</div>
+<!-- end .add-address-modal -->

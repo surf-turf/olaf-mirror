@@ -68,7 +68,12 @@
     "shop_now": "Shop now",
     "expiration_date": "Expiration date",
     "store_credit": "Store credit",
-    "please_login_credit": "Please login to your account to see your store credit"
+    "please_login_credit": "Please login to your account to see your store credit",
+    "edit": "Edit",
+    "default_billing_address": "default billing address",
+    "default_shipping_address": "default shipping address",
+    "add_new_address": "Add new address",
+    "additional_address": "Additional address"
   },
   "collection": {
     "clear_all_filters": "Clear all filters",

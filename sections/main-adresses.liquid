@@ -1,9 +1,98 @@
 {{ 'section-main-addresses.css' | asset_url | stylesheet_tag }}
+<script src="{{- 'extender-new-address.js' | asset_url -}}" defer></script>
+<script src="{{- 'extender-edit-address.js' | asset_url -}}" defer></script>
 
 <div class="main-addresses__inner">
+  <div class="support-nav">
+    <div class="support-nav__welcome">
+      <p>{{ 'account.welcome' | t }}</p>
+      <p>{{ customer.name }}</p>
+    </div>
 
+    {% if section.settings.links != blank %}
+      <ul class="support-nav__list">
+        {% for link in section.settings.links.links %}
+          <li class="support-nav__list-item">
+            <a
+              href="{{ link.url }}"
+              class="support-nav__link {% if link.handle == page.handle %}support-nav__link--active{% endif %}"
+            >
+              {{- link.title -}}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+
+  <div class="content">
+    <div class="title-holder">
+      <h1 class="title-holder__title">{{ 'account.addresses' | t }}</h1>
+    </div>
+
+    <div class="address-grid">
+      <div class="address-grid__address">
+        <h2>{{ 'account.default_billing_address' | t }}</h2>
+        <p>{{ customer.name }}</p>
+        <p>{{ customer.default_address.street }}</p>
+        <p>{{ customer.default_address.city }}, {{ customer.default_address.province }}</p>
+        <p>{{ customer.default_address.country }}, {{ customer.default_address.zip }}</p>
+        <p>{{ customer.default_address.phone }}</p>
+
+        <div class="button-row">
+          <button class="js-edit">{{ 'account.edit' | t }}</button>
+          <form
+            class="address-delete-form"
+            method="post"
+            action="/account/addresses/{{ address.id }}"
+          >
+            <input type="hidden" name="_method" value="delete">
+            <button type="submit">{{ 'account.delete' | t }}</button>
+          </form>
+        </div>
+      </div>
+
+      {% for address in customer.addresses %}
+        <edit-address>
+          <div class="address-grid__address">
+            <h2>
+              {{ 'account.additional_address' | t }}
+              {{ forloop.index }}
+            </h2>
+            <p>{{ address.name }}</p>
+            <p>{{ address.street }}</p>
+            <p>{{ address.city }}, {{ address.province }}</p>
+            <p>{{ address.country }}, {{ address.zip }}</p>
+            <p>{{ address.phone }}</p>
+
+            <div class="button-row">
+              <button class="js-edit">{{ 'account.edit' | t }}</button>
+              <form
+                class="address-delete-form"
+                method="post"
+                action="/account/addresses/{{ address.id }}"
+              >
+                <input type="hidden" name="_method" value="delete">
+                <button type="submit">{{ 'account.delete' | t }}</button>
+              </form>
+            </div>
+          </div>
+
+          {% render 'edit-address-modal', address: address %}
+        </edit-address>
+      {% endfor %}
+    </div>
+
+    <div class="button-holder">
+      <button class="button button--primary js-add-address">{{ 'account.add_new_address' | t }}</button>
+    </div>
+  </div>
 </div>
 <!-- end .main-addresses__inner -->
+
+<new-address>
+  {% render 'new-address-modal' %}
+</new-address>
 
 {% schema %}
 {
