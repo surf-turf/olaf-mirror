@@ -14,7 +14,8 @@
           "header_nav": "s-t-main-menu",
           "mobile_nav": "s-t-main-menu",
           "mobile_nav_sub": "s-t-test-bottom-menu-mobile",
-          "image": "shopify:\/\/shop_images\/230104-SS23-Cecilia-Reeve-HEADER.jpg"
+          "image": "shopify:\/\/shop_images\/230104-SS23-Cecilia-Reeve-HEADER.jpg",
+          "logo": "shopify:\/\/shop_images\/Frame.svg"
         }
       },
       "footer": {
@@ -62,7 +63,9 @@
             "ace-tate-olaf-sunglasses-oyster-white",
             "olaf-ace-tate-herman-black",
             "jog-nap-denim-jeans"
-          ]
+          ],
+          "cta_url": "",
+          "cta_text": ""
         }
       },
       "alert-bar": {
