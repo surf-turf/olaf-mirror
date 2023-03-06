@@ -1,7 +1,19 @@
 <div class="footer__inner">
-  <div class="title-holder">
-    <h2 class="title-holder__title">Olaf</h2>
-  </div>
+  {% comment %}
+    <div class="title-holder">
+      <h2 class="title-holder__title">Olaf</h2>
+    </div>
+  {% endcomment %}
+
+  {% if section.settings.footer_logo != blank %}
+    <div class="image-holder">
+      {{
+        section.settings.footer_logo
+        | image_url: width: 35
+        | image_tag: section.settings.logo.alt, 'image-holder__image'
+      }}
+    </div>
+  {% endif %}
 
   <nav class="nav">
     <div class="nav__inner">
@@ -14,7 +26,14 @@
           <div class="children">
             {% for child_link in item.links %}
               <li class="nav__child">
-                <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                <a
+                  href="{{ child_link.url }}"
+                  {% if child_link.url contains 'http' %}
+                    target="blank"
+                  {% endif %}
+                >
+                  {{- child_link.title -}}
+                </a>
               </li>
             {% endfor %}
           </div>
@@ -36,6 +55,11 @@
       "id": "footer_nav",
       "type": "link_list",
       "label": "Footer navigation list"
+    },
+    {
+      "id": "footer_logo",
+      "type": "image_picker",
+      "label": "Footer logo"
     }
   ]
 }

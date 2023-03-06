@@ -36,7 +36,11 @@
         <button>
           <div class="js-toggle">{{ 'header.menu' | t -}}</div>
           {%- if cart.item_count > 0 %}
-            <span class="js-cart-toggle">({{ cart.item_count }})</span>
+            <span class="js-cart-toggle">
+              <div class="left">﹙</div>
+              {{ cart.item_count }}
+              <div class="right">﹚</div>
+            </span>
           {% endif -%}
         </button>
       {% else %}
