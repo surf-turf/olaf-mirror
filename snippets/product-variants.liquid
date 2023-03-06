@@ -18,9 +18,42 @@
     </div>
   {% endfor %}
 
-  {% if product.metafields.custom.color_dot_products.value != blank %}
-    <div class="option">
-      <h3 class="option__title">{{ 'product.color' | t }}</h3>
+  <div class="option">
+    <h3 class="option__title">{{ 'product.color' | t }}</h3>
+
+    <div class="option__colors">
+      {%- liquid
+        assign baseColorName = ''
+        if product.metafields.custom.color_name != blank
+          assign baseColorName = product.metafields.custom.color_name
+        else
+          assign baseColorName = product.title | split: '-' | last
+        endif
+      %}
+
+      <a href="{{ product.url }}" class="color-name color-name--active">
+        {{- baseColorName -}}
+      </a>
+
+      {% if product.metafields.custom.color_dot_products.value != blank %}
+        {% for color in product.metafields.custom.color_dot_products.value %}
+          {%- liquid
+            assign colorName = ''
+            if color.metafields.custom.color_name != blank
+              assign colorName = color.metafields.custom.color_name
+            else
+              assign colorName = color.title | split: '-' | last
+            endif
+          %}
+          <a href="{{ color.url }}" class="color-name {% if color.id == product.id %}color-name--active{% endif %}">
+            {{- colorName -}}
+          </a>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    {% comment %}In the latter stages of the project they decided to change the format from dots to names{% endcomment %}
+    {% comment %}
       <div class="option__colors">
         {% for colorDot in product.metafields.custom.color_dot_products.value %}
           <a class="bullet {% if colorDot.id == product.id %}bullet--active{% endif %}" href="{{ colorDot.url }}">
@@ -31,6 +64,6 @@
           </a>
         {% endfor %}
       </div>
-    </div>
-  {% endif %}
+    {% endcomment %}
+  </div>
 </section>

@@ -39,7 +39,7 @@
   </a>
 
   <div class="cart-item__content">
-    <h2>{{ item.product.title }}</h2>
+    <h2>{{ item.product.title | split: '-' | first }}</h2>
 
     {% for option in item.options_with_values %}
       <div class="cart-item__option">
@@ -47,6 +47,7 @@
         <p class="cart-item__option-value">{{ option.value }}</p>
 
         <fieldset class="cart-item__variants">
+          {% assign size = item.title | split: ' - ' | last %}
           {% for option in item.product.options_with_values %}
             {% for value in option.values %}
               <label class="option__label">
@@ -55,7 +56,7 @@
                   type="radio"
                   name="id"
                   value="{{ value | escape }}"
-                  {% if item.title contains value %}
+                  {% if size == value %}
                     checked
                   {% endif %}
                 >
@@ -68,27 +69,43 @@
       </div>
     {% endfor %}
 
-    {% if item.product.metafields.custom.color_dot_color != blank %}
+    {% if item.product.metafields.custom.color_dot_products.value != blank %}
+      {%- liquid
+        assign baseColorName = ''
+        if item.product.metafields.custom.color_name != blank
+          assign baseColorName = item.product.metafields.custom.color_name
+        else
+          assign baseColorName = item.product.title | split: '-' | last
+        endif
+      %}
+
       <div class="cart-item__option">
         <p class="cart-item__option-label">{{ 'sections.cart.color' | t }}</p>
         <div class="color">
-          <div
-            class="cart-item__option--dot"
-            style="background-color: {{ item.product.metafields.custom.color_dot_color }}"
-          ></div>
-          <p class="cart-item__option-value">{{ item.product.title | split: '-' | last }}</p>
+          {% comment %}
+            <div
+              class="cart-item__option--dot"
+              style="background-color: {{ item.product.metafields.custom.color_dot_color }}"
+            ></div>
+          {% endcomment %}
+          <p class="cart-item__option-value">{{ baseColorName }}</p>
         </div>
 
         <div class="cart-item__colors">
           {% for product in item.product.metafields.custom.color_dot_products.value %}
-            <div
-              data-id="{{ product.id }}"
-              class="cart-item__option--dot"
-              style="background-color: {{ product.metafields.custom.color_dot_color }}"
-            ></div>
+            {% comment %}
+              <div
+                data-id="{{ product.id }}"
+                class="cart-item__option--dot"
+                style="background-color: {{ product.metafields.custom.color_dot_color }}"
+              ></div>
+            {% endcomment %}
+            <div class="color cart-item__option--dot" data-id="{{ product.id }}">
+              {{ product.metafields.custom.color_name }}
+            </div>
           {% endfor %}
 
-          <input type="hidden" class="color-id" id="color-id" value="">
+          <input type="hidden" class="color-id" id="color-id" value="{{ item.variant_id }}">
 
           <script type="application/json" id="color-products">
             {
@@ -148,7 +165,7 @@
 
     <p class="cart-item__change cart-item__change--size">{{ 'sections.cart.change' | t }}</p>
 
-    {% if item.product.metafields.custom.color_dot_color != blank %}
+    {% if item.product.metafields.custom.color_dot_products.value != blank %}
       <p class="cart-item__change cart-item__change--color">{{ 'sections.cart.change' | t }}</p>
     {% endif %}
   </div>

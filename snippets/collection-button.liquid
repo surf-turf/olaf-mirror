@@ -65,7 +65,13 @@
 
       {%- liquid
         render 'picture', image: product.images[0], class: 'image-holder__image', productIndex: productIndex
-        render 'picture', image: product.images[2], class: 'image-holder__image--hover', productIndex: productIndex
+        if product.images[2] != blank
+          render 'picture', image: product.images[2], class: 'image-holder__image--hover', productIndex: productIndex
+        else
+          if product.images[1] != blank
+            render 'picture', image: product.images[1], class: 'image-holder__image--hover', productIndex: productIndex
+          endif
+        endif
       -%}
     {% endif %}
 

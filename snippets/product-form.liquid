@@ -23,7 +23,7 @@
     {%- comment -%}Outputs the variants of a product. Including hidden field for default variant products{%- endcomment -%}
 
     <div class="title-holder">
-      <h2 class="title-holder__title">{{ product.title }}</h2>
+      <h2 class="title-holder__title">{{ product.title | split: '-' | first }}</h2>
       {% render 'product-price', product: product %}
     </div>
 

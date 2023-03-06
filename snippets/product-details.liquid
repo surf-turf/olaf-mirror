@@ -9,10 +9,6 @@
       </div>
     </article>
 
-    <article class="product-details__size-chart collapsable">
-      <button class="collapsable__button js-size-chart">{{ 'product.size_chart' | t }}</button>
-    </article>
-
     {% for block in blocks %}
       {% if block.settings.title != blank %}
         <article class="product-details__information collapsable">
@@ -35,4 +31,8 @@
       {% endif %}
     {% endfor %}
   </section>
+
+  <article class="product-details__size-chart collapsable">
+    <button class="collapsable__button js-size-chart">{{ 'product.size_chart' | t }}</button>
+  </article>
 </collapsable-handler>

@@ -1,6 +1,10 @@
 {{ 'snippet-cart-footer.css' | asset_url | stylesheet_tag }}
 
 <div class="cart-footer">
+  <div class="button-holder">
+    <a href="{{ section.settings.cta_url }}" class="button button--primary">{{ section.settings.cta_text }}</a>
+  </div>
+
   <ul class="usp-holder">
     {% for block in blocks %}
       <li class="usp-holder__usp">- {{ block.settings.usp_text }}</li>

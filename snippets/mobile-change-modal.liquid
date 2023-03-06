@@ -27,16 +27,26 @@
       <div class="mobile-change-modal__colors">
         <p class="title">{{ 'sections.cart.color' | t }}</p>
         <div class="colors">
+          <div class="colors__dot colors__dot--active" data-id="{{ item.product.id }}">
+            {{ item.product.metafields.custom.color_name }}
+          </div>
+
           {% for product in item.product.metafields.custom.color_dot_products.value %}
-            <div
-              data-id="{{ product.id }}"
-              class="colors__dot"
-              style="background-color: {{ product.metafields.custom.color_dot_color }}"
-            ></div>
+            {% comment %}
+              <div
+                data-id="{{ product.id }}"
+                class="colors__dot"
+                style="background-color: {{ product.metafields.custom.color_dot_color }}"
+              ></div>
+            {% endcomment %}
+
+            <div class="colors__dot" data-id="{{ product.id }}">
+              {{ product.metafields.custom.color_name }}
+            </div>
           {% endfor %}
         </div>
 
-        <input type="hidden" class="color-id" id="color-id" value="">
+        <input type="hidden" class="color-id" id="color-id" value="{{ item.variant_id }}">
 
         <script type="application/json" id="color-products">
           {
