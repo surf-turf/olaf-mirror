@@ -26,13 +26,24 @@
       }
     },
     "size-chart": {
-      "type": "size-chart"
-    },
-    "recommended-products": {
-      "type": "recommended-products"
+      "type": "size-chart",
+      "settings": {
+        "intro_text": "<p>You will receive a confirmation by email shortly after placing your order. Please re-check your shipping address for mistakes. Extra shipping cost as a result of a wrong address will be for the client's costs.<br\/><br\/>*We are currently not able to ship our products to the UK. In the meantime, we are doing our best to make this possible again as soon as we can.<\/p>",
+        "chart_image": "shopify:\/\/shop_images\/image_11.svg",
+        "measure_graphic": "shopify:\/\/shop_images\/image_13.svg",
+        "contact_text": "<p>You will receive a confirmation by email shortly after placing your order. Please re-check your shipping address for mistakes. Extra shipping cost as a result of a wrong address will be for the client's costs.<br\/><br\/>*We are currently not able to ship our products to the UK. In the meantime, we are doing our best to make this possible again as soon as we can.<\/p>"
+      }
     },
     "product-additional-media": {
-      "type": "product-additional-media"
+      "type": "product-additional-media",
+      "settings": {
+      }
+    },
+    "recommended-products": {
+      "type": "recommended-products",
+      "settings": {
+        "intent": "related"
+      }
     }
   },
   "order": [
