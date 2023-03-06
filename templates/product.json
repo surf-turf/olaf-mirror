@@ -27,6 +27,45 @@
     },
     "size-chart": {
       "type": "size-chart",
+      "blocks": {
+        "d7583ba4-0ca4-4c32-aa11-19a180da5f38": {
+          "type": "text",
+          "settings": {
+            "step_text": "Place the item(s) in the original shipping box"
+          }
+        },
+        "e7ae19da-4bfb-4d8d-b2b3-a845630e8bd5": {
+          "type": "text",
+          "settings": {
+            "step_text": "Enclose the completed Return Form."
+          }
+        },
+        "6e807d89-fe0a-4a94-9c66-19f9d40cfd0e": {
+          "type": "text",
+          "settings": {
+            "step_text": "Place the original or a copy of the receipt that came with your order."
+          }
+        },
+        "15adfb8c-0dc7-40f5-b1c3-b78d05918959": {
+          "type": "text",
+          "settings": {
+            "step_text": "Close the box and tape it securely."
+          }
+        },
+        "5fda7099-0da1-422c-82c9-a0c9ec85af71": {
+          "type": "text",
+          "settings": {
+            "step_text": "Post your parcel using any of your preferred shipping methods. 6 Return shipment is at the customer’s"
+          }
+        }
+      },
+      "block_order": [
+        "d7583ba4-0ca4-4c32-aa11-19a180da5f38",
+        "e7ae19da-4bfb-4d8d-b2b3-a845630e8bd5",
+        "6e807d89-fe0a-4a94-9c66-19f9d40cfd0e",
+        "15adfb8c-0dc7-40f5-b1c3-b78d05918959",
+        "5fda7099-0da1-422c-82c9-a0c9ec85af71"
+      ],
       "settings": {
         "intro_text": "<p>You will receive a confirmation by email shortly after placing your order. Please re-check your shipping address for mistakes. Extra shipping cost as a result of a wrong address will be for the client's costs.<br\/><br\/>*We are currently not able to ship our products to the UK. In the meantime, we are doing our best to make this possible again as soon as we can.<\/p>",
         "chart_image": "shopify:\/\/shop_images\/image_11.svg",
