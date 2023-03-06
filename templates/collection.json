@@ -26,9 +26,11 @@
         "3dbaaca9-511b-4e63-98bb-2d5b77bb3ef3": {
           "type": "grid-2",
           "settings": {
+            "image_left": "shopify:\/\/shop_images\/230208-SS23-Website-4.jpg",
             "url_left": "shopify:\/\/products\/2-pack-olaf-branded-rib-ls-steel-blue-green",
             "title_left": "<p>SS23<br\/>high summer<\/p>",
             "color_1": "#ffffff",
+            "image_right": "shopify:\/\/shop_images\/230208-SS23-Website-4.jpg",
             "url_right": "shopify:\/\/products\/3-pack-olaf-socks-maroon",
             "title_right": "",
             "color_2": "",
@@ -50,6 +52,7 @@
         "2c19f748-f2f6-4f5c-a44d-deebbf68f9f1": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/2210120-SS23-Newsletter10.jpg",
             "video_url": "",
             "url": "shopify:\/\/products\/olaf-socks-3-pack-purple-neon",
             "subtitle": "",
