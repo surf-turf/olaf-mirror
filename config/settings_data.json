@@ -21,7 +21,8 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "footer_nav": "s-t-footer"
+          "footer_nav": "s-t-footer",
+          "footer_logo": "shopify:\/\/shop_images\/olaf.svg"
         }
       },
       "cart-drawer": {
