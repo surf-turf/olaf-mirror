@@ -10,6 +10,17 @@
       },
       "header": {
         "type": "header",
+        "blocks": {
+          "e49d04fb-0375-4751-84b0-564c7f91ecf8": {
+            "type": "image",
+            "settings": {
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "e49d04fb-0375-4751-84b0-564c7f91ecf8"
+        ],
         "settings": {
           "header_nav": "s-t-main-menu",
           "mobile_nav": "s-t-main-menu",
@@ -61,9 +72,9 @@
         ],
         "settings": {
           "upselling_products": [
-            "ace-tate-olaf-sunglasses-oyster-white",
-            "olaf-ace-tate-herman-black",
-            "jog-nap-denim-jeans"
+            "olaf-aop-blur-bandana-azure-blue",
+            "olaf-aop-blur-bandana-azure-orange",
+            "olaf-block-cap-azure-blue"
           ],
           "cta_url": "",
           "cta_text": ""
