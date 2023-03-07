@@ -3,12 +3,20 @@
     "support-links": {
       "type": "support-links",
       "settings": {
-        "links": "support-links"
+        "links": "information",
+        "policies": ""
       }
     },
     "main": {
-      "type": "wishlist"
+      "type": "wishlist",
+      "settings": {
+        "cta_url": "shopify:\/\/collections\/all",
+        "cta_text": "add product to your wishlist"
+      }
     }
   },
-  "order": ["support-links","main"]
+  "order": [
+    "support-links",
+    "main"
+  ]
 }
