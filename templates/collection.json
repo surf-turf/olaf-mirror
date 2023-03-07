@@ -59,13 +59,24 @@
             "color": "",
             "grid_position": 15
           }
+        },
+        "be2decee-21ae-4712-8440-4635eca849e8": {
+          "type": "text",
+          "settings": {
+            "title": "<p>fafasfa<\/p>",
+            "content": "<p>fadfaasfdsfafdafasasdfasadfa<\/p>",
+            "color": "#dc2424",
+            "grid_position": 1,
+            "grid_padding": 80
+          }
         }
       },
       "block_order": [
         "76f66184-2c8b-440e-9d99-52529bb592f7",
         "3dbaaca9-511b-4e63-98bb-2d5b77bb3ef3",
         "d423cb26-bb47-47e4-bc81-99920e917780",
-        "2c19f748-f2f6-4f5c-a44d-deebbf68f9f1"
+        "2c19f748-f2f6-4f5c-a44d-deebbf68f9f1",
+        "be2decee-21ae-4712-8440-4635eca849e8"
       ],
       "settings": {
         "collection_list": [
