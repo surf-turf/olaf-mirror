@@ -13,12 +13,26 @@
         "3d0f8676-fb41-42db-b3d6-4ae8472d6e05": {
           "type": "text",
           "settings": {
+            "subject": "Shipping"
+          }
+        },
+        "50f4358e-de98-40ec-b666-a4862e08ca90": {
+          "type": "text",
+          "settings": {
+            "subject": "Returns"
+          }
+        },
+        "aee535d1-8b7d-4717-a801-bd010002c01e": {
+          "type": "text",
+          "settings": {
             "subject": ""
           }
         }
       },
       "block_order": [
-        "3d0f8676-fb41-42db-b3d6-4ae8472d6e05"
+        "3d0f8676-fb41-42db-b3d6-4ae8472d6e05",
+        "50f4358e-de98-40ec-b666-a4862e08ca90",
+        "aee535d1-8b7d-4717-a801-bd010002c01e"
       ],
       "settings": {
         "contact_intro": "<p>You can also call us on +31 20 238 2573 <br\/>Monday to Friday between 9am and 6pm, <br\/>excluding public holidays.<\/p>",
