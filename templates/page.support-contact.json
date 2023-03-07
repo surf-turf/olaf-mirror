@@ -3,11 +3,17 @@
     "support-links": {
       "type": "support-links",
       "settings": {
-        "links": "support-links"
+        "links": "information",
+        "policies": ""
       }
     },
     "main": {
-      "type": "main-contact"
+      "type": "main-contact",
+      "settings": {
+        "contact_intro": "",
+        "address": "",
+        "opening_hours": ""
+      }
     }
   },
   "order": [
