@@ -3,11 +3,14 @@
     "support-links": {
       "type": "support-links",
       "settings": {
-        "links": "support-links"
+        "links": "information",
+        "policies": ""
       }
     },
     "main": {
-      "type": "credit"
+      "type": "credit",
+      "settings": {
+      }
     }
   },
   "order": [
