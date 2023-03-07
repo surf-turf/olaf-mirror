@@ -9,10 +9,21 @@
     },
     "main": {
       "type": "main-contact",
+      "blocks": {
+        "3d0f8676-fb41-42db-b3d6-4ae8472d6e05": {
+          "type": "text",
+          "settings": {
+            "subject": ""
+          }
+        }
+      },
+      "block_order": [
+        "3d0f8676-fb41-42db-b3d6-4ae8472d6e05"
+      ],
       "settings": {
-        "contact_intro": "",
-        "address": "",
-        "opening_hours": ""
+        "contact_intro": "<p>You can also call us on +31 20 238 2573 <br\/>Monday to Friday between 9am and 6pm, <br\/>excluding public holidays.<\/p>",
+        "address": "<p>Bilderdijkstraat 112-114<br\/>1053 KZ, Amsterdam<br\/>The Netherlands<\/p>",
+        "opening_hours": "<p>Monday 11am-7pm<br\/>Tuesday 11am-7pm<br\/>Wednesday 11am-7pm<br\/>Thursday 11am-7pm<br\/>Friday 11am-7pm<br\/>Saturday 11am-7pm<br\/>Sunday 12pm-6pm<\/p>"
       }
     }
   },
