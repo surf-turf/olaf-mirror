@@ -27,6 +27,7 @@
       "blocks": {
         "626eb87b-893a-411a-8a8c-f71441b9bc5d": {
           "type": "sticky",
+          "disabled": true,
           "settings": {
             "hero_image": "shopify:\/\/shop_images\/09_1.jpg",
             "hero_video": "",
@@ -74,8 +75,8 @@
         "7ed2a76a-153d-4b09-b98d-b53a831264e0": {
           "type": "artwork",
           "settings": {
-            "image": "shopify:\/\/shop_images\/01_760x_513f0aff-3060-42a9-9418-c6dfa8cbb431.webp",
-            "url": "shopify:\/\/products\/olaf-block-cap-ocean-green",
+            "image": "shopify:\/\/shop_images\/230104-SS23-Cecilia-Reeve-HEADER.jpg",
+            "url": "shopify:\/\/collections\/ss23-all-products",
             "collection_artwork_height": "75%"
           }
         }
