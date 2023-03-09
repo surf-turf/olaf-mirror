@@ -10,7 +10,9 @@
             "hero_video": "",
             "hero_title": "continuously inspired by countries, cultures and citizens.",
             "hero_text_color": "#000000",
-            "hero_text_color_image": "#efff3b"
+            "hero_text_color_image": "#efff3b",
+            "hero_sticky_button_text": "",
+            "hero_sticky_button_url": ""
           }
         }
       },
@@ -18,6 +20,8 @@
         "626eb87b-893a-411a-8a8c-f71441b9bc5d"
       ],
       "settings": {
+        "spacing_top": 0,
+        "spacing_bottom": 0
       }
     },
     "a1301c22-90bf-46d2-9806-91c2ba79f254": {
@@ -37,12 +41,12 @@
         "711a9a5e-2e5f-4c47-8ede-c2c825062ecc": {
           "type": "collection_card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/2210120-PUFFER-Website.jpg",
+            "image": "shopify:\/\/shop_images\/230209-SS23-Instagram-7.jpg",
             "name": "Mens",
             "label_desktop": "New Arrivals",
             "label_mobile": "New",
-            "url": "",
-            "button_text": ""
+            "url": "shopify:\/\/collections\/mens-new-arrivals",
+            "button_text": "SHOP NOW"
           }
         },
         "7ed2a76a-153d-4b09-b98d-b53a831264e0": {
