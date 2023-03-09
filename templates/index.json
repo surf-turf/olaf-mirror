@@ -1,5 +1,27 @@
 {
   "sections": {
+    "8c123973-c036-497f-876e-bbd7fb5b176f": {
+      "type": "hero",
+      "blocks": {
+        "382d13ea-3937-4a45-a6a2-760373e08ee2": {
+          "type": "base",
+          "settings": {
+            "hero_image": "shopify:\/\/shop_images\/2210120-SS23-Newsletter10.jpg",
+            "hero_title": "SUMMER SOUVENIRS",
+            "hero_video": "",
+            "hero_url": "shopify:\/\/collections\/ss23-all-products",
+            "hero_base_text_color": "#fde00a"
+          }
+        }
+      },
+      "block_order": [
+        "382d13ea-3937-4a45-a6a2-760373e08ee2"
+      ],
+      "settings": {
+        "spacing_top": 0,
+        "spacing_bottom": 0
+      }
+    },
     "c81d0255-774b-4d8a-9626-c692347a332b": {
       "type": "hero",
       "blocks": {
@@ -303,6 +325,7 @@
     }
   },
   "order": [
+    "8c123973-c036-497f-876e-bbd7fb5b176f",
     "c81d0255-774b-4d8a-9626-c692347a332b",
     "a1301c22-90bf-46d2-9806-91c2ba79f254",
     "e80ee74c-89e1-440b-8177-245c70a455e7",
