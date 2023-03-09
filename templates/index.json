@@ -206,13 +206,13 @@
         "8190fe4c-01c8-4c03-b54a-697772c97e10": {
           "type": "image-block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/2210120-Social27.jpg",
-            "text": "Heavyweight Studio Hoodie",
+            "image": "shopify:\/\/shop_images\/P221116140008-top-61.jpg",
+            "text": "Heavyweight Studio Collection",
             "button_text": "explore more",
-            "button_url": "shopify:\/\/pages\/faq",
+            "button_url": "shopify:\/\/collections\/heavyweight-studio-collection-all-products",
             "span": true,
             "hide_mobile": false,
-            "color": "#fcfafa",
+            "color": "#000000",
             "height": "unset"
           }
         }
