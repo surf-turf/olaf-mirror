@@ -30,11 +30,11 @@
         "b1e6caad-e7e9-4a0f-9a88-6dfd34558868": {
           "type": "collection_card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/221129-Website-Banner-Puffer0.jpg",
+            "image": "shopify:\/\/shop_images\/230208-SS23-Website-13.jpg",
             "name": "Women",
             "label_desktop": "New Arrivals",
             "label_mobile": "New",
-            "url": "shopify:\/\/pages\/disclaimer",
+            "url": "shopify:\/\/collections\/womens-new-arrivals",
             "button_text": "Shop now"
           }
         },
