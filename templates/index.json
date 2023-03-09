@@ -193,13 +193,13 @@
         "e80a7574-1de2-42b5-a0fd-c8c7d9123636": {
           "type": "image-block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/men_705df103-8af7-4906-9064-2125a26e7862.jpg",
-            "text": "Heavyweight Studio Hoodie In various colours",
-            "button_text": "Explore more",
-            "button_url": "shopify:\/\/products\/olaf-block-cap-ocean-green",
+            "image": "shopify:\/\/shop_images\/Untitled_design_1.png",
+            "text": "REPURPOSE - Created from leftover garments",
+            "button_text": "BROWSE",
+            "button_url": "shopify:\/\/collections\/repurpose-mens-all-products",
             "span": false,
-            "hide_mobile": true,
-            "color": "#ffffff",
+            "hide_mobile": false,
+            "color": "#000000",
             "height": "75%"
           }
         },
