@@ -198,7 +198,7 @@
             "button_text": "BROWSE",
             "button_url": "shopify:\/\/collections\/repurpose-mens-all-products",
             "span": false,
-            "hide_mobile": false,
+            "hide_mobile": true,
             "color": "#000000",
             "height": "75%"
           }
