@@ -93,6 +93,7 @@
     },
     "e80ee74c-89e1-440b-8177-245c70a455e7": {
       "type": "special-featured",
+      "disabled": true,
       "blocks": {
         "c5e929fd-a594-405f-84da-2964380667c1": {
           "type": "text_card",
@@ -153,7 +154,7 @@
         "16bc5338-4d5a-4956-8342-ffaa34d47ccd": {
           "type": "text",
           "settings": {
-            "text": "<p>Virgil Nicholas<br\/><br\/>With honesty, well-being, and respect for oneself and,<br\/><a href=\"\/pages\/store\" title=\"Bilderdijkstraat 112-114\">Read more...<\/a><\/p>",
+            "text": "<p>GLORIA LANDENBERGER<br\/><br\/><strong>Designer, creative director, ceramicist, and<\/strong><br\/><a href=\"\/pages\/store\" title=\"Bilderdijkstraat 112-114\">Read more...<\/a><\/p>",
             "image": "shopify:\/\/shop_images\/IMG_2656.jpg",
             "background_color": "#ddd26d",
             "color": "#000000"
