@@ -72,9 +72,9 @@
         ],
         "settings": {
           "upselling_products": [
-            "olaf-aop-blur-bandana-azure-blue",
-            "olaf-aop-blur-bandana-azure-orange",
-            "olaf-block-cap-azure-blue"
+            "olaf-block-cap-azure-blue",
+            "olaf-mini-logo-socks-white-black",
+            "olaf-mini-tote-bag-off-white"
           ],
           "cta_url": "",
           "cta_text": ""
