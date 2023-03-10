@@ -83,7 +83,7 @@
       "alert-bar": {
         "type": "alert-bar",
         "settings": {
-          "alert_text": "TEST SAVE <a href=\"\/pages\/careers\" title=\"Careers\">HERE<\/a>.",
+          "alert_text": "SHIPPING: NL FREE \/ EU FREE* \/  WORLDWIDE ABOVE €200. <a href=\"\/pages\/shipping-pickups\" title=\"Shipping & Pickups\">READ MORE HERE<\/a>",
           "show_alert": true,
           "text_color": "#000000",
           "background_color": "#efff3b",
