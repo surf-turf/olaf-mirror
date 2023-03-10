@@ -83,7 +83,7 @@
       "alert-bar": {
         "type": "alert-bar",
         "settings": {
-          "alert_text": "TO ENSURE YOUR ITEMS ARRIVE IN TIME FOR HOLIDAYS, ORDER BY THE SHIPPING DEADLINES YOU CAN FIND <a href=\"\/pages\/careers\" title=\"Careers\">HERE<\/a>.",
+          "alert_text": "TEST SAVE <a href=\"\/pages\/careers\" title=\"Careers\">HERE<\/a>.",
           "show_alert": true,
           "text_color": "#000000",
           "background_color": "#efff3b",
