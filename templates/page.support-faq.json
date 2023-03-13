@@ -73,12 +73,20 @@
           "type": "text",
           "settings": {
             "question": "How can I return my order?",
-            "answer": "To return or exchange items, please follow these steps: \n\n1. Go to our return portal: https:\/\/code.returns-exchanges.com\/olaf-hussein-2 \n\nOrders must be returned unwashed and unused in the original packaging with all labels still attached.\n\nNon-sale items can also be returned in our flagship store at Bilderdijkstraat 12 in Amsterdam.\n \nWe will offer a full refund on all items within 30 days of receipt. Unfortunately, we can not refund any taxes duties charges or shipping fees for returns. Refunds will be done in Euros at the price paid upon original purchase."
+            "answer": "To return or exchange items, please follow these steps: \n\n1. Go to our return portal via the link  https:\/\/code.returns-exchanges.com\/olaf-hussein-2 or scan the QR code on the paper that was included in your order. Follow the steps described in the portal. \n\n2. Place the item(s) you want to return or exchange in a box. Re-use the original packaging if possible and enclose this document with the barcode that came with your order. Tape the package securely. Please note, if the returned item(s) does not meet our return criterias, the return cannot be approved and we will be unable to provide a refund. \n\n3. Go to your local post office and return your package. Information regarding return labels, carrier services and sending returns back to us will be described in the return portal. Please hold on to your proof of shipment until we have confirmed your return or exchange. \n\n4. Once we have received and processed your return or exchange, you will receive a confirmation email. Are you returning, you can expect to receive the refund within 3-5 working days after we have processes your return. With some payment methods the refund can take up to 14 days after processing the return. Exchanges will be shipped from our warehouse within 1-2 working days after processing your returned item(s).\n\nOrders must be returned unwashed and unused in the original packaging with all labels still attached.\n\nNon-sale items can also be returned in our flagship store at Bilderdijkstraat 12 in Amsterdam.\n \nWe will offer a full refund on all items within 30 days of receipt. Unfortunately, we can not refund any taxes duties charges or shipping fees for returns. Refunds will be done in Euros at the price paid upon original purchase."
+          }
+        },
+        "e8bfed1d-e86b-4418-bf38-bda0e0082bce": {
+          "type": "text",
+          "settings": {
+            "question": "When will I get my refund?",
+            "answer": "We aim to process your refund within 7 business days after receiving your return. The refund will be made to your original payment method. Please allow up to 5 working days for the refund to appear in your account after we process your return. For some payment methods, the refund process may take up to 14 days after we process your return."
           }
         }
       },
       "block_order": [
-        "ab2b0cc2-f182-41c7-9213-52a71469c0cd"
+        "ab2b0cc2-f182-41c7-9213-52a71469c0cd",
+        "e8bfed1d-e86b-4418-bf38-bda0e0082bce"
       ],
       "settings": {
         "title": "Returns & refunds",
