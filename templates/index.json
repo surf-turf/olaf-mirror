@@ -1,5 +1,35 @@
 {
   "sections": {
+    "852c8d50-a04d-4182-8091-56c84ea04cad": {
+      "type": "hero",
+      "blocks": {
+        "009b2f6a-8596-41aa-bb8a-03d7456e21e6": {
+          "type": "two_images",
+          "settings": {
+            "hero_image_left": "shopify:\/\/shop_images\/230209-SS23-Instagram25.jpg",
+            "hero_video_left": "",
+            "hero_title_left": "",
+            "hero_button_text_left": "",
+            "hero_url_left": "",
+            "hero_base_text_color_left": "",
+            "hero_image_right": "shopify:\/\/shop_images\/2210120-SS23-Instagram_c4a9384f-5394-4d6a-8863-aea8f288c259.jpg",
+            "hero_video_right": "",
+            "hero_title_right": "",
+            "hero_button_text_right": "",
+            "hero_url_right": "",
+            "hero_base_text_color_right": "",
+            "hero_two_width_animation": false
+          }
+        }
+      },
+      "block_order": [
+        "009b2f6a-8596-41aa-bb8a-03d7456e21e6"
+      ],
+      "settings": {
+        "spacing_top": 0,
+        "spacing_bottom": 0
+      }
+    },
     "8c123973-c036-497f-876e-bbd7fb5b176f": {
       "type": "hero",
       "disabled": true,
@@ -89,36 +119,6 @@
       ],
       "settings": {
         "spacing_top": 8,
-        "spacing_bottom": 0
-      }
-    },
-    "852c8d50-a04d-4182-8091-56c84ea04cad": {
-      "type": "hero",
-      "blocks": {
-        "009b2f6a-8596-41aa-bb8a-03d7456e21e6": {
-          "type": "two_images",
-          "settings": {
-            "hero_image_left": "shopify:\/\/shop_images\/230209-SS23-Instagram25.jpg",
-            "hero_video_left": "",
-            "hero_title_left": "",
-            "hero_button_text_left": "",
-            "hero_url_left": "",
-            "hero_base_text_color_left": "",
-            "hero_image_right": "shopify:\/\/shop_images\/2210120-SS23-Instagram_c4a9384f-5394-4d6a-8863-aea8f288c259.jpg",
-            "hero_video_right": "",
-            "hero_title_right": "",
-            "hero_button_text_right": "",
-            "hero_url_right": "",
-            "hero_base_text_color_right": "",
-            "hero_two_width_animation": false
-          }
-        }
-      },
-      "block_order": [
-        "009b2f6a-8596-41aa-bb8a-03d7456e21e6"
-      ],
-      "settings": {
-        "spacing_top": 0,
         "spacing_bottom": 0
       }
     },
@@ -353,10 +353,10 @@
     }
   },
   "order": [
+    "852c8d50-a04d-4182-8091-56c84ea04cad",
     "8c123973-c036-497f-876e-bbd7fb5b176f",
     "c81d0255-774b-4d8a-9626-c692347a332b",
     "a1301c22-90bf-46d2-9806-91c2ba79f254",
-    "852c8d50-a04d-4182-8091-56c84ea04cad",
     "e80ee74c-89e1-440b-8177-245c70a455e7",
     "e1fd0b58-60a3-497c-baf2-7cc5f2b4ba15",
     "fd9e16cf-c2dd-400b-ac4f-0cef8b1accc9",
