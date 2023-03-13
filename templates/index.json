@@ -69,16 +69,15 @@
     },
     "8c123973-c036-497f-876e-bbd7fb5b176f": {
       "type": "hero",
-      "disabled": true,
       "blocks": {
         "382d13ea-3937-4a45-a6a2-760373e08ee2": {
           "type": "base",
           "settings": {
             "hero_image": "shopify:\/\/shop_images\/2210120-SS23-Newsletter10.jpg",
-            "hero_title": "",
+            "hero_title": "ss23 full collection",
             "hero_video": "",
             "hero_url": "shopify:\/\/collections\/ss23-all-products",
-            "hero_base_text_color": "#fde00a"
+            "hero_base_text_color": "#fff"
           }
         }
       },
