@@ -205,6 +205,18 @@
     },
     "cdf88629-23f6-4286-b8a6-b42c3e896803": {
       "type": "faq-item",
+      "blocks": {
+        "f098d1b9-33fa-440d-90cb-c190b1c7d146": {
+          "type": "text",
+          "settings": {
+            "question": "Can I feature the brand in our media?",
+            "answer": "<p>Please contact us at <a href=\"mailto:press@olafhussein.com\">press@olafhussein.com<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "f098d1b9-33fa-440d-90cb-c190b1c7d146"
+      ],
       "settings": {
         "title": "Press",
         "show_faq_title": false
