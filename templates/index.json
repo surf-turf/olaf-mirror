@@ -67,6 +67,38 @@
         "spacing_bottom": 0
       }
     },
+    "29c04a7a-63c9-486f-ba20-a85d090b5c1c": {
+      "type": "base-text",
+      "custom_css": [
+
+      ],
+      "settings": {
+        "base_text": "<p>ØLÅF is a modern, contemporary clothing brand for men and women where fashion meets function. The collection features timeless everyday staples with a modern twist, designed to elevate your style for any occasion. Every season ØLÅF offers a combination of must-have staples in innovative materials and a selection of specials for your ideal wardrobe.<\/p>",
+        "spacing_top": 32,
+        "spacing_bottom": 56,
+        "font_size": 32
+      }
+    },
+    "d7ef80dc-c19d-4045-97fd-7058ad2168e5": {
+      "type": "brand-explainers",
+      "blocks": {
+        "b203024d-47f7-4b50-ae73-34c327659e23": {
+          "type": "text",
+          "settings": {
+            "title": "Ex",
+            "content": "ØLÅF is a modern, contemporary clothing brand for men and women where fashion meets function. The collection features timeless everyday staples with a modern twist, designed to elevate your style for any occasion. Every season ØLÅF offers a combination of must-have staples in innovative materials and a selection of specials for your ideal wardrobe."
+          }
+        }
+      },
+      "block_order": [
+        "b203024d-47f7-4b50-ae73-34c327659e23"
+      ],
+      "settings": {
+        "spacing_top": 0,
+        "spacing_bottom": 0,
+        "explainer_title": "<p><em>ØLÅF is a modern, contemporary clothing brand for men and<\/em><\/p><p><em>women where fashion meets function. The collection features timeless<\/em><\/p><p><em>everyday staples with a modern twist, designed to elevate<\/em><\/p><p><em>your style for any occasion. Every season ØLÅF offers a combination<\/em><\/p><p><em>of must-have staples in innovative materials and a selection<\/em><\/p><p><em>of specials for your ideal wardrobe.<\/em><\/p>"
+      }
+    },
     "8c123973-c036-497f-876e-bbd7fb5b176f": {
       "type": "hero",
       "blocks": {
@@ -441,6 +473,8 @@
   "order": [
     "c103cb2f-83fe-4eb8-b54a-2c57ce727dd4",
     "852c8d50-a04d-4182-8091-56c84ea04cad",
+    "29c04a7a-63c9-486f-ba20-a85d090b5c1c",
+    "d7ef80dc-c19d-4045-97fd-7058ad2168e5",
     "8c123973-c036-497f-876e-bbd7fb5b176f",
     "c81d0255-774b-4d8a-9626-c692347a332b",
     "a1301c22-90bf-46d2-9806-91c2ba79f254",
