@@ -73,7 +73,7 @@
           "type": "text",
           "settings": {
             "question": "How can I return my order?",
-            "answer": "<p>To return or exchange items, please follow these steps described in our exchange and returns portal or read more about returns <a href=\"\/pages\/returns\" title=\"Returns & Refunds\"><strong>here<\/strong><\/a><strong>.<\/strong> Please note that orders must be returned unwashed and unused in the original packaging with all labels still attached.<\/p>"
+            "answer": "<p>To return or exchange items, please follow these steps described in our exchange and returns portal or read more about returns <a href=\"\/pages\/returns\" title=\"Returns & Refunds\"><strong>here<\/strong><\/a>. Please note that orders must be returned unwashed and unused in the original packaging with all labels still attached. You can also return non-sale items in our flagship store at Bilderdijkstraat 12-14 in Amsterdam.<\/p>"
           }
         },
         "e8bfed1d-e86b-4418-bf38-bda0e0082bce": {
@@ -89,12 +89,20 @@
             "question": "How can I exchange my item?",
             "answer": "<p>To return or exchange items, please follow these steps described in our exchange and returns portal or read more about exchanges <a href=\"\/pages\/returns\" title=\"Returns & Refunds\"><strong>here<\/strong><\/a>.<strong> <\/strong>Please note that shipping costs for exchanges within Netherlands, Germany, Belgium and France are covered by us. Are you exchanging from any other country, we can unfortunately not offer free exchanges.<\/p>"
           }
+        },
+        "e0469025-aed2-4f70-81f2-e2ad9da98584": {
+          "type": "text",
+          "settings": {
+            "question": "I have a damaged item, what should I do?",
+            "answer": "<p>All orders are processed carefully and inspected before shipment. However, if one of your items is defect, please contact us on store@olafhussein.com immediately with a description of your problem and detailed photos of the defect. Please do not send damaged items back to us without contacting us first. <\/p>"
+          }
         }
       },
       "block_order": [
         "ab2b0cc2-f182-41c7-9213-52a71469c0cd",
         "e8bfed1d-e86b-4418-bf38-bda0e0082bce",
-        "c9f5fa3a-1cdb-47f3-a27d-18a92e6799f6"
+        "c9f5fa3a-1cdb-47f3-a27d-18a92e6799f6",
+        "e0469025-aed2-4f70-81f2-e2ad9da98584"
       ],
       "settings": {
         "title": "Returns & refunds",
