@@ -127,6 +127,18 @@
     },
     "348f3e38-8c7e-48b3-8a54-3145835d23da": {
       "type": "faq-item",
+      "blocks": {
+        "b2a0e74a-7fde-4dc7-820c-32984c7002a5": {
+          "type": "text",
+          "settings": {
+            "question": "How can I pay for my order?",
+            "answer": "<p>We accept iDeal, Paypal, Visa, Mastercard, American Express and Klarna. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b2a0e74a-7fde-4dc7-820c-32984c7002a5"
+      ],
       "settings": {
         "title": "Payments",
         "show_faq_title": false
