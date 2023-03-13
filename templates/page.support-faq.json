@@ -73,7 +73,7 @@
           "type": "text",
           "settings": {
             "question": "How can I return my order?",
-            "answer": "<p>To return or exchange items, please follow these steps described in our exchange and returns portal or read more about returns <a href=\"\/pages\/returns\" title=\"Returns & Refunds\"><strong>here<\/strong><\/a>. Please note that orders must be returned unwashed and unused in the original packaging with all labels still attached. You can also return non-sale items in our flagship store at Bilderdijkstraat 12-14 in Amsterdam.<\/p>"
+            "answer": "<p>To return or exchange items, please follow these steps described in our exchange and returns portal or read more about returns <a href=\"\/pages\/returns\" title=\"Returns & Refunds\"><strong>here<\/strong><\/a>. Please note that orders must be returned unwashed and unused in the original packaging with all labels still attached. You can also return non-sale items in our flagship store at Bilderdijkstraat 112 in Amsterdam.<\/p>"
           }
         },
         "e8bfed1d-e86b-4418-bf38-bda0e0082bce": {
@@ -232,6 +232,18 @@
     },
     "774726dc-7bd7-4c54-bcab-0a050a6d5c6f": {
       "type": "faq-item",
+      "blocks": {
+        "88a6070c-cf8c-4352-8889-7a2dbffad137": {
+          "type": "text",
+          "settings": {
+            "question": "Can I speak to someone from Customer Service?",
+            "answer": "<p>Yes you can. You can reach us Monday to Friday between 10pm and 5pm at +31 20 238 2573 or send us an email on <a href=\"mailto:store@olafhussein.com\" title=\"mailto:store@olafhussein.com\">store@olafhussein.com<\/a>. <br\/><br\/>You can also always visit our store at Bilderdijkstraat 112, 1053 KZ Amsterdam. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "88a6070c-cf8c-4352-8889-7a2dbffad137"
+      ],
       "settings": {
         "title": "Customer service",
         "show_faq_title": false
