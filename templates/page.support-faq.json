@@ -37,13 +37,21 @@
             "question": "What are the shipping costs?",
             "answer": "We offer free shipping on all orders in the Netherlands, Belgium, Luxembourg, Germany, France, and Denmark. On all other European orders we offer free shipping above €100. Worldwide orders are eligible for free shipping from €200."
           }
+        },
+        "497c9821-0904-4f47-a028-8b6a662e252e": {
+          "type": "text",
+          "settings": {
+            "question": "Where can I check the status of my order?",
+            "answer": "In the order confirmation, you will receive a link to check the status of your order. You can also check the status of all your orders when you are signed into your account."
+          }
         }
       },
       "block_order": [
         "a3c19ee4-9443-46ac-bed2-11797a4b2bc1",
         "ca3ff5f6-be4b-42e7-9588-5b237a508df8",
         "1cf4922e-2233-4b0d-b45c-85d2336b9f3e",
-        "3c2c72c4-fea6-4e0f-8e01-7d9eaf0e936a"
+        "3c2c72c4-fea6-4e0f-8e01-7d9eaf0e936a",
+        "497c9821-0904-4f47-a028-8b6a662e252e"
       ],
       "settings": {
         "title": "orders & delivery",
