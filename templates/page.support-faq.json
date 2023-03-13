@@ -44,6 +44,13 @@
             "question": "Where can I check the status of my order?",
             "answer": "In the order confirmation, you will receive a link to check the status of your order. You can also check the status of all your orders when you are signed into your account."
           }
+        },
+        "15dde2f2-24ba-44dd-b3ec-f73385d68629": {
+          "type": "text",
+          "settings": {
+            "question": "How can I change or cancel my order?",
+            "answer": "Once we receive your order, we will send it immediately to our warehouse for shipment. If you wish to modify or cancel your order, please contact us as soon as possible. We will check the status of your order and determine if any changes can be made. If our warehouse has already processed your order, you will have to wait until it arrives and then make a return."
+          }
         }
       },
       "block_order": [
@@ -51,7 +58,8 @@
         "ca3ff5f6-be4b-42e7-9588-5b237a508df8",
         "1cf4922e-2233-4b0d-b45c-85d2336b9f3e",
         "3c2c72c4-fea6-4e0f-8e01-7d9eaf0e936a",
-        "497c9821-0904-4f47-a028-8b6a662e252e"
+        "497c9821-0904-4f47-a028-8b6a662e252e",
+        "15dde2f2-24ba-44dd-b3ec-f73385d68629"
       ],
       "settings": {
         "title": "orders & delivery",
