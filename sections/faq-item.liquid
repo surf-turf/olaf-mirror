@@ -17,9 +17,9 @@
 
       <article class="content-holder">
         {% for block in section.blocks %}
-          <div class="content-holder__item">
+          <div class="content-holder__item wysiwyg">
             <p class="question">{{ block.settings.question }}</p>
-            <p class="answer">{{ block.settings.answer }}</p>
+            {{ block.settings.answer }}
           </div>
         {% endfor %}
       </article>
