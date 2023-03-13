@@ -30,12 +30,20 @@
             "question": "When can I expect my order to arrive?",
             "answer": "Delivery time depends on your location and local delivery service. Under normal circumstances you should receive your order within The Netherlands in 1-2 working days. Orders sent to the rest of Europe will take 2-5 working days. Worldwide deliveries may take up to 3-7 working days. Please note that during sale periods and holidays it may take longer for your order to arrive."
           }
+        },
+        "3c2c72c4-fea6-4e0f-8e01-7d9eaf0e936a": {
+          "type": "text",
+          "settings": {
+            "question": "What are the shipping costs?",
+            "answer": "We offer free shipping on all orders in the Netherlands, Belgium, Luxembourg, Germany, France, and Denmark. On all other European orders we offer free shipping above €100. Worldwide orders are eligible for free shipping from €200."
+          }
         }
       },
       "block_order": [
         "a3c19ee4-9443-46ac-bed2-11797a4b2bc1",
         "ca3ff5f6-be4b-42e7-9588-5b237a508df8",
-        "1cf4922e-2233-4b0d-b45c-85d2336b9f3e"
+        "1cf4922e-2233-4b0d-b45c-85d2336b9f3e",
+        "3c2c72c4-fea6-4e0f-8e01-7d9eaf0e936a"
       ],
       "settings": {
         "title": "orders & delivery",
