@@ -184,11 +184,19 @@
             "question": "What will you do with my information?",
             "answer": "<p>Your information is solely used to process your order and shipment. We may use your email address for promotional purposes and your phone number might be used if there is a problem with your order. Under no circumstance will we share or sell your information to third parties. <\/p>"
           }
+        },
+        "c7712b48-8e12-41e9-9bcc-9890c59370f6": {
+          "type": "text",
+          "settings": {
+            "question": "Is it possible to delete my account?",
+            "answer": "<p>We can delete your account whenever you want. Send us an email at <a href=\"mailto:store@olafhussein.com\" title=\"mailto:store@olafhussein.com\">store@olafhussein.com<\/a> and we will remove your information from our system. <\/p>"
+          }
         }
       },
       "block_order": [
         "961c93a7-fefc-4653-8137-c20048fb3a45",
-        "4234854e-296e-4f23-81b7-b5c99957dfb1"
+        "4234854e-296e-4f23-81b7-b5c99957dfb1",
+        "c7712b48-8e12-41e9-9bcc-9890c59370f6"
       ],
       "settings": {
         "title": "Accounts",
