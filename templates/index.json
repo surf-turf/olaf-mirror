@@ -38,6 +38,7 @@
     },
     "852c8d50-a04d-4182-8091-56c84ea04cad": {
       "type": "hero",
+      "disabled": true,
       "blocks": {
         "009b2f6a-8596-41aa-bb8a-03d7456e21e6": {
           "type": "two_images",
@@ -116,6 +117,7 @@
     },
     "a1301c22-90bf-46d2-9806-91c2ba79f254": {
       "type": "featured-collections",
+      "disabled": true,
       "blocks": {
         "b1e6caad-e7e9-4a0f-9a88-6dfd34558868": {
           "type": "collection_card",
@@ -217,6 +219,7 @@
     },
     "e1fd0b58-60a3-497c-baf2-7cc5f2b4ba15": {
       "type": "featured-citizens",
+      "disabled": true,
       "blocks": {
         "16bc5338-4d5a-4956-8342-ffaa34d47ccd": {
           "type": "text",
