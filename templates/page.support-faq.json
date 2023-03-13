@@ -73,7 +73,7 @@
           "type": "text",
           "settings": {
             "question": "How can I return my order?",
-            "answer": "<p>To return or exchange items, please follow these steps described in our exchange and returns portal or read more about returns <strong>here.<\/strong> Please note that orders must be returned unwashed and unused in the original packaging with all labels still attached.<\/p>"
+            "answer": "<p>To return or exchange items, please follow these steps described in our exchange and returns portal or read more about returns <a href=\"\/pages\/returns\" title=\"Returns & Refunds\"><strong>here<\/strong><\/a><strong>.<\/strong> Please note that orders must be returned unwashed and unused in the original packaging with all labels still attached.<\/p>"
           }
         },
         "e8bfed1d-e86b-4418-bf38-bda0e0082bce": {
@@ -82,11 +82,19 @@
             "question": "When will I get my refund?",
             "answer": "<p>We aim to process your refund within 7 business days after receiving your return. The refund will be made to your original payment method. Please allow up to 5 working days for the refund to appear in your account after we process your return. For some payment methods, the refund process may take up to 14 days after we process your return.<\/p>"
           }
+        },
+        "c9f5fa3a-1cdb-47f3-a27d-18a92e6799f6": {
+          "type": "text",
+          "settings": {
+            "question": "How can I exchange my item?",
+            "answer": "<p>To return or exchange items, please follow these steps described in our exchange and returns portal or read more about exchanges <a href=\"\/pages\/returns\" title=\"Returns & Refunds\"><strong>here<\/strong><\/a>.<strong> <\/strong>Please note that shipping costs for exchanges within Netherlands, Germany, Belgium and France are covered by us. Are you exchanging from any other country, we can unfortunately not offer free exchanges.<\/p>"
+          }
         }
       },
       "block_order": [
         "ab2b0cc2-f182-41c7-9213-52a71469c0cd",
-        "e8bfed1d-e86b-4418-bf38-bda0e0082bce"
+        "e8bfed1d-e86b-4418-bf38-bda0e0082bce",
+        "c9f5fa3a-1cdb-47f3-a27d-18a92e6799f6"
       ],
       "settings": {
         "title": "Returns & refunds",
