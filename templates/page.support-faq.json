@@ -148,12 +148,20 @@
             "question": "I received a bill for import charges?",
             "answer": "<p>For countries outside Europe there may be additional charges added by your local customs. These fees are paid to the local carrier and your own responsibility. <\/p>"
           }
+        },
+        "3523b476-55cb-4c8b-9023-9a6d9c6f1241": {
+          "type": "text",
+          "settings": {
+            "question": "Are taxes included in the prices?",
+            "answer": "<p>All our prices are final and include the 21% VAT, in compliance to Dutch law. We are not responsible for additional import taxes that may be added, depending on local customs.<\/p>"
+          }
         }
       },
       "block_order": [
         "b2a0e74a-7fde-4dc7-820c-32984c7002a5",
         "c229752f-796c-448f-b761-b9484f5725f3",
-        "d8c9b33d-a442-45a3-ac65-e1ca8578749d"
+        "d8c9b33d-a442-45a3-ac65-e1ca8578749d",
+        "3523b476-55cb-4c8b-9023-9a6d9c6f1241"
       ],
       "settings": {
         "title": "Payments",
