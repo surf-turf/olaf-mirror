@@ -170,6 +170,18 @@
     },
     "e9b579d3-51e8-4933-aaa2-ccbce2a9a899": {
       "type": "faq-item",
+      "blocks": {
+        "961c93a7-fefc-4653-8137-c20048fb3a45": {
+          "type": "text",
+          "settings": {
+            "question": "Do I need an account to order on olafhussein.com?",
+            "answer": "<p>No, you can also check out as a guest. However, having an account offers benefits such as access to your complete order history and additional functions.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "961c93a7-fefc-4653-8137-c20048fb3a45"
+      ],
       "settings": {
         "title": "Accounts",
         "show_faq_title": false
