@@ -33,7 +33,7 @@
       ],
       "settings": {
         "spacing_top": 0,
-        "spacing_bottom": 16
+        "spacing_bottom": 0
       }
     },
     "852c8d50-a04d-4182-8091-56c84ea04cad": {
@@ -259,6 +259,7 @@
     },
     "fd9e16cf-c2dd-400b-ac4f-0cef8b1accc9": {
       "type": "image-section",
+      "disabled": true,
       "blocks": {
         "e80a7574-1de2-42b5-a0fd-c8c7d9123636": {
           "type": "image-block",
@@ -301,6 +302,7 @@
     },
     "2559746f-0b63-4e76-ac39-e111ac2a4894": {
       "type": "product-slider",
+      "disabled": true,
       "settings": {
         "product_list": [
           "olaf-cargo-shirt-black",
