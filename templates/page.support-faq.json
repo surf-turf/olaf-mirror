@@ -103,6 +103,13 @@
             "question": "Can I return a sale item?",
             "answer": "<p>Sale products can be returned by sending the items to our warehouse. All instructions are mentioned in our exchange and return portal. Sale products cannot be returned in our physical store. All returned products have to be unwashed and unused in the original packaging with all labels still attached.<\/p>"
           }
+        },
+        "b938eac0-7e23-47c4-8322-21192ef23a4c": {
+          "type": "text",
+          "settings": {
+            "question": "Can I return an order that was paid with a gift card?",
+            "answer": "<p>All approved returns will be refunded to the original payment method used when the order was made.<\/p>"
+          }
         }
       },
       "block_order": [
@@ -110,7 +117,8 @@
         "e8bfed1d-e86b-4418-bf38-bda0e0082bce",
         "c9f5fa3a-1cdb-47f3-a27d-18a92e6799f6",
         "e0469025-aed2-4f70-81f2-e2ad9da98584",
-        "a2a00d51-8b1e-4807-95e5-30ecdbd872f9"
+        "a2a00d51-8b1e-4807-95e5-30ecdbd872f9",
+        "b938eac0-7e23-47c4-8322-21192ef23a4c"
       ],
       "settings": {
         "title": "Returns & refunds",
