@@ -212,10 +212,18 @@
             "question": "Can I feature the brand in our media?",
             "answer": "<p>Please contact us at <a href=\"mailto:press@olafhussein.com\">press@olafhussein.com<\/a><\/p>"
           }
+        },
+        "29d1e37e-5a07-44bc-8ea1-0ee4f68a8eeb": {
+          "type": "text",
+          "settings": {
+            "question": "Can I sell Olaf Hussein products in my own store?",
+            "answer": "<p>Please contact us at <a href=\"mailto:sales@olafhussein.com\">sales@olafhussein.com<\/a><\/p>"
+          }
         }
       },
       "block_order": [
-        "f098d1b9-33fa-440d-90cb-c190b1c7d146"
+        "f098d1b9-33fa-440d-90cb-c190b1c7d146",
+        "29d1e37e-5a07-44bc-8ea1-0ee4f68a8eeb"
       ],
       "settings": {
         "title": "Press",
