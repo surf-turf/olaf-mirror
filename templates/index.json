@@ -6,8 +6,8 @@
         "382d13ea-3937-4a45-a6a2-760373e08ee2": {
           "type": "base",
           "settings": {
-            "hero_image": "shopify:\/\/shop_images\/Screenshot_2023-02-10_at_12.48.08.png",
-            "hero_title": "SUMMER SOUVENIRS",
+            "hero_image": "shopify:\/\/shop_images\/2210120-SS23-Newsletter10.jpg",
+            "hero_title": "",
             "hero_video": "",
             "hero_url": "shopify:\/\/collections\/ss23-all-products",
             "hero_base_text_color": "#fde00a"
@@ -172,7 +172,7 @@
         "27007b99-81c6-4c95-9fd3-a77dd3b055c4": {
           "type": "text",
           "settings": {
-            "text": "<p>DANIEL MEUL<br\/><br\/><strong>If dressing well is a form of good manners, then<\/strong> <a href=\"\/blogs\/citizens\/olaf-citizens-daniel-meul-1\" title=\"ØLÅF CITIZENS : DANIEL MEUL\">Read more...<\/a><\/p>",
+            "text": "<p>DANIEL MEUL<br\/><br\/><br\/><strong>If dressing well is a form of good manners, then<\/strong> <a href=\"\/blogs\/citizens\/olaf-citizens-daniel-meul-1\" title=\"ØLÅF CITIZENS : DANIEL MEUL\">Read more...<\/a><\/p>",
             "image": "shopify:\/\/shop_images\/70653586_104655780856442_2708818350762977419_n.jpg",
             "background_color": "#f16539",
             "color": "#000000"
