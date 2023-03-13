@@ -21,13 +21,21 @@
           "type": "text",
           "settings": {
             "question": "Why haven’t I received my order information?",
-            "answer": "Sometimes, your confirmation may take a little longer when we have many orders. Please wait up to an hour for your confirmation to arrive at your"
+            "answer": "Sometimes, your confirmation may take a little longer. If you haven't received your confirmation after one hour, please check your spam filter and that you have provided us with the correct email address. Contact us on store@olafhusseein.com if you checked as mentioned above and still haven't received your order confirmation."
+          }
+        },
+        "1cf4922e-2233-4b0d-b45c-85d2336b9f3e": {
+          "type": "text",
+          "settings": {
+            "question": "When can I expect my order to arrive?",
+            "answer": "Delivery time depends on your location and local delivery service. Under normal circumstances you should receive your order within The Netherlands in 1-2 working days. Orders sent to the rest of Europe will take 2-5 working days. Worldwide deliveries may take up to 3-7 working days. Please note that during sale periods and holidays it may take longer for your order to arrive."
           }
         }
       },
       "block_order": [
         "a3c19ee4-9443-46ac-bed2-11797a4b2bc1",
-        "ca3ff5f6-be4b-42e7-9588-5b237a508df8"
+        "ca3ff5f6-be4b-42e7-9588-5b237a508df8",
+        "1cf4922e-2233-4b0d-b45c-85d2336b9f3e"
       ],
       "settings": {
         "title": "orders & delivery",
