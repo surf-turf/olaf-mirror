@@ -1,25 +1,26 @@
 {{ 'snippet-citizens-base-image.css' | asset_url | stylesheet_tag }}
 
+{% assign contentIndex = index %}
+{% if index == null %}
+  {% assign contentIndex = 0 %}
+{% endif %}
+
 <section class="citizens-base-image">
   <div class="citizens-base-image__inner">
-    {% if article.metafields.accentuate.citizens_base_image != blank %}
-      {% for image in article.metafields.accentuate.citizens_base_image %}
-        <div class="image-holder">
-          {% if image[0].media_type == 'video' %}
-            <video class="image-holder__image" autoplay loop muted playsinline>
-              <source src="{{ image[0].src }}" type="{{ image[0].mime_type }}">
-            </video>
-          {% else %}
-            <img
-              src="{{ image[0].src }}"
-              alt="{{ image[0].alt }}"
-              width="{{ image[0].width }}"
-              height="{{ image[0].height }}"
-              class="image-holder__image"
-            >
-          {% endif %}
-        </div>
-      {% endfor %}
-    {% endif %}
+    <div class="image-holder">
+      {% if image[0][contentIndex].media_type == 'video' %}
+        <video class="image-holder__image" autoplay loop muted playsinline>
+          <source src="{{ image[0][contentIndex].src }}" type="{{ image[0][contentIndex].mime_type }}">
+        </video>
+      {% else %}
+        <img
+          src="{{ image[0][contentIndex].src }}"
+          alt="{{ image[0][contentIndex].alt }}"
+          width="{{ image[0][contentIndex].width }}"
+          height="{{ image[0][contentIndex].height }}"
+          class="image-holder__image"
+        >
+      {% endif %}
+    </div>
   </div>
 </section>

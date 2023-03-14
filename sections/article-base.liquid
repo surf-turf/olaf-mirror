@@ -7,6 +7,10 @@
     | map: 'sections'
     | where: 'visible'
   %}
+
+  <script>
+    console.log({{ sections | json }})
+  </script>
   {% for section in sections %}
     {% case section.name %}
       {% when 'citizens_1' %}
@@ -23,9 +27,15 @@
           index: section.index
         %}
       {% when 'citizens_base_text_block' %}
-        {% render 'citizens-base-text', settings: article.metafields.accentuate.citizens_base_text %}
+        {% render 'citizens-base-text',
+          settings: article.metafields.accentuate.citizens_base_text,
+          index: section.index
+        %}
       {% when 'citizens_base_image_block' %}
-        {% render 'citizens-base-image', image: article.metafields.accentuate.citizens_base_image %}
+        {% render 'citizens-base-image',
+          image: article.metafields.accentuate.citizens_base_image,
+          index: section.index
+        %}
       {% when 'spacer' %}
         {% render 'citizens-spacer', image: article.metafields.accentuate.spacer %}
     {% endcase %}
