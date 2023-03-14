@@ -114,7 +114,7 @@
           "type": "base",
           "settings": {
             "hero_image": "shopify:\/\/shop_images\/2210120-SS23-Newsletter10.jpg",
-            "hero_title": "ss23 full collection",
+            "hero_title": "FW23 The great outdoors",
             "hero_video": "",
             "hero_url": "shopify:\/\/collections\/ss23-all-products",
             "hero_base_text_color": "#ffffff"
@@ -157,17 +157,6 @@
     "a1301c22-90bf-46d2-9806-91c2ba79f254": {
       "type": "featured-collections",
       "blocks": {
-        "b1e6caad-e7e9-4a0f-9a88-6dfd34558868": {
-          "type": "collection_card",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/230208-SS23-Website-13.jpg",
-            "name": "Women",
-            "label_desktop": "New Arrivals",
-            "label_mobile": "New",
-            "url": "shopify:\/\/collections\/womens-new-arrivals",
-            "button_text": "Shop now"
-          }
-        },
         "711a9a5e-2e5f-4c47-8ede-c2c825062ecc": {
           "type": "collection_card",
           "settings": {
@@ -177,6 +166,17 @@
             "label_mobile": "New",
             "url": "shopify:\/\/collections\/mens-new-arrivals",
             "button_text": "SHOP NOW"
+          }
+        },
+        "b1e6caad-e7e9-4a0f-9a88-6dfd34558868": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/230208-SS23-Website-13.jpg",
+            "name": "Women",
+            "label_desktop": "New Arrivals",
+            "label_mobile": "New",
+            "url": "shopify:\/\/collections\/womens-new-arrivals",
+            "button_text": "Shop now"
           }
         },
         "7ed2a76a-153d-4b09-b98d-b53a831264e0": {
@@ -189,8 +189,8 @@
         }
       },
       "block_order": [
-        "b1e6caad-e7e9-4a0f-9a88-6dfd34558868",
         "711a9a5e-2e5f-4c47-8ede-c2c825062ecc",
+        "b1e6caad-e7e9-4a0f-9a88-6dfd34558868",
         "7ed2a76a-153d-4b09-b98d-b53a831264e0"
       ],
       "settings": {
@@ -204,11 +204,11 @@
         "c5e929fd-a594-405f-84da-2964380667c1": {
           "type": "text_card",
           "settings": {
-            "title": "EXPLORE SS23 GRAPHICS",
+            "title": "SS23 jackets",
             "color": "#000000",
             "button_1_text": "all jackets",
-            "button_1_url": "shopify:\/\/pages\/store",
-            "button_2_text": "see collection",
+            "button_1_url": "shopify:\/\/products\/olaf-aop-denim-shorts-dark-denim",
+            "button_2_text": "",
             "button_2_url": "shopify:\/\/blogs\/citizens",
             "show_mobile": false
           }
@@ -234,8 +234,8 @@
             "button_1_url_mobile": "",
             "button_2_text_mobile": "",
             "button_2_url_mobile": "",
-            "title_desktop": "fadf",
-            "button_1_text_desktop": "fad",
+            "title_desktop": "Gloria Landenberger",
+            "button_1_text_desktop": "Full article",
             "button_1_url_desktop": "",
             "button_2_text_desktop": "",
             "button_2_url_desktop": "",
@@ -299,14 +299,14 @@
         "e80a7574-1de2-42b5-a0fd-c8c7d9123636": {
           "type": "image-block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Untitled_design_1.png",
-            "text": "REPURPOSE - Created from leftover garments",
+            "image": "shopify:\/\/shop_images\/230209-SS23-Instagram-10.jpg",
+            "text": "REPURPOSE",
             "button_text": "BROWSE",
             "button_url": "shopify:\/\/collections\/repurpose-mens-all-products",
             "span": false,
             "hide_mobile": true,
-            "color": "#000000",
-            "height": "50%"
+            "color": "#fafafa",
+            "height": "unset"
           }
         },
         "8190fe4c-01c8-4c03-b54a-697772c97e10": {
@@ -314,11 +314,11 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/P221116140008-top-61.jpg",
             "text": "Heavyweight Studio Collection",
-            "button_text": "explore more",
+            "button_text": "",
             "button_url": "shopify:\/\/collections\/heavyweight-studio-collection-all-products",
             "span": false,
             "hide_mobile": false,
-            "color": "#000000",
+            "color": "#767676",
             "height": "unset"
           }
         },
@@ -338,13 +338,39 @@
         "a9ce4559-ad8d-4ed0-81e8-acd7a92679e8": {
           "type": "image-block",
           "settings": {
+            "image": "shopify:\/\/shop_images\/2210120-SS23-Instagram-36.jpg",
             "text": "",
             "button_text": "",
             "button_url": "",
             "span": false,
             "hide_mobile": false,
             "color": "",
-            "height": "75%"
+            "height": "unset"
+          }
+        },
+        "26b46084-3d0e-4391-bbd0-5ba27a8b0360": {
+          "type": "image-block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/230209-SS23-Instagram25.jpg",
+            "text": "",
+            "button_text": "",
+            "button_url": "",
+            "span": false,
+            "hide_mobile": false,
+            "color": "",
+            "height": "unset"
+          }
+        },
+        "402900ae-524f-4791-af19-542914167c41": {
+          "type": "image-block",
+          "settings": {
+            "text": "",
+            "button_text": "SS23 Menswear",
+            "button_url": "",
+            "span": false,
+            "hide_mobile": false,
+            "color": "#e22120",
+            "height": "unset"
           }
         }
       },
@@ -352,7 +378,9 @@
         "e80a7574-1de2-42b5-a0fd-c8c7d9123636",
         "8190fe4c-01c8-4c03-b54a-697772c97e10",
         "3e30d478-02cc-4392-8dec-9f7d2a1f1c5e",
-        "a9ce4559-ad8d-4ed0-81e8-acd7a92679e8"
+        "a9ce4559-ad8d-4ed0-81e8-acd7a92679e8",
+        "26b46084-3d0e-4391-bbd0-5ba27a8b0360",
+        "402900ae-524f-4791-af19-542914167c41"
       ],
       "settings": {
         "show_mobile_button": true,
@@ -364,23 +392,11 @@
     },
     "0ca80d82-d83f-4ae4-8275-bd4448746a16": {
       "type": "text-block",
-      "blocks": {
-        "fe2495dd-9df4-4a60-ad57-12d01c497e53": {
-          "type": "text",
-          "settings": {
-            "function_title": "",
-            "name": ""
-          }
-        }
-      },
-      "block_order": [
-        "fe2495dd-9df4-4a60-ad57-12d01c497e53"
-      ],
       "settings": {
-        "title": "Test",
-        "content": "<p><em>ØLÅF is a modern, contemporary clothing brand for men and<\/em><\/p><p><em>women where fashion meets function. The collection features timeless<\/em><\/p><p><em>everyday staples with a modern twist, designed to elevate<\/em><\/p><p><em>your style for any occasion. Every season ØLÅF offers a combination<\/em><\/p><p><em>of must-have staples in innovative materials and a selection<\/em><\/p><p><em>of specials for your ideal wardrobe.<\/em><\/p>",
-        "padding_top": 40,
-        "padding_bottom": 40,
+        "title": "SS23 LOST AT SEA",
+        "content": "<p><em>ØLÅF is a modern, contemporary clothing brand for men and women where fashion meets function. The collection features timeless everyday staples with a modern twist, designed to elevate your style for any occasion. Every season ØLÅF offers a combination of must-have staples in innovative materials and a selection of specials for your ideal wardrobe.<\/em><\/p>",
+        "padding_top": 0,
+        "padding_bottom": 0,
         "color": "#000000"
       }
     },
