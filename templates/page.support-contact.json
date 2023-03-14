@@ -35,14 +35,70 @@
         "aee535d1-8b7d-4717-a801-bd010002c01e"
       ],
       "settings": {
-        "contact_intro": "<p>You can also call us on +31 20 238 2573 <br\/>Monday to Friday between 9am and 6pm, <br\/>excluding public holidays.<\/p>",
+        "contact_intro": "<p>You can always contact us if you need any help. <\/p><p><br\/>Send us an email via the form here, or call us on +31 20 238 25 Monday to Friday between 9am and 6pm. <\/p><p>Please note that our customer service is closed on public holidays. <br\/><br\/>If you are a business and have an inquiry, please contact us on sales@olafhussein.com.<\/p>",
         "address": "<p>Bilderdijkstraat 112-114<br\/>1053 KZ, Amsterdam<br\/>The Netherlands<\/p>",
         "opening_hours": "<p>Monday 11am-7pm<br\/>Tuesday 11am-7pm<br\/>Wednesday 11am-7pm<br\/>Thursday 11am-7pm<br\/>Friday 11am-7pm<br\/>Saturday 11am-7pm<br\/>Sunday 12pm-6pm<\/p>"
+      }
+    },
+    "a55d6ef0-5ab8-4997-855c-4915bfe30269": {
+      "type": "faq-item",
+      "settings": {
+        "title": "",
+        "show_faq_title": false
+      }
+    },
+    "2ff4eca1-2d45-4ab0-8c5f-654c47fdf7fe": {
+      "type": "faq-item",
+      "settings": {
+        "title": "",
+        "show_faq_title": false
+      }
+    },
+    "0df9339b-4993-4278-9dfd-c4650bacbdb4": {
+      "type": "faq-item",
+      "settings": {
+        "title": "",
+        "show_faq_title": false
+      }
+    },
+    "e905e8ee-2114-4470-b6d2-4eb1850fc868": {
+      "type": "faq-item",
+      "settings": {
+        "title": "",
+        "show_faq_title": false
+      }
+    },
+    "f5e75e85-4bb0-4220-b447-98dda8e93fbb": {
+      "type": "faq-item",
+      "settings": {
+        "title": "",
+        "show_faq_title": false
+      }
+    },
+    "42f57f2d-5406-42fd-9699-718a2c276491": {
+      "type": "faq-item",
+      "settings": {
+        "title": "",
+        "show_faq_title": false
+      }
+    },
+    "c8600976-505d-42ca-ab21-70f364ea5e8a": {
+      "type": "faq-item",
+      "settings": {
+        "title": "",
+        "show_faq_title": false
       }
     }
   },
   "order": [
     "support-links",
-    "main"
+    "main",
+    "a55d6ef0-5ab8-4997-855c-4915bfe30269",
+    "2ff4eca1-2d45-4ab0-8c5f-654c47fdf7fe",
+    "0df9339b-4993-4278-9dfd-c4650bacbdb4",
+    "e905e8ee-2114-4470-b6d2-4eb1850fc868",
+    "f5e75e85-4bb0-4220-b447-98dda8e93fbb",
+    "42f57f2d-5406-42fd-9699-718a2c276491",
+    "c8600976-505d-42ca-ab21-70f364ea5e8a"
   ]
 }
