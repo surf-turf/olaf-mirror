@@ -22,17 +22,38 @@
             "subject": "Returns"
           }
         },
+        "4e928475-e383-4972-8743-dd1778ab99e4": {
+          "type": "text",
+          "settings": {
+            "subject": "Exchanges"
+          }
+        },
         "aee535d1-8b7d-4717-a801-bd010002c01e": {
           "type": "text",
           "settings": {
-            "subject": ""
+            "subject": "Orders"
+          }
+        },
+        "c85aa170-078c-4b5a-ba87-49461b65ad91": {
+          "type": "text",
+          "settings": {
+            "subject": "Payment"
+          }
+        },
+        "e302f2f6-42f1-45c2-8a92-cc6afdf634ae": {
+          "type": "text",
+          "settings": {
+            "subject": "Other"
           }
         }
       },
       "block_order": [
         "3d0f8676-fb41-42db-b3d6-4ae8472d6e05",
         "50f4358e-de98-40ec-b666-a4862e08ca90",
-        "aee535d1-8b7d-4717-a801-bd010002c01e"
+        "4e928475-e383-4972-8743-dd1778ab99e4",
+        "aee535d1-8b7d-4717-a801-bd010002c01e",
+        "c85aa170-078c-4b5a-ba87-49461b65ad91",
+        "e302f2f6-42f1-45c2-8a92-cc6afdf634ae"
       ],
       "settings": {
         "contact_intro": "<p>You can always contact us if you need any help. <\/p><p><br\/>Send us an email via the form here, or call us on +31 20 238 25 Monday to Friday between 9am and 6pm. <\/p><p>Please note that our customer service is closed on public holidays. <br\/><br\/>If you are a business and have an inquiry, please contact us on sales@olafhussein.com.<\/p>",
