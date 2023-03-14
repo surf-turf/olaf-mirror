@@ -36,15 +36,6 @@
         "spacing_bottom": 0
       }
     },
-    "36f40b7f-8e6f-4a89-977f-9a448e8cde55": {
-      "type": "base-text",
-      "settings": {
-        "base_text": "<p><em>ØLÅF is a modern, contemporary clothing brand for men and<\/em><\/p><p><em>women where fashion meets function. The collection features timeless<\/em><\/p><p><em>everyday staples with a modern twist, designed to elevate<\/em><\/p><p><em>your style for any occasion. Every season ØLÅF offers a combination<\/em><\/p><p><em>of must-have staples in innovative materials and a selection<\/em><\/p><p><em>of specials for your ideal wardrobe.<\/em><\/p>",
-        "spacing_top": 0,
-        "spacing_bottom": 0,
-        "font_size": 24
-      }
-    },
     "852c8d50-a04d-4182-8091-56c84ea04cad": {
       "type": "hero",
       "disabled": true,
@@ -94,13 +85,21 @@
         "b203024d-47f7-4b50-ae73-34c327659e23": {
           "type": "text",
           "settings": {
-            "title": "Ex",
+            "title": "Vision",
+            "content": "ØLÅF is a modern, contemporary clothing brand for men and women where fashion meets function. The collection features timeless everyday staples with a modern twist, designed to elevate your style for any occasion. Every season ØLÅF offers a combination of must-have staples in innovative materials and a selection of specials for your ideal wardrobe."
+          }
+        },
+        "4ad4b5bc-25ae-4c20-b21f-4b817ded11fd": {
+          "type": "text",
+          "settings": {
+            "title": "Mission",
             "content": "ØLÅF is a modern, contemporary clothing brand for men and women where fashion meets function. The collection features timeless everyday staples with a modern twist, designed to elevate your style for any occasion. Every season ØLÅF offers a combination of must-have staples in innovative materials and a selection of specials for your ideal wardrobe."
           }
         }
       },
       "block_order": [
-        "b203024d-47f7-4b50-ae73-34c327659e23"
+        "b203024d-47f7-4b50-ae73-34c327659e23",
+        "4ad4b5bc-25ae-4c20-b21f-4b817ded11fd"
       ],
       "settings": {
         "spacing_top": 0,
@@ -481,7 +480,6 @@
   },
   "order": [
     "c103cb2f-83fe-4eb8-b54a-2c57ce727dd4",
-    "36f40b7f-8e6f-4a89-977f-9a448e8cde55",
     "852c8d50-a04d-4182-8091-56c84ea04cad",
     "29c04a7a-63c9-486f-ba20-a85d090b5c1c",
     "d7ef80dc-c19d-4045-97fd-7058ad2168e5",
